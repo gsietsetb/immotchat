@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "ImmoTchat",
+    "description": "chat for real estates",
+    "slug": "immotchat",
+    "sdkVersion": "17.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#efefef",
+    "icon": "./assets/icons/app.png",
+    "loading": {
+      "icon": "./assets/icons/loading.png",
+      "hideExponentText": false
+    },
+    "packagerOpts": {
+      "assetExts": ["ttf", "mp4"]
+    }
+  }
+}
