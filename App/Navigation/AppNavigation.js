@@ -12,10 +12,10 @@ const PrimaryNav = TabNavigator(
   {
     ChatListScreen: {
       screen: ChatListScreen
-    }
-    /*ProfileScreen: {
+    },
+    ProfileScreen: {
       screen: ProfileScreen
-    }*/
+    }
   },
   {
     // Default config for all screens

@@ -37,7 +37,7 @@ import styles from "./Styles/ChatScreenStyles";
 // I18n
 import I18n from "react-native-i18n";
 
-@inject("messageStore")
+@inject("messageStore", "userStore")
 @observer
 class ChatScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -137,15 +137,24 @@ class ChatScreen extends React.Component {
   };
 
   renderMessages = () => {
-    const { messageStore } = this.props;
+    const { messageStore, userStore } = this.props;
+
+    const currentUser = userStore.currentUser;
+
+    if (!currentUser) {
+      return;
+    }
+    const user = {
+      _id: currentUser.uid,
+      name: currentUser.displayName || ""
+    };
+
     return (
       <GiftedChat
         inverted={true}
         messages={messageStore.messageList}
         onSend={this.onSend}
-        user={{
-          _id: 1
-        }}
+        user={user}
       />
     );
   };

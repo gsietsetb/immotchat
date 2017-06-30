@@ -31,7 +31,7 @@ import styles from "./Styles/ChatListScreenStyles";
 // I18n
 import I18n from "react-native-i18n";
 
-@inject("roomStore")
+@inject("roomStore", "userStore")
 @observer
 class ChatListScreen extends React.Component {
   static navigationOptions = {
@@ -91,6 +91,12 @@ class ChatListScreen extends React.Component {
   };
 
   onPress = rowData => {
+    const { userStore } = this.props;
+    const user = userStore.currentUser;
+    if (!user) {
+      alert(I18n.t("login needed"));
+      return;
+    }
     this.props.navigation.navigate("Chat", { chatRoom: rowData });
   };
   /* ***********************************************************

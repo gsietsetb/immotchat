@@ -34,14 +34,14 @@ class MessageStore {
   sendMessage(message, room) {
     message.createdAt = moment().toISOString();
     message.dateInverse = -moment().unix();
-    database.ref("messages/" + room).push(message);
+    database.ref("messages/" + room + "/messages").push(message);
   }
 
   @action
   getMessages(room) {
     console.log("getMessages start", room);
     database
-      .ref("messages/" + room)
+      .ref("messages/" + room + "/messages")
       .orderByChild("dateInverse")
       .on("value", snapshot => {
         const results = snapshot.val() || [];

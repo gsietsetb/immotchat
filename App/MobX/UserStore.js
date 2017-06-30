@@ -1,76 +1,170 @@
+import { AsyncStorage } from "react-native";
 
-import { AsyncStorage } from 'react-native';
+import { observable, createTransformer, action, computed } from "mobx";
 
-import { observable, createTransformer, action } from 'mobx';
+import moment from "moment";
 
-import moment from 'moment';
+import { persist, create } from "mobx-persist";
 
-import { persist, create } from 'mobx-persist'
-
-
-import API from '../Services/Api'
-import FixtureAPI from '../Services/FixtureApi'
-import DebugConfig from '../Config/DebugConfig'
-
-const api = DebugConfig.useFixtures ? FixtureAPI : API.create()
-
-console.log(DebugConfig.useFixtures);
+import firebase from "../Lib/firebase";
 
 class UserStore {
+  @observable errorMessage = null;
 
-  @persist @observable session = null;
   @observable hydrated = false;
   @observable fetching = false;
 
-  isLoggedIn() {
+  @persist("object")
+  @observable
+  info = null;
 
-    return this.session;
-
+  @computed
+  get currentUser() {
+    console.log("userInfo currentUser", firebase.auth().currentUser);
+    let user = firebase.auth().currentUser;
+    if (user) {
+      return {
+        displayName: user.displayName,
+        email: user.email,
+        emailVerified: user.emailVerified,
+        phoneNumber: user.emailVerified,
+        photoURL: user.photoURL,
+        refreshToken: user.refreshToken,
+        uid: user.uid
+      };
+    }
   }
 
-
-  @action hydrateComplete() {
+  @action
+  hydrateComplete() {
     this.hydrated = true;
 
-    console.log('hydrateComplete');
-
-
+    console.log("hydrateComplete");
   }
 
+  @action
   login(email, password) {
-
-    console.log('email',email);
-    console.log('password',password);
-
+    console.log("email", email);
+    console.log("password", password);
+    this.errorMessage = null;
     this.fetching = true;
-    api.login(email, password)
-    .then((response) => {
-      console.log('response login',response);
-      if (response.ok && response.data) {
-        this.fetching = false;
-        console.log('session:',response.data.session);
-        this.session = response.data.session;
 
-      }else{
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(user => {
+        console.log("result", user);
         this.fetching = false;
-        this.session = null;
+      })
+      .catch(error => {
+        // Handle Errors here.
+        this.fetching = false;
+        this.info = null;
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        this.errorMessage = errorMessage;
+        if (errorCode === "auth/wrong-password") {
+          console.log("Wrong password.");
+        } else {
+          console.log(errorMessage);
+        }
+        console.log(error);
+      });
+  }
+
+  @action
+  createUser(email, password, profile) {
+    this.fetching = true;
+    this.errorMessage = null;
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(user => {
+        console.log("result", user);
+        this.fetching = false;
+        this.saveProfile(profile);
+      })
+      .catch(function(error) {
+        // Handle Errors here.
+        this.fetching = false;
+        this.info = null;
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        this.errorMessage = errorMessage;
+
+        if (errorCode == "auth/weak-password") {
+          console.log("Wrong password.");
+        } else {
+          console.log(errorMessage);
+        }
+        console.log(error);
+      });
+  }
+
+  @action
+  saveProfile(profile) {
+    let user = firebase.auth().currentUser;
+    console.log("user is auth", user);
+    if (user) {
+      this.fetching = true;
+
+      user
+        .updateProfile({
+          displayName: profile.displayName
+        })
+        .then(
+          () => {
+            // Update successful.
+
+            console.log("updated successful");
+
+            this.fetching = false;
+          },
+          error => {
+            // An error happened.
+            console.log("updated failed");
+            this.fetching = true;
+          }
+        );
+    }
+  }
+
+  @action
+  logout() {
+    this.fetching = true;
+    firebase.auth().signOut().then(
+      () => {
+        this.fetching = false;
+        this.info = null;
+      },
+      error => {
+        this.fetching = false;
       }
-    });
+    );
   }
-
-  logout () {
-    this.fetching = true;
-    api.logout()
-    .then((response)=>{
-      this.fetching = false;
-      this.session = null;
-    })
-
-  }
-
 }
 
-export default userStore = new UserStore();
+export default (userStore = new UserStore());
+
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    console.log("user connected", user);
+    userStore.info = {
+      displayName: user.displayName,
+      email: user.email,
+      emailVerified: user.emailVerified,
+      phoneNumber: user.emailVerified,
+      photoURL: user.photoURL,
+      refreshToken: user.refreshToken,
+      uid: user.uid
+    };
+  } else {
+    userStore.info = null;
+    console.log("user disconnected");
+  }
+});
 
 const hydrate = create({ storage: AsyncStorage, jsonify: true });
-hydrate('user', userStore).then(() => { userStore.hydrateComplete() });
+hydrate("user", userStore).then(() => {
+  userStore.hydrateComplete();
+});
