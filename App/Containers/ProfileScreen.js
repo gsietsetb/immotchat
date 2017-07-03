@@ -14,6 +14,8 @@ import {
 // I18n
 import I18n from "react-native-i18n";
 
+import Icon from "@expo/vector-icons/Entypo";
+
 import { Metrics, Colors } from "../Themes";
 // external libs
 
@@ -29,7 +31,14 @@ import { observer, inject } from "mobx-react/native";
 @observer
 class ProfileScreen extends React.Component {
   static navigationOptions = {
-    title: I18n.t("Profile")
+    title: I18n.t("Profile"),
+    tabBarLabel: I18n.t("Profile"),
+    tabBarIcon: ({ tintColor }) =>
+      <Icon
+        name="user"
+        size={Metrics.icons.small}
+        style={[styles.tabIcon, { color: tintColor }]}
+      />
   };
   constructor(props) {
     super(props);

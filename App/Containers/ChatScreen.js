@@ -16,7 +16,7 @@ import { observer, inject } from "mobx-react/native";
 
 //import { MessagesActions } from "../Redux/MessageRedux";
 
-import { GiftedChat } from "react-native-gifted-chat";
+import { GiftedChat, MessageText } from "react-native-gifted-chat";
 
 //import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -136,6 +136,20 @@ class ChatScreen extends React.Component {
     messageStore.sendMessage(messages[0], chatRoom.id);
   };
 
+  renderMessageText(props) {
+    const textStyle = {
+      fontSize: 14,
+      fontFamily: "roboto-regular"
+    };
+
+    return (
+      <MessageText
+        textStyle={{ left: textStyle, right: textStyle }}
+        {...props}
+      />
+    );
+  }
+
   renderMessages = () => {
     const { messageStore, userStore } = this.props;
 
@@ -153,6 +167,7 @@ class ChatScreen extends React.Component {
       <GiftedChat
         inverted={true}
         messages={messageStore.messageList}
+        renderMessageText={this.renderMessageText}
         onSend={this.onSend}
         user={user}
       />

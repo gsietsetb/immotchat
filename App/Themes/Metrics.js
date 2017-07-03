@@ -22,7 +22,7 @@ const metrics = {
   doubleSection: 50,
   horizontalLineHeight: 1,
   searchBarHeight: 30,
-  statusBar: Platform.OS === "ios" ? 20 : 0,
+  statusBar: Platform.OS === "ios" ? 0 : 24,
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
   navBarHeight: Platform.OS === "ios" ? 64 : 54,

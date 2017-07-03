@@ -15,6 +15,8 @@ import { Metrics } from "../Themes";
 
 // external libs
 //import Icon from "react-native-vector-icons/FontAwesome";
+
+import Icon from "@expo/vector-icons/Entypo";
 //import Animatable from "react-native-animatable";
 
 //import FooterBrand from "../Components/FooterBrand";
@@ -28,6 +30,10 @@ import ChatRow from "../Components/ChatRow";
 // Styles
 import styles from "./Styles/ChatListScreenStyles";
 
+/*import { createIconSetFromFontello } from "@expo/vector-icons";
+import fontelloConfig from "../Themes/Fonts/config.json";
+const Icon = createIconSetFromFontello(fontelloConfig, "immo");*/
+
 // I18n
 import I18n from "react-native-i18n";
 
@@ -35,7 +41,16 @@ import I18n from "react-native-i18n";
 @observer
 class ChatListScreen extends React.Component {
   static navigationOptions = {
-    title: I18n.t("ImmoTchat")
+    title: I18n.t("ImmoTchat"),
+    tabBarLabel: I18n.t("my_chats"),
+    scrollEnabled: false,
+    showIcon: true,
+    tabBarIcon: ({ tintColor }) =>
+      <Icon
+        name="chat"
+        size={Metrics.icons.small}
+        style={[styles.tabIcon, { color: tintColor }]}
+      />
   };
 
   constructor(props) {

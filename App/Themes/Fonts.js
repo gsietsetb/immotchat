@@ -1,10 +1,10 @@
-import {Platform} from 'react-native'
+import { Platform } from "react-native";
 
 const type = {
-  base: (Platform.OS === 'ios') ? 'Avenir-Book' : 'Roboto',
-  bold: (Platform.OS === 'ios') ? 'Avenir-Black' : 'Roboto',
-  emphasis: 'HelveticaNeue-Italic'
-}
+  base: "roboto-regular",
+  bold: "roboto-bold",
+  emphasis: "HelveticaNeue-Italic"
+};
 
 const size = {
   h1: 38,
@@ -18,7 +18,7 @@ const size = {
   medium: 14,
   small: 12,
   tiny: 8.5
-}
+};
 
 const style = {
   h1: {
@@ -26,7 +26,7 @@ const style = {
     fontSize: size.h1
   },
   h2: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: size.h2
   },
   h3: {
@@ -53,10 +53,10 @@ const style = {
     fontFamily: type.base,
     fontSize: size.medium
   }
-}
+};
 
 export default {
   type,
   size,
   style
-}
+};

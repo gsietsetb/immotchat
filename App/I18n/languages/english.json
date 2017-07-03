@@ -32,5 +32,6 @@
   "Account Info": "Account Info",
   "Disconnect": "Disconnect",
   "email": "Email address",
-  "login needed": "Please login or create an account before join a chat room"
+  "login needed": "Please login or create an account before join a chat room",
+  "my_chats": "Chats"
 }
