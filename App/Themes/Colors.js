@@ -23,7 +23,7 @@ const colors = {
   border: "#483F53",
   banner: "#5F3E63",
   text: "#E0D7E5",
-  primaryDark: "#2d2d2d",
+  primaryDark: "#ff0000",
   primaryNormal: "#2d2d2dCC",
   secondaryDark: "#00BCD4",
   secondaryLight: "#00BCD480",

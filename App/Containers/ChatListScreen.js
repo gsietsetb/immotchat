@@ -96,7 +96,7 @@ class ChatListScreen extends React.Component {
     console.log("componentWillReact");
     const { roomStore } = this.props;
 
-    console.log("list", roomStore.list.slice());
+    //console.log("list", roomStore.list.slice());
 
     /*if (roomStore.list) {
       this.setState({

@@ -34,8 +34,12 @@ export default class ChatRow extends React.Component {
             <Image source={{ uri: data.venue.img }} style={styles.image} />
           </View>
           <View style={styles.rightContainer}>
-            <Text style={styles.boldLabel}>{data.title}</Text>
-            <Text style={styles.label}>{data.venue.name}</Text>
+            <Text style={styles.boldLabel}>
+              {data.title}
+            </Text>
+            <Text style={styles.label}>
+              {data.venue.name}
+            </Text>
           </View>
         </View>
       </TouchableOpacity>

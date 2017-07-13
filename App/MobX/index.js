@@ -7,7 +7,6 @@ import messageStore from "./MessageStore";
 export default {
   roomStore,
   messageStore,
-  searchStore: new SpotifyStore(),
   navigationStore,
   userStore
   // place for other stores...

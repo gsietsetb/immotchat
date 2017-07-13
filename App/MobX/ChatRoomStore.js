@@ -19,6 +19,7 @@ console.log(DebugConfig.useFixtures);
 
 class ChatRoomStore {
   @observable list = [];
+
   @observable hydrated = false;
   @observable fetching = false;
 
@@ -43,6 +44,7 @@ class ChatRoomStore {
   @action
   getList() {
     console.log("getList start");
+
     database.ref("rooms").on("value", snapshot => {
       const results = snapshot.val() || [];
       console.log("results", results);
