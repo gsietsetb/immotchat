@@ -41,7 +41,7 @@ import I18n from "react-native-i18n";
 @observer
 class ChatScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    title: navigation.state.params.chatRoom.title
+    //title: navigation.state.params.chatRoom.title
   });
 
   state: {
@@ -72,7 +72,7 @@ class ChatScreen extends React.Component {
   componentDidMount = () => {
     const { navigation, messageStore } = this.props;
     const chatRoom = navigation.state.params.chatRoom;
-    //console.log("chatRoom", chatRoom);
+    console.log("chatRoom", chatRoom);
     //fetchMessagesAttempt(chatRoom.id);
     messageStore.getMessages(chatRoom.id);
   };

@@ -6,9 +6,11 @@ import {
   Text,
   KeyboardAvoidingView,
   View,
-  ListView
+  ListView,
+  Linking
 } from "react-native";
 
+import { Constants } from "expo";
 import { observer, inject } from "mobx-react/native";
 
 import { Metrics } from "../Themes";
@@ -37,7 +39,7 @@ const Icon = createIconSetFromFontello(fontelloConfig, "immo");*/
 // I18n
 import I18n from "react-native-i18n";
 
-@inject("roomStore", "userStore")
+@inject("roomStore", "userStore", "nav")
 @observer
 class ChatListScreen extends React.Component {
   static navigationOptions = {
@@ -96,7 +98,7 @@ class ChatListScreen extends React.Component {
     console.log("componentWillReact");
     const { roomStore } = this.props;
 
-    //console.log("list", roomStore.list.slice());
+    console.log("list", roomStore.list.slice());
 
     /*if (roomStore.list) {
       this.setState({
@@ -106,13 +108,16 @@ class ChatListScreen extends React.Component {
   };
 
   onPress = rowData => {
-    const { userStore } = this.props;
+    const { userStore, nav } = this.props;
     const user = userStore.currentUser;
     if (!user) {
       alert(I18n.t("login needed"));
       return;
     }
-    this.props.navigation.navigate("Chat", { chatRoom: rowData });
+
+    //Linking.openURL(Constants.linkingUri + "room=" + rowData.id);
+
+    nav.navigate("Chat", { chatRoom: rowData });
   };
   /* ***********************************************************
   * STEP 3
@@ -195,18 +200,4 @@ class ChatListScreen extends React.Component {
   }
 }
 
-/*const mapStateToProps = state => {
-  return {
-    fetching: state.chat.fetching,
-    rooms: state.chat.rooms
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchRoomsAttempt: () => dispatch(RoomsActions.fetchRoomsAttempt())
-  };
-};
-*/
-//export default connect(mapStateToProps, mapDispatchToProps)(ChatListScreen);
 export default ChatListScreen;

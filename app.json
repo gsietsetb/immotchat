@@ -8,6 +8,7 @@
     "orientation": "portrait",
     "primaryColor": "#efefef",
     "icon": "./assets/icons/app.png",
+    "scheme": "immo",
     "loading": {
       "icon": "./assets/icons/loading.png",
       "hideExponentText": false

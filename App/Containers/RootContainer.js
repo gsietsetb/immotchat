@@ -10,13 +10,15 @@ import { addNavigationHelpers } from "react-navigation";
 // Styles
 import styles from "./Styles/RootContainerStyles";
 
-@inject("navigationStore")
+@inject("nav")
 @observer
 class RootContainer extends Component {
   constructor(props, context) {
     super(props, context);
   }
-  componentDidMount() {}
+  componentDidMount() {
+    console.log("props", this.props);
+  }
 
   render() {
     return (
