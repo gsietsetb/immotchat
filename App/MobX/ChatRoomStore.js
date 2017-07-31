@@ -1,5 +1,8 @@
 import { AsyncStorage, ListView } from "react-native";
 
+import FCM from "react-native-fcm";
+import { Platform } from "react-native";
+
 import { observable, createTransformer, action, computed } from "mobx";
 
 import moment from "moment";
@@ -20,10 +23,13 @@ console.log(DebugConfig.useFixtures);
 class ChatRoomStore {
   @observable list = [];
 
+  @observable details = null;
+
   @observable hydrated = false;
   @observable fetching = false;
 
   ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+  usersDS = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
   @computed
   get count() {
@@ -35,10 +41,48 @@ class ChatRoomStore {
     return this.ds.cloneWithRows(this.list.slice());
   }
 
+  @computed
+  get userList() {
+    if (this.details && this.details.users) {
+      return this.usersDS.cloneWithRows(this.details.users);
+    }
+    return this.usersDS.cloneWithRows([]);
+  }
+
+  @action
+  enterRoom(room, me) {
+    if (me) {
+      me.refreshToken = null;
+      database.ref("rooms/" + room + "/users/" + me.uid).set(me);
+    }
+
+    FCM.requestPermissions();
+    FCM.getFCMToken().then(token => {
+      console.log("getFCMToken", token);
+    });
+    /*if (Platform.OS === "ios") {
+      FCM.getAPNSToken().then(token => {
+        console.log("APNS TOKEN (getFCMToken)", token);
+      });
+    }*/
+
+    FCM.subscribeToTopic(`room-${room}`);
+  }
+
   @action
   hydrateComplete() {
     this.hydrated = true;
     console.log("hydrateComplete");
+  }
+
+  @action
+  getDetails(room) {
+    console.log("getting details");
+    database.ref("rooms/" + room).on("value", snapshot => {
+      const results = snapshot.val() || [];
+      console.log("getDetails results", results);
+      this.details = results;
+    });
   }
 
   @action

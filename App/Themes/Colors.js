@@ -28,7 +28,8 @@ const colors = {
   secondaryDark: "#00BCD4",
   secondaryLight: "#00BCD480",
   primaryLight: "#2d2d2d80",
-  whiteFull: "#ffffff"
+  whiteFull: "#ffffff",
+  listLineSeparator: "#cccccc"
 };
 
 export default colors;

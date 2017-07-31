@@ -3,16 +3,21 @@ import { addNavigationHelpers } from "react-navigation";
 import { inject, observer } from "mobx-react/native";
 import React from "react";
 
-import { Constants } from "expo";
+import FCM, {
+  FCMEvent,
+  NotificationType,
+  WillPresentNotificationResult,
+  RemoteNotificationResult
+} from "react-native-fcm";
 
-import { Linking } from "react-native";
+import { Linking, Platform } from "react-native";
 
 import autobind from "autobind-decorator";
 
 import NavigationStore from "../MobX/NavigationStore";
 import handleBackButton from "../Lib/handleBackButton";
 
-import qs from "querystringify";
+import { routeMatcher } from "route-matcher";
 
 export default function createNavigationContainer(
   Component: ReactClass<*>
@@ -29,14 +34,63 @@ export default function createNavigationContainer(
     };
 
     componentDidMount() {
-      this.addLinkingListener();
-    }
-    componentDidUnMount() {
-      Linking.removeEventListener("url", this.handleDeepLink);
-    }
-    addLinkingListener = () => {
-      console.log("adding linking listener");
-      Linking.addEventListener("url", this.handleDeepLink);
+      if (Platform.OS === "android") {
+        Linking.getInitialURL().then(url => {
+          console.log("url", url);
+          this.navigate(url);
+        });
+      } else {
+        Linking.addEventListener("url", this.handleOpenURL);
+      }
+
+      FCM.getInitialNotification().then(notif => {
+        console.log("INITIAL NOTIFICATION", notif);
+      });
+
+      this.notificationListener = FCM.on(FCMEvent.Notification, async notif => {
+        console.log("notif: ", notif);
+        if (notif.local_notification) {
+          //this is a local notification
+        }
+        if (notif.opened_from_tray) {
+          console.log("opened_from_tray: ", notif);
+          //app is open/resumed because user clicked banner
+        }
+
+        if (Platform.OS === "ios") {
+          //optional
+          //iOS requires developers to call completionHandler to end notification process.
+          //This library handles it for you automatically with default behavior (for remote notification, finish with NoData; for WillPresent, finish depend on "show_in_foreground"). However if you want to return different result, follow the following code to override
+          //notif._notificationType is available for iOS platfrom
+          switch (notif._notificationType) {
+            case NotificationType.Remote:
+              notif.finish(RemoteNotificationResult.NewData); //other types available: RemoteNotificationResult.NewData, RemoteNotificationResult.ResultFailed
+              break;
+            case NotificationType.NotificationResponse:
+              notif.finish();
+              break;
+            case NotificationType.WillPresent:
+              notif.finish(WillPresentNotificationResult.All); //other types available: WillPresentNotificationResult.None
+              break;
+          }
+        } else {
+          FCM.presentLocalNotification({
+            id: notif.room,
+            title: notif.fcm.title,
+            body: notif.fcm.body,
+            sound: "default",
+            priority: "high",
+            click_action: "ACTION",
+            icon: "ic_launcher",
+            show_in_foreground: true
+          });
+        }
+      });
+      this.refreshTokenListener = FCM.on(FCMEvent.RefreshToken, token => {
+        console.log("refresh token: ", token);
+        // fcm token may not be available on first load, catch it here
+      });
+      /*
       Linking.getInitialURL()
         .then(url => {
           if (url) {
@@ -56,18 +110,26 @@ export default function createNavigationContainer(
             let query = qs.parse(finalUrl);
             console.log("query", query);
 
-            if (finalUrl) {
-              Linking.openURL(Constants.linkingUri + finalUrl);
+            if (query.room) {
+              setTimeout(() => {
+                nav.navigate("Chat", { chatRoom: { id: query.room } });
+              }, 500);
             }
           }
         })
         .catch(err => console.error("An error occurred", err));
-    };
+        */
+    }
+    componentDidUnMount() {
+      Linking.removeEventListener("url", this.handleOpenURL);
+    }
 
-    handleDeepLink = event => {
-      const { nav } = this.props;
+    handleOpenURL = event => {
       console.log("event", event);
+
+      this.navigate(event.url);
       //alert(event);
+      /*
       let url = event.url;
       const baseUrl = Constants.linkingUri.replace("+", "");
       if (url.indexOf(Constants.linkingUri) !== -1) {
@@ -84,7 +146,7 @@ export default function createNavigationContainer(
         setTimeout(() => {
           nav.navigate("Chat", { chatRoom: { id: query.room } });
         }, 500);
-      }
+      }*/
       /*let data;
       if (query) {
         data = qs.parse(query);
@@ -93,6 +155,22 @@ export default function createNavigationContainer(
       }
 
       this.setState({redirectData: data});*/
+    };
+
+    navigate = url => {
+      const { nav } = this.props;
+
+      if (url) {
+        const route = url.replace(/.*?:\/\//g, "");
+        let roomDL = routeMatcher("room/:roomId");
+
+        let found = roomDL.parse(route);
+        if (found) {
+          console.log("found", found);
+          const { roomId } = found;
+          nav.navigate("Chat", { chatRoom: { id: roomId } });
+        }
+      }
     };
 
     @autobind

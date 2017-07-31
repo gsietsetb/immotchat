@@ -1,48 +1,24 @@
 export default {
   // Functions return fixtures
-  login: (email, password, simulateWrong = false) => {
-    return new Promise(function(resolve, reject) {
-      if (!simulateWrong) {
-
-        const data = require('../Fixtures/login.json');
-        setTimeout(()=>{
-          resolve({
-          ok: true,
-          data: data
-          })
-        }, 1000);
-
-
-
-      } else {
-        reject({
-          ok: false,
-          error: 'User not valid'
-        });  // error, rejected
-      }
-    });
+  getRoot: () => {
+    return {
+      ok: true,
+      data: require('../Fixtures/root.json')
+    }
   },
-  logout: () => {
-    return new Promise(function(resolve, reject) {
-        setTimeout(()=>{
-          resolve({
-          ok: true,
-          data: []
-          })
-        }, 1000);
-    });
+  getRate: () => {
+    return {
+      ok: true,
+      data: require('../Fixtures/rateLimit.json')
+    }
   },
-  search: (query) => {
-    return new Promise(function(resolve, reject) {
-
-      const data = require('../Fixtures/spotify.json');
-      setTimeout(()=>{
-        resolve({
-        ok: true,
-        data: data
-        })
-      }, 0);
-
-    });
+  getUser: (username) => {
+    // This fixture only supports gantman or else returns skellock
+    const gantmanData = require('../Fixtures/gantman.json')
+    const skellockData = require('../Fixtures/skellock.json')
+    return {
+      ok: true,
+      data: username.toLowerCase() === 'gantman' ? gantmanData : skellockData
+    }
   }
-};
+}

@@ -14,7 +14,7 @@ import {
 // I18n
 import I18n from "react-native-i18n";
 
-import Icon from "@expo/vector-icons/Entypo";
+import Icon from "react-native-vector-icons/Entypo";
 
 import { Metrics, Colors } from "../Themes";
 // external libs

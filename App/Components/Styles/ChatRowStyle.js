@@ -43,15 +43,5 @@ export default StyleSheet.create({
   label: {
     textAlign: "left"
     /*color: Colors.snow*/
-  },
-  distance: {
-    position: "absolute",
-    flexDirection: "row",
-    bottom: 0,
-    right: 0,
-    padding: 10
-  },
-  distanceIcon: {
-    marginRight: 3
   }
 });

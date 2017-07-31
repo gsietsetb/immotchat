@@ -1,9 +1,9 @@
 {
-  "presets": ["babel-preset-expo"],
+  "presets": ["react-native"],
   "plugins": ["transform-decorators-legacy"],
   "env": {
-    "development": {
-      "plugins": ["transform-react-jsx-source"]
+    "production": {
+      "plugins": ["ignite-ignore-reactotron"]
     }
   }
 }

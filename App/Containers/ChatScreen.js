@@ -7,42 +7,42 @@ import ReactNative, {
   Text,
   KeyboardAvoidingView,
   View,
-  ListView
+  ListView,
+  TouchableOpacity
 } from "react-native";
-
-//import { connect } from "react-redux";
 
 import { observer, inject } from "mobx-react/native";
 
-//import { MessagesActions } from "../Redux/MessageRedux";
-
 import { GiftedChat, MessageText } from "react-native-gifted-chat";
 
-//import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-
 import { Metrics } from "../Themes";
-// external libs
-//import Icon from "react-native-vector-icons/FontAwesome";
-//import Animatable from "react-native-animatable";
 
-//import FooterBrand from "../Components/FooterBrand";
-
-//import AlertMessage from "../Components/AlertMessage";
-//import MessageRow from "../Components/MessageRow";
-
-//import ChatInput from "../Components/ChatInput";
 // Styles
 import styles from "./Styles/ChatScreenStyles";
 
 // I18n
 import I18n from "react-native-i18n";
 
-@inject("messageStore", "userStore")
+@inject("messageStore", "userStore", "nav")
 @observer
 class ChatScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => ({
-    //title: navigation.state.params.chatRoom.title
-  });
+  static navigationOptions = ({ navigation }) => {
+    const { params = {} } = navigation.state;
+
+    return {
+      title: "chat",
+      headerRight: (
+        <TouchableOpacity
+          style={styles.headerRightButton}
+          onPress={() => params.handlePressInfo()}
+        >
+          <Text style={styles.headerRight}>
+            {I18n.t("Info")}
+          </Text>
+        </TouchableOpacity>
+      )
+    };
+  };
 
   state: {
     dataSource: Object
@@ -74,14 +74,22 @@ class ChatScreen extends React.Component {
     const chatRoom = navigation.state.params.chatRoom;
     console.log("chatRoom", chatRoom);
     //fetchMessagesAttempt(chatRoom.id);
-    messageStore.getMessages(chatRoom.id);
+    messageStore.getMessages(chatRoom.id, 0);
+    navigation.setParams({ handlePressInfo: this.handlePressInfo });
   };
 
+  handlePressInfo = () => {
+    const { nav } = this.props;
+    const { chatRoom } = nav.params;
+    console.log("pressed chatRoom", chatRoom);
+
+    nav.navigate("InfoChat", { chatRoom });
+  };
   componentWillReact = () => {
     console.log("componentWillReact chatRoom");
     const { messageStore } = this.props;
 
-    console.log("messageList", messageStore.messageList);
+    //console.log("messageList", messageStore.messageList);
 
     /*if (roomStore.list) {
       this.setState({
@@ -150,6 +158,47 @@ class ChatScreen extends React.Component {
     );
   }
 
+  onLoadEarlier = () => {
+    const { navigation, messageStore } = this.props;
+    const chatRoom = navigation.state.params.chatRoom;
+    messageStore.getMessages(chatRoom.id, messageStore.step);
+  };
+
+  pressUser = user => {
+    console.log("user", user);
+
+    const { nav } = this.props;
+    nav.navigate("User", {
+      user: {
+        displayName: user.name,
+        id: user._id
+      }
+    });
+  };
+  longPress = (context, message) => {
+    const { navigation, messageStore } = this.props;
+    const chatRoom = navigation.state.params.chatRoom;
+
+    console.log("context", context);
+    console.log("message", message);
+
+    const options = ["Report Abuse", "Cancel"];
+    const cancelButtonIndex = options.length - 1;
+    context.actionSheet().showActionSheetWithOptions({
+      options,
+      cancelButtonIndex
+    }, buttonIndex => {
+      switch (buttonIndex) {
+        case 0:
+          console.log("report abuse");
+
+          messageStore.reportAbuse(message, chatRoom.id);
+          break;
+
+        default:
+      }
+    });
+  };
   renderMessages = () => {
     const { messageStore, userStore } = this.props;
 
@@ -166,6 +215,11 @@ class ChatScreen extends React.Component {
     return (
       <GiftedChat
         inverted={true}
+        loadEarlier={true}
+        showUserAvatar={true}
+        onPressAvatar={this.pressUser}
+        onLongPress={this.longPress}
+        onLoadEarlier={this.onLoadEarlier}
         messages={messageStore.messageList}
         renderMessageText={this.renderMessageText}
         onSend={this.onSend}

@@ -10,29 +10,20 @@ import {
   Linking
 } from "react-native";
 
-import { Constants } from "expo";
 import { observer, inject } from "mobx-react/native";
 
 import { Metrics } from "../Themes";
 
 // external libs
 //import Icon from "react-native-vector-icons/FontAwesome";
-
-import Icon from "@expo/vector-icons/Entypo";
+import Icon from "react-native-vector-icons/Entypo";
 //import Animatable from "react-native-animatable";
-
-//import FooterBrand from "../Components/FooterBrand";
-
-//import AlertMessage from "../Components/AlertMessage";
-//import { connect } from "react-redux";
-
-//import { RoomsActions } from "../Redux/RoomRedux";
 
 import ChatRow from "../Components/ChatRow";
 // Styles
 import styles from "./Styles/ChatListScreenStyles";
 
-/*import { createIconSetFromFontello } from "@expo/vector-icons";
+/*import { createIconSetFromFontello } from "react-native-vector-icons";
 import fontelloConfig from "../Themes/Fonts/config.json";
 const Icon = createIconSetFromFontello(fontelloConfig, "immo");*/
 
@@ -108,15 +99,15 @@ class ChatListScreen extends React.Component {
   };
 
   onPress = rowData => {
-    const { userStore, nav } = this.props;
+    const { userStore, nav, roomStore } = this.props;
     const user = userStore.currentUser;
     if (!user) {
       alert(I18n.t("login needed"));
       return;
     }
 
-    //Linking.openURL(Constants.linkingUri + "room=" + rowData.id);
-
+    roomStore.enterRoom(rowData.id, user);
+    console.log("rowData", rowData);
     nav.navigate("Chat", { chatRoom: rowData });
   };
   /* ***********************************************************

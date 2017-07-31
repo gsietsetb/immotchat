@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "31411352854",
+    "firebase_url": "https://immotchat-2e7a5.firebaseio.com",
+    "project_id": "immotchat-2e7a5",
+    "storage_bucket": "immotchat-2e7a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31411352854:android:661e06184b51a440",
+        "android_client_info": {
+          "package_name": "io.idev.immotchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31411352854-ovak6o7cere78k12mrivrad0cbco9vq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN-WHb6e1k-BVgU_eoid-MEwdRgpyGxeU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

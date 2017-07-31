@@ -1,6 +1,7 @@
 // @flow
 
-import { BackAndroid, Platform } from "react-native";
+import { BackHandler, Platform } from "react-native";
+
 import React, { Component } from "react";
 
 interface BackButtonPressed {
@@ -15,7 +16,7 @@ export default function handleBackButton(
   class BackButtonComponent extends Component {
     componentDidMount() {
       const { backButtonPressed } = this.targetComponentRef;
-      this.backButtonPressedSubscription = BackAndroid.addEventListener(
+      this.backButtonPressedSubscription = BackHandler.addEventListener(
         "backPress",
         backButtonPressed
       );

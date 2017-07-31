@@ -1,48 +1,35 @@
 import "../Config";
+import DebugConfig from "../Config/DebugConfig";
 import React, { Component } from "react";
-import { Provider } from "mobx-react";
 
-import { View } from "react-native";
+import { Provider } from "mobx-react/native";
 
-import { Font } from "expo";
+import { autorun } from "mobx";
+
 import stores from "../MobX";
 
-import RootContainer from "./RootContainer";
+import createNavigationContainer from "../Navigation/createNavigationContainer";
 
-/**
- * Provides an entry point into our application.  Both index.ios.js and index.android.js
- * call this component first.
- *
- *
- * We separate like this to play nice with React Native's hot reloading.
- */
+import AppNavigation from "../Navigation/AppNavigation";
+
+stores.nav.setNavigator(AppNavigation);
+
+const AppNavigationMobx = createNavigationContainer(AppNavigation);
+
+autorun("NavigationStore State", () => {
+  console.log("navigationState", stores.nav.navigationState);
+  console.log("current state", stores.nav.state);
+});
+
 class App extends Component {
-  state = {
-    fontLoaded: false
-  };
-  async componentDidMount() {
-    await Font.loadAsync({
-      immo: require("../../assets/fonts/immo.ttf"),
-      "roboto-regular": require("../../assets/fonts/Roboto-Regular.ttf"),
-      "roboto-bold": require("../../assets/fonts/Roboto-Bold.ttf")
-    });
-    console.log("all font loaded");
-
-    this.setState({ fontLoaded: true });
-  }
-
   render() {
-    console.log("font loaded", this.state.fontLoaded);
-    if (this.state.fontLoaded) {
-      return (
-        <Provider {...stores}>
-          <RootContainer />
-        </Provider>
-      );
-    } else {
-      <View />;
-    }
+    return (
+      <Provider {...stores}>
+        <AppNavigationMobx />
+      </Provider>
+    );
   }
 }
 
-export default App;
+// allow reactotron overlay for fast design in dev mode
+export default (DebugConfig.useReactotron ? console.tron.overlay(App) : App);

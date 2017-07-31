@@ -11,6 +11,8 @@ const database = firebase.database();
 
 class MessageStore {
   @observable messages = [];
+  limit = 20;
+  step = 20;
   @observable hydrated = false;
   @observable fetching = false;
   @observable sending = false;
@@ -31,6 +33,17 @@ class MessageStore {
   }
 
   @action
+  reportAbuse(message, room) {
+    message.markAsAbuse = true;
+    message.abuseTime = moment().toISOString();
+    message.previousMessage = null;
+    message.nextMessage = null;
+    database
+      .ref("messages/" + room + "/messages/" + message.id)
+      .update(message);
+  }
+
+  @action
   sendMessage(message, room) {
     message.createdAt = moment().toISOString();
     message.dateInverse = -moment().unix();
@@ -38,11 +51,22 @@ class MessageStore {
   }
 
   @action
-  getMessages(room) {
-    console.log("getMessages start", room);
+  getMessages(room, limit) {
+    let limitMessages = this.limit;
+
+    if (limit) {
+      limitMessages += limit;
+    } else {
+      this.messages = [];
+      limitMessages = this.step;
+    }
+
+    this.limit = limitMessages;
+    console.log("getMessages start", room, limitMessages);
     database
       .ref("messages/" + room + "/messages")
-      .orderByChild("dateInverse")
+      //.orderByChild("dateInverse")
+      .limitToLast(limitMessages)
       .on("value", snapshot => {
         const results = snapshot.val() || [];
         console.log("results", results);

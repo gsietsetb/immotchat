@@ -33,5 +33,7 @@
   "Disconnect": "Disconnect",
   "email": "Email address",
   "login needed": "Please login or create an account before join a chat room",
-  "my_chats": "Chats"
+  "my_chats": "Chats",
+  "Info": "Info",
+  "Partecipants": "Partecipants"
 }

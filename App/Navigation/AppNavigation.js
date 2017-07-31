@@ -2,6 +2,8 @@ import { StackNavigator, TabNavigator, TabBarBottom } from "react-navigation";
 
 import ChatListScreen from "../Containers/ChatListScreen";
 import ChatScreen from "../Containers/ChatScreen";
+import InfoChatScreen from "../Containers/InfoChatScreen";
+import UserScreen from "../Containers/UserScreen";
 import ProfileScreen from "../Containers/ProfileScreen";
 import LaunchScreen from "../Containers/LaunchScreen";
 
@@ -43,7 +45,9 @@ const StackNav = StackNavigator(
     Home: {
       screen: PrimaryNav
     },
-    Chat: { screen: ChatScreen }
+    Chat: { screen: ChatScreen },
+    InfoChat: { screen: InfoChatScreen },
+    User: { screen: UserScreen }
   },
   {
     navigationOptions: {
