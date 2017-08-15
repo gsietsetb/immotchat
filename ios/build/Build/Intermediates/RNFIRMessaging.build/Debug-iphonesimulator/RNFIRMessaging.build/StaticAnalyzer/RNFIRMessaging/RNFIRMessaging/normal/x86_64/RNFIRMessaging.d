@@ -1,6 +1,7 @@
 dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native-fcm/ios/RNFIRMessaging.m \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native-fcm/ios/RNFIRMessaging.h \
+  ../../../ios/Pods/Firebase/Core/Sources/module.modulemap \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native-fcm/ios/../../../ios/Pods/Firebase/Core/Sources/module.modulemap \
   ../../../ios/Pods/Headers/Public/FirebaseCore/FirebaseCore/FIRApp.h \
   ../../../ios/Pods/Headers/Public/FirebaseCore/FirebaseCore/FIRCoreSwiftNameSupport.h \

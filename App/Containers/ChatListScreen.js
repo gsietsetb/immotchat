@@ -30,6 +30,8 @@ const Icon = createIconSetFromFontello(fontelloConfig, "immo");*/
 // I18n
 import I18n from "react-native-i18n";
 
+const dataObjects = [];
+
 @inject("roomStore", "userStore", "nav")
 @observer
 class ChatListScreen extends React.Component {
@@ -49,29 +51,6 @@ class ChatListScreen extends React.Component {
   constructor(props) {
     super(props);
     // If you need scroll to bottom, consider http://bit.ly/2bMQ2BZ
-
-    /* ***********************************************************
-    * STEP 1
-    * This is an array of objects with the properties you desire
-    * Usually this should come from Redux mapStateToProps
-    *************************************************************/
-    const dataObjects = [];
-
-    /* ***********************************************************
-    * STEP 2
-    * Teach datasource how to detect if rows are different
-    * Make this function fast!  Perhaps something like:
-    *   (r1, r2) => r1.id !== r2.id}
-    *************************************************************/
-    const rowHasChanged = (r1, r2) => r1 !== r2;
-
-    // DataSource configured
-    const ds = new ListView.DataSource({ rowHasChanged });
-
-    // Datasource is always in state
-    this.state = {
-      dataSource: ds.cloneWithRows(dataObjects)
-    };
   }
 
   componentDidMount = () => {
@@ -88,19 +67,14 @@ class ChatListScreen extends React.Component {
   componentWillReact = () => {
     console.log("componentWillReact");
     const { roomStore } = this.props;
-
-    console.log("list", roomStore.list.slice());
-
-    /*if (roomStore.list) {
-      this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(roomStore.list.slice())
-      });
-    }*/
   };
 
   onPress = rowData => {
     const { userStore, nav, roomStore } = this.props;
-    const user = userStore.currentUser;
+
+    console.log("rowData", rowData);
+    roomStore.getDetails(rowData.id);
+    /*const user = userStore.currentUser;
     if (!user) {
       alert(I18n.t("login needed"));
       return;
@@ -108,7 +82,7 @@ class ChatListScreen extends React.Component {
 
     roomStore.enterRoom(rowData.id, user);
     console.log("rowData", rowData);
-    nav.navigate("Chat", { chatRoom: rowData });
+    nav.navigate("Chat", { chatRoom: rowData });*/
   };
   /* ***********************************************************
   * STEP 3
@@ -142,16 +116,13 @@ class ChatListScreen extends React.Component {
 
   // Used for friendly AlertMessage
   // returns true if the dataSource is empty
-  noRowData = () => {
-    return this.state.dataSource.getRowCount() === 0;
-  };
 
   renderHeader = () => {
     const { roomStore } = this.props;
     return (
       <View style={styles.listHeaderContaiener}>
         <Text>
-          {roomStore.count} results
+          {roomStore.roomsCount} results
         </Text>
       </View>
     );
@@ -165,12 +136,13 @@ class ChatListScreen extends React.Component {
 
   renderList = () => {
     const { roomStore } = this.props;
-    console.log("renderList rooms", roomStore.dataSource);
+
+    //console.log("renderList rooms", roomStore.dataSource);
 
     return (
       <ListView
         contentContainerStyle={styles.listContent}
-        dataSource={roomStore.dataSource}
+        dataSource={roomStore.allRooms}
         renderRow={this.renderRow}
         renderHeader={this.renderHeader}
         renderSeparator={this.renderSeparator}

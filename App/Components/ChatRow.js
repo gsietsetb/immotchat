@@ -30,16 +30,19 @@ export default class ChatRow extends React.Component {
         onPress={this.onPress}
       >
         <View style={styles.row}>
-          <View style={styles.imgContainer}>
-            <Image source={{ uri: data.venue.img }} style={styles.image} />
-          </View>
+          {data.venue &&
+            <View style={styles.imgContainer}>
+              <Image source={{ uri: data.venue.img }} style={styles.image} />
+            </View>}
+
           <View style={styles.rightContainer}>
             <Text style={styles.boldLabel}>
               {data.title}
             </Text>
-            <Text style={styles.label}>
-              {data.venue.name}
-            </Text>
+            {data.venue &&
+              <Text style={styles.label}>
+                {data.venue.name}
+              </Text>}
           </View>
         </View>
       </TouchableOpacity>

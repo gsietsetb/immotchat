@@ -1,11 +1,38 @@
 import { AsyncStorage, ListView } from "react-native";
 
-import { observable, createTransformer, action, computed } from "mobx";
+import { observable, action, computed } from "mobx";
 
 import moment from "moment";
 
+import gql from "graphql-tag";
+
 import { persist, create } from "mobx-persist";
 import firebase from "../Lib/firebase";
+
+import { query } from "../Lib/graphcool";
+
+const queries = {
+  getMessages: gql`
+    query($id: ID!) {
+      Conversation(id: $id) {
+        id
+        messages {
+          id
+          text
+          createdAt
+          author {
+            id
+            email
+            profilePicture
+          }
+          conversation {
+            id
+          }
+        }
+      }
+    }
+  `
+};
 
 const database = firebase.database();
 
@@ -16,6 +43,19 @@ class MessageStore {
   @observable hydrated = false;
   @observable fetching = false;
   @observable sending = false;
+
+  allMessagesSubscription = roomId =>
+    query(queries.getMessages, {
+      variables: { title },
+      onUpdate: data => console.log("Updated!", data),
+      onError: error => console.error(error.message)
+    });
+
+  createPost = title =>
+    mutate(queries.createPost, {
+      variables: { title },
+      refetchQueries: [{ query: queries.allPosts }]
+    });
 
   @computed
   get count() {
