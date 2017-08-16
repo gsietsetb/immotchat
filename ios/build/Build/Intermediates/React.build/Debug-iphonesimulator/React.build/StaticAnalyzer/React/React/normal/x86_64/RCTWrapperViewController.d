@@ -15,4 +15,6 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTUtils.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTAssert.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/UIView+React.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTAutoInsetsProtocol.h

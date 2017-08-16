@@ -26,6 +26,7 @@
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTSlider.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTFollyConvert.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTAsyncLocalStorage.o
+/Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTInspectorDevServerHelper.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTDevSettings.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTProgressViewManager.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTFPSGraph.o
@@ -43,6 +44,7 @@
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTEventEmitter.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTJavaScriptLoader.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTPerfMonitor.o
+/Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTLayoutAnimation.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTCxxModule.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTProfileTrampoline-arm64.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTProfileTrampoline-i386.o
@@ -53,6 +55,7 @@
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTWrapperViewController.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTScrollView.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTReloadCommand.o
+/Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTInspector.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTAccessibilityManager.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTDevLoadingView.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTTiming.o
@@ -86,6 +89,7 @@
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTBridge.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTShadowView+Layout.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTWebViewManager.o
+/Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTPackagerConnectionBridgeConfig.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTPicker.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTTabBarItem.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTModalHostView.o
@@ -94,13 +98,16 @@
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTSegmentedControlManager.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTPickerManager.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTRefreshControlManager.o
+/Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTInspectorPackagerConnection.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTBundleURLProvider.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTActivityIndicatorView.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTScrollContentShadowView.o
+/Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTLayoutAnimationGroup.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTNavigator.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTTabBar.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTRedBox.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTJSCErrorHandling.o
+/Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/InspectorInterfaces.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTModalHostViewController.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTNavItem.o
 /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Intermediates/React.build/Debug-iphonesimulator/React.build/Objects-normal/x86_64/RCTEventDispatcher.o

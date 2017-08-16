@@ -1,7 +1,6 @@
 dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSCUtils.cpp \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSCUtils.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/Executor.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JSBigString.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Exception.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Conv.h \
@@ -356,7 +355,9 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/detail/RangeCommon.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/detail/RangeSse42.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/portability/Math.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Optional.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/Value.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/dynamic.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/dynamic-inl.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Format.h \
@@ -374,8 +375,5 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/FormatArg.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Format-inl.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/portability/Windows.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/Value.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/Unicode.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/noncopyable.h

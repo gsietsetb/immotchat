@@ -18,10 +18,10 @@ import API from "../Services/Api";
 import FixtureAPI from "../Services/FixtureApi";
 import DebugConfig from "../Config/DebugConfig";
 
-import { query } from "mobx-apollo";
-import { client } from "../Lib/graphcool";
-
+import { graphcool } from "../Lib/graphcool";
 const api = DebugConfig.useFixtures ? FixtureAPI : API.create();
+
+console.log(DebugConfig.useFixtures);
 
 const queries = {
   allRooms: gql`
@@ -42,6 +42,31 @@ const queries = {
           lastName
           displayName
           profilePicture
+        }
+      }
+    }
+  `,
+  roomSubscription: gql`
+    subscription changedConversation {
+      Conversation(filter: { mutation_in: [CREATED, UPDATED, DELETED] }) {
+        mutation
+        node {
+          id
+          updatedAt
+          title
+          venue {
+            id
+            name
+            img
+          }
+          users {
+            id
+            email
+            firstName
+            lastName
+            displayName
+            profilePicture
+          }
         }
       }
     }
@@ -81,39 +106,9 @@ class ChatRoomStore {
   ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   usersDS = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
-
-
-  conversationSubscription = query(this, queries.allRooms, { /* ...options */ });
-  query(queries.allRooms, {
-    onUpdate: data => console.log("Updated!", data),
-    onError: error => console.error(error.message)
-  });
-
   @computed
   get count() {
     return this.list.slice().length;
-  }
-
-  @computed
-  get roomsCount() {
-    if (this.conversationSubscription.current()) {
-      return this.conversationSubscription.current().allConversations.slice()
-        .length;
-    } else {
-      return 0;
-    }
-  }
-  @computed
-  get allRooms() {
-    //console.log(this.conversationSubscription.current());
-    this.allRooms();
-    /*if (this.conversationSubscription.current()) {
-      return this.ds.cloneWithRows(
-        this.conversationSubscription.current().allConversations.slice()
-      );
-    } else {
-      return this.ds.cloneWithRows([]);
-    }*/
   }
 
   @computed
@@ -168,47 +163,61 @@ class ChatRoomStore {
   getDetails(room) {
     console.log("getting details", room);
 
-    let ciccio = query(
-      queries.roomDetails,
-      {
+    graphcool
+      .query({
+        query: queries.roomDetails,
         variables: {
           id: room
         }
-      },
-      {
-        onUpdate: data => console.log("Updated!", data),
-        onError: error => console.log("error", error.message)
-      }
-    );
-    /*database.ref("rooms/" + room).on("value", snapshot => {
-      const results = snapshot.val() || [];
-      console.log("getDetails results", results);
-      this.details = results;
-    });*/
+      })
+      .then(result => {
+        console.log("getDetails result", result);
+
+        const { data } = result;
+        if (data.Conversation) {
+          this.details = data.Conversation;
+        }
+      })
+      .catch(error => console.log("error", error));
   }
 
   @action
   getList() {
-    console.log("getList start");
+    graphcool
+      .query({
+        query: queries.allRooms
+      })
+      .then(result => {
+        console.log("getList result", result);
+        const { data } = result;
+        if (data.allConversations) {
+          this.list = data.allConversations;
+        }
+      })
+      .catch(error => console.log("error", error));
+  }
 
-    /*allPostsSubscription = query(queries.allPosts, {
-      // onUpdate: data => console.log('Updated!', data),
-      onError: error => console.error(error.message)
-    });*/
-    /*database.ref("rooms").on("value", snapshot => {
-      const results = snapshot.val() || [];
-      console.log("results", results);
-      this.list = Object.keys(results).map(key => {
-        results[key].id = key;
-        return results[key];
+  @action
+  subscribeToConversations() {
+    return graphcool
+      .subscribe({
+        query: queries.roomSubscription
+      })
+      .subscribe({
+        next: data => {
+          console.log("conversation subscription", data);
+          this.getList();
+        },
+        error(error) {
+          console.error("Subscription callback with error: ", error);
+        }
       });
-
-      console.log("getList result", this.list);
-    });*/
   }
 }
 
 export default (roomStore = new ChatRoomStore());
+//autorun(() => console.log("autorun", roomStore.allPosts)); // [{ title: 'Hello World!' }]
+//autorun(() => console.log("autorun", roomStore.roomDetails)); // [{ title: 'Hello World!' }]
 
 //const hydrate = create({ storage: AsyncStorage, jsonify: true });
 //hydrate('user', userStore).then(() => { userStore.hydrateComplete() });

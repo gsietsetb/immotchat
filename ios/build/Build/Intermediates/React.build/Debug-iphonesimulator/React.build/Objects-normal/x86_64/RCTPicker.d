@@ -3,6 +3,8 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTPicker.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/UIView+React.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTConvert.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTAnimationType.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTBorderStyle.h \
@@ -12,6 +14,4 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTUtils.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTPointerEvents.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h

@@ -62,6 +62,7 @@ class ChatListScreen extends React.Component {
     const { roomStore } = this.props;
 
     roomStore.getList();
+    roomStore.subscribeToConversations();
   };
 
   componentWillReact = () => {
@@ -73,16 +74,16 @@ class ChatListScreen extends React.Component {
     const { userStore, nav, roomStore } = this.props;
 
     console.log("rowData", rowData);
-    roomStore.getDetails(rowData.id);
-    /*const user = userStore.currentUser;
+    //roomStore.getDetails(rowData.id);
+    const user = userStore.currentUser;
     if (!user) {
       alert(I18n.t("login needed"));
       return;
     }
 
-    roomStore.enterRoom(rowData.id, user);
-    console.log("rowData", rowData);
-    nav.navigate("Chat", { chatRoom: rowData });*/
+    roomStore.enterRoom(rowData, user);
+    //console.log("rowData", rowData);
+    //nav.navigate("Chat", { chatRoom: rowData });
   };
   /* ***********************************************************
   * STEP 3
@@ -122,7 +123,7 @@ class ChatListScreen extends React.Component {
     return (
       <View style={styles.listHeaderContaiener}>
         <Text>
-          {roomStore.roomsCount} results
+          {roomStore.count} results
         </Text>
       </View>
     );
@@ -137,12 +138,15 @@ class ChatListScreen extends React.Component {
   renderList = () => {
     const { roomStore } = this.props;
 
-    //console.log("renderList rooms", roomStore.dataSource);
+    //console.log("chatlist", roomStore.allConversations);
+
+    //console.log("allPosts", roomStore.list);
+    console.log("renderList rooms", roomStore.allRooms);
 
     return (
       <ListView
         contentContainerStyle={styles.listContent}
-        dataSource={roomStore.allRooms}
+        dataSource={roomStore.dataSource}
         renderRow={this.renderRow}
         renderHeader={this.renderHeader}
         renderSeparator={this.renderSeparator}

@@ -373,14 +373,13 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Exception.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/portability/Windows.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/NativeModule.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/Executor.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JSBigString.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Optional.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/Instance.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/ModuleRegistry.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/NativeToJsBridge.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JSCExecutor.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JSCNativeModules.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/ModuleRegistry.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JSExecutor.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/Value.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
@@ -388,9 +387,7 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/noncopyable.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/json.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCHelpers.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JSModulesUnbundle.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/MessageQueueThread.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/MethodCall.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JsArgumentHelpers.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JsArgumentHelpers-inl.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/SystraceSection.h
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/SystraceSection.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/MessageQueueThread.h

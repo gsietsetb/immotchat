@@ -8,7 +8,6 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTFrameUpdate.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTInvalidating.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTBridge+Private.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTBridge+JavaScriptCore.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTConvert.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTAnimationType.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTBorderStyle.h \
@@ -21,6 +20,7 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTJSEnvironment.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTModuleData.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Profiler/RCTProfile.h \

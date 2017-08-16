@@ -27,6 +27,8 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Modules/RCTAccessibilityManager.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTBridge+Private.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTComponentData.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Modules/RCTLayoutAnimation.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Modules/RCTLayoutAnimationGroup.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTModuleData.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTModuleMethod.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTBridgeMethod.h \

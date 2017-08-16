@@ -31,4 +31,6 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/Libraries/Text/RCTShadowTextField.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/Libraries/Text/RCTTextField.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTView.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/Libraries/Text/RCTTextInput.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/Libraries/Text/RCTBackedTextInputViewProtocol.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/Libraries/Text/RCTUITextField.h

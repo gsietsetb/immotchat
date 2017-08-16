@@ -10,4 +10,6 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTBridgeModule.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTFrameUpdate.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/UIView+React.h
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/UIView+React.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h

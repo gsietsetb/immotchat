@@ -1,21 +1,13 @@
 dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSIndexedRAMBundle.cpp \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSIndexedRAMBundle.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/Executor.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JSBigString.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Exception.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Conv.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/boost_1_63_0/boost/implicit_cast.hpp \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/double-conversion/double-conversion.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/double-conversion/utils.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Demangle.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/FBString.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JSModulesUnbundle.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/noncopyable.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/oss-compat-util.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Bits.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Portability.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/portability/Config.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/CPortability.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Hash.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/ApplyTuple.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Bits.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/portability/Builtins.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Assume.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/detail/BitsDetail.h \
@@ -226,6 +218,14 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/boost_1_63_0/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/boost_1_63_0/boost/mpl/aux_/preprocessed/gcc/apply.hpp \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Likely.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Conv.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/boost_1_63_0/boost/implicit_cast.hpp \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/double-conversion/double-conversion.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/double-conversion/utils.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Demangle.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/FBString.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Hash.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/ApplyTuple.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/SpookyHashV1.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/SpookyHashV2.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Malloc.h \
@@ -356,25 +356,5 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/detail/RangeCommon.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/detail/RangeSse42.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/portability/Math.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Optional.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/dynamic.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/dynamic-inl.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Format.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/String.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/boost_1_63_0/boost/regex/pending/unicode_iterator.hpp \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/boost_1_63_0/boost/cstdint.hpp \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/boost_1_63_0/boost/assert.hpp \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/boost_1_63_0/boost/throw_exception.hpp \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/ExceptionString.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/FBVector.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/FormatTraits.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/ScopeGuard.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/detail/UncaughtExceptionCounter.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/String-inl.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/FormatArg.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Format-inl.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/portability/Windows.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JSBundleType.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/JSModulesUnbundle.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/noncopyable.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/oss-compat-util.h
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSBigString.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Exception.h

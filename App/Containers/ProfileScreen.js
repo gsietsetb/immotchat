@@ -52,13 +52,6 @@ class ProfileScreen extends React.Component {
   }
   componentDidMount() {
     // this.props.init();
-
-    const { userStore } = this.props;
-    console.log("userinfo", userStore.userInfo);
-
-    /*userStore.saveProfile({
-      displayName: "Paolo Mosca"
-    });*/
   }
 
   componentWillUnmount() {}
@@ -312,10 +305,10 @@ class ProfileScreen extends React.Component {
 
   renderAccountInfo = () => {
     const { userStore } = this.props;
-    const { info } = userStore;
+    const { user } = userStore;
     //console.log('info', info);
 
-    if (info) {
+    if (user) {
       return (
         <View>
           <View header>
@@ -323,16 +316,16 @@ class ProfileScreen extends React.Component {
               {I18n.t("Account Info")}
             </Text>
           </View>
-          {info.displayName &&
+          {user.displayName &&
             <View>
               <Text style={styles.infoText}>
-                {info.displayName}
+                {user.displayName}
               </Text>
             </View>}
-          {info.email &&
+          {user.email &&
             <View>
               <Text style={styles.infoText}>
-                {info.email}
+                {user.email}
               </Text>
             </View>}
           <View header>
@@ -344,9 +337,9 @@ class ProfileScreen extends React.Component {
   };
   renderLogin = () => {
     const { userStore } = this.props;
-    const { info } = userStore;
+    const { user } = userStore;
 
-    if (!info) {
+    if (!user) {
       return (
         <View>
           {this.createForm()}
