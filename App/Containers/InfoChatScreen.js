@@ -51,38 +51,12 @@ class InfoChatScreen extends React.Component {
   constructor(props) {
     super(props);
     // If you need scroll to bottom, consider http://bit.ly/2bMQ2BZ
-
-    const { nav } = props;
-    const { chatRoom } = nav.params;
-
-    /* ***********************************************************
-    * STEP 1
-    * This is an array of objects with the properties you desire
-    * Usually this should come from Redux mapStateToProps
-    *************************************************************/
-    const dataObjects = chatRoom.users || [];
-
-    /* ***********************************************************
-    * STEP 2
-    * Teach datasource how to detect if rows are different
-    * Make this function fast!  Perhaps something like:
-    *   (r1, r2) => r1.id !== r2.id}
-    *************************************************************/
-    const rowHasChanged = (r1, r2) => r1 !== r2;
-
-    // DataSource configured
-    const ds = new ListView.DataSource({ rowHasChanged });
-
-    // Datasource is always in state
-    this.state = {
-      dataSource: ds.cloneWithRows(dataObjects)
-    };
   }
 
   componentDidMount = () => {
     const { nav } = this.props;
     const { chatRoom } = nav.params;
-    //roomStore.getDetails(chatRoom.id);
+    roomStore.getDetails(chatRoom.id);
   };
 
   componentWillReact = () => {
@@ -106,7 +80,7 @@ class InfoChatScreen extends React.Component {
   renderRow = rowData => {
     return (
       <TouchableOpacity
-        key={rowData.uid}
+        key={rowData.id}
         style={styles.userRow}
         onPress={() => this.pressRow(rowData)}
       >
@@ -127,20 +101,26 @@ class InfoChatScreen extends React.Component {
   renderHeader = () => {
     const { nav, roomStore } = this.props;
     const { chatRoom } = nav.params;
-
+    console.log("chatRoom", chatRoom);
     if (chatRoom) {
       return (
         <View style={styles.headerContainer}>
-          <View style={styles.imgContainer}>
-            <Image source={{ uri: chatRoom.venue.img }} style={styles.image} />
-          </View>
+          {chatRoom.venue &&
+            <View style={styles.imgContainer}>
+              <Image
+                source={{ uri: chatRoom.venue.img }}
+                style={styles.image}
+              />
+            </View>}
+
           <View style={styles.rightContainer}>
             <Text style={styles.boldLabel}>
               {chatRoom.title}
             </Text>
-            <Text style={styles.label}>
-              {chatRoom.venue.name}
-            </Text>
+            {chatRoom.venue &&
+              <Text style={styles.label}>
+                {chatRoom.venue.name}
+              </Text>}
           </View>
         </View>
       );
@@ -164,7 +144,7 @@ class InfoChatScreen extends React.Component {
     return (
       <ListView
         contentContainerStyle={styles.listContent}
-        dataSource={this.state.dataSource}
+        dataSource={roomStore.userList}
         renderHeader={this.renderHeaderList}
         renderRow={this.renderRow}
         renderSeparator={this.renderSeparator}

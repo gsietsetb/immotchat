@@ -92,6 +92,31 @@ const queries = {
         }
       }
     }
+  `,
+  getUser: gql`
+    query($userID: ID!) {
+      user {
+        id
+        conversations(filter: { users_some: { id: $userID } }) {
+          id
+        }
+        _conversationsMeta(filter: { users_some: { id: $userID } }) {
+          count
+        }
+      }
+    }
+  `,
+  joinConversation: gql`
+    mutation($userId: ID!, $roomId: ID!) {
+      addToConversationsOnUser(
+        usersUserId: $userId
+        conversationsConversationId: $roomId
+      ) {
+        conversationsConversation {
+          id
+        }
+      }
+    }
   `
 };
 
@@ -119,7 +144,8 @@ class ChatRoomStore {
   @computed
   get userList() {
     if (this.details && this.details.users) {
-      return this.usersDS.cloneWithRows(this.details.users);
+      console.log("userList", this.details.users);
+      return this.usersDS.cloneWithRows(this.details.users.slice());
     }
     return this.usersDS.cloneWithRows([]);
   }
@@ -127,16 +153,34 @@ class ChatRoomStore {
   @action
   enterRoom(room, me) {
     if (me) {
-      me.refreshToken = null;
+      //me.refreshToken = null;
+
+      console.log("me", me);
       //database.ref("rooms/" + room + "/users/" + me.uid).set(me);
 
       FCM.requestPermissions();
       FCM.getFCMToken().then(token => {
         console.log("getFCMToken", token);
-
         // probably is better to store user tokens for multiple devices?
       });
-      FCM.subscribeToTopic(`user-${me.uid}`);
+      FCM.subscribeToTopic(`user-${me.id}`);
+
+      graphcool
+        .mutate({
+          mutation: queries.joinConversation,
+          variables: {
+            userId: me.id,
+            roomId: room.id
+          }
+        })
+        .then(result => {
+          console.log("joinConversation result", result);
+
+          const { data } = result;
+          if (data.addToConversationsOnUser) {
+          }
+        })
+        .catch(error => console.log("error", error));
     }
 
     /*FCM.requestPermissions();

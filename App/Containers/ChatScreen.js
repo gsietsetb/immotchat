@@ -75,6 +75,8 @@ class ChatScreen extends React.Component {
     console.log("chatRoom", chatRoom);
     //fetchMessagesAttempt(chatRoom.id);
     messageStore.getMessages(chatRoom.id, 0);
+    messageStore.subscribeToMessages(chatRoom.id);
+
     navigation.setParams({ handlePressInfo: this.handlePressInfo });
   };
 
@@ -203,12 +205,12 @@ class ChatScreen extends React.Component {
     const { messageStore, userStore } = this.props;
 
     const currentUser = userStore.currentUser;
-
+    console.log("currentUser", currentUser);
     if (!currentUser) {
       return;
     }
     const user = {
-      _id: currentUser.uid,
+      _id: currentUser.id,
       name: currentUser.displayName || ""
     };
 

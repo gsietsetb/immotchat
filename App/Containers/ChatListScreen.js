@@ -83,7 +83,7 @@ class ChatListScreen extends React.Component {
 
     roomStore.enterRoom(rowData, user);
     //console.log("rowData", rowData);
-    //nav.navigate("Chat", { chatRoom: rowData });
+    nav.navigate("Chat", { chatRoom: rowData });
   };
   /* ***********************************************************
   * STEP 3
