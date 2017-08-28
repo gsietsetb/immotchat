@@ -170,6 +170,7 @@ class MessageStore {
 
     graphcool
       .query({
+        fetchPolicy: "network-only",
         query: queries.getMessages,
         variables: {
           id: room,
@@ -190,6 +191,7 @@ class MessageStore {
   subscribeToMessages(room) {
     return graphcool
       .subscribe({
+        fetchPolicy: "network-only",
         query: queries.chatUpdates,
         variables: {
           conversationId: room
