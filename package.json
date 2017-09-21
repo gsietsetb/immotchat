@@ -5,33 +5,38 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean --force",
-    "clean:android": "cd android/ && ./gradlew clean && cd .. && react-native run-android",
-    "newclear": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build && rm -rf node_modules/ && npm cache clean --force && npm i",
+    "clean":
+      "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean --force",
+    "clean:android":
+      "cd android/ && ./gradlew clean && cd .. && react-native run-android",
+    "newclear":
+      "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build && rm -rf node_modules/ && npm cache clean --force && npm i",
     "test:watch": "jest --watch",
     "updateSnapshot": "jest --updateSnapshot",
-    "coverage": "jest --coverage && open coverage/lcov-report/index.html || xdg-open coverage/lcov-report/index.html",
+    "coverage":
+      "jest --coverage && open coverage/lcov-report/index.html || xdg-open coverage/lcov-report/index.html",
     "android:build": "cd android && ./gradlew assembleRelease",
-    "android:install": "cd android && ./gradlew assembleRelease && ./gradlew installRelease",
-    "android:hockeyapp": "cd android && ./gradlew assembleRelease && puck -submit=auto app/build/outputs/apk/app-release.apk",
+    "android:install":
+      "cd android && ./gradlew assembleRelease && ./gradlew installRelease",
+    "android:hockeyapp":
+      "cd android && ./gradlew assembleRelease && puck -submit=auto app/build/outputs/apk/app-release.apk",
     "android:devices": "$ANDROID_HOME/platform-tools/adb devices",
-    "android:logcat": "$ANDROID_HOME/platform-tools/adb logcat *:S ReactNative:V ReactNativeJS:V",
-    "android:shake": "$ANDROID_HOME/platform-tools/adb devices | grep '\\t' | awk '{print $1}' | sed 's/\\s//g' | xargs -I {} $ANDROID_HOME/platform-tools/adb -s {} shell input keyevent 82",
+    "android:logcat":
+      "$ANDROID_HOME/platform-tools/adb logcat *:S ReactNative:V ReactNativeJS:V",
+    "android:shake":
+      "$ANDROID_HOME/platform-tools/adb devices | grep '\\t' | awk '{print $1}' | sed 's/\\s//g' | xargs -I {} $ANDROID_HOME/platform-tools/adb -s {} shell input keyevent 82",
     "lint": "standard --verbose | snazzy",
-    "lintdiff": "git diff --name-only --cached --relative | grep '\\.js$' | xargs standard | snazzy",
+    "lintdiff":
+      "git diff --name-only --cached --relative | grep '\\.js$' | xargs standard | snazzy",
     "fixcode": "standard --fix"
   },
   "dependencies": {
     "apisauce": "^0.14.1",
-    "apollo-client": "^1.9.2",
     "autobind-decorator": "^2.1.0",
     "firebase": "^4.3.1",
     "format-json": "^1.0.3",
-    "graphql-tag": "^2.4.2",
-    "ignite-vector-icons": "^1.1.0",
     "lodash": "^4.17.2",
     "mobx": "^3.3.0",
-    "mobx-apollo": "0.0.9",
     "mobx-logger": "^0.6.0",
     "mobx-persist": "^0.3.4",
     "mobx-react": "^4.3.2",
@@ -50,8 +55,7 @@
     "react-native-i18n": "1.0.0",
     "react-native-vector-icons": "^4.4.0",
     "react-navigation": "^1.0.0-beta.11",
-    "route-matcher": "^0.1.0",
-    "subscriptions-transport-ws": "^0.8.2"
+    "route-matcher": "^0.1.0"
   },
   "devDependencies": {
     "babel-eslint": "7.1.1",
@@ -68,7 +72,7 @@
     "ignite-i18n": "^1.0.0",
     "ignite-ir-boilerplate": "^2.0.2",
     "ignite-standard": "^1.0.0",
-    "ignite-vector-icons": "^1.0.0",
+    "ignite-vector-icons": "^1.1.0",
     "jest": "20.0.4",
     "mockery": "^2.0.0",
     "react-addons-test-utils": "~15.4.1",
@@ -80,17 +84,9 @@
     "standard": "10.0.2"
   },
   "jest": {
-    "testMatch": [
-      "**/Tests/**/*.js",
-      "**/?(*.)(spec|test).js?(x)"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "Tests/Setup.js"
-    ],
-    "setupFiles": [
-      "./Tests/Setup"
-    ],
+    "testMatch": ["**/Tests/**/*.js", "**/?(*.)(spec|test).js?(x)"],
+    "testPathIgnorePatterns": ["/node_modules/", "Tests/Setup.js"],
+    "setupFiles": ["./Tests/Setup"],
     "preset": "react-native"
   },
   "config": {},

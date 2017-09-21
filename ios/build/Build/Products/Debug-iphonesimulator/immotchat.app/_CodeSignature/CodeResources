@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		3qmGJjF6nldajBQzZ8+4FpSn4+E=
+		QJwbhmhe/pXhop8GQsNqSW7qKZE=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -243,7 +243,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		itEnyKMlgvcjAUZxknQGoQ+/j6E=
+		3cFWGwaBWH83xOz8nrHDVFAju9o=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -271,7 +271,7 @@
 		</data>
 		<key>PlugIns/immotchatTests.xctest.dSYM/Contents/Resources/DWARF/immotchatTests</key>
 		<data>
-		6CElTuQJRy2+BBPVSIXOh27Dhn4=
+		S7KENBoMTd+i0PamnfXhaLVII9A=
 		</data>
 		<key>PlugIns/immotchatTests.xctest/Info.plist</key>
 		<data>
@@ -312,11 +312,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3qmGJjF6nldajBQzZ8+4FpSn4+E=
+			QJwbhmhe/pXhop8GQsNqSW7qKZE=
 			</data>
 			<key>hash2</key>
 			<data>
-			+zXR2atUASFX7bEzAANirk8aB1cWlWcylHjdaDcD0Hs=
+			yg/M4PYo2KmpzcWS72bA45Dq28fTnCeAqY4HmlOl1Wc=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -1007,11 +1007,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6CElTuQJRy2+BBPVSIXOh27Dhn4=
+			S7KENBoMTd+i0PamnfXhaLVII9A=
 			</data>
 			<key>hash2</key>
 			<data>
-			wpdIUROv1RqiPRF1C+2q9MLdGCqLAypngwophRx9q9A=
+			OC0Yp+CjW7LxBapKPRoBIv4abJj59+6Wa9cDAmehic0=
 			</data>
 		</dict>
 		<key>PlugIns/immotchatTests.xctest/Info.plist</key>

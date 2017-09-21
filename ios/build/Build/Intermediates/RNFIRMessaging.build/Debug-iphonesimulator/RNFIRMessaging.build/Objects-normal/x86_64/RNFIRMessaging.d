@@ -1,7 +1,7 @@
 dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native-fcm/ios/RNFIRMessaging.m \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native-fcm/ios/RNFIRMessaging.h \
-  ../../../ios/Pods/Firebase/Core/Sources/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native-fcm/ios/../../../ios/Pods/Firebase/Core/Sources/module.modulemap \
   ../../../ios/Pods/Headers/Public/FirebaseCore/FirebaseCore/FIRApp.h \
   ../../../ios/Pods/Headers/Public/FirebaseCore/FirebaseCore/FIRCoreSwiftNameSupport.h \
   ../../../ios/Pods/Headers/Public/FirebaseMessaging/FirebaseMessaging/FirebaseMessaging.h \
@@ -16,7 +16,6 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native-fcm/ios/../../../ios/Pods/Firebase/Core/Sources/module.modulemap \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
