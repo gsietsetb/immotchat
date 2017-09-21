@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		HxX8SJoxv65tyOEY+UUb90pfpiQ=
+		3qmGJjF6nldajBQzZ8+4FpSn4+E=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -251,7 +251,7 @@
 		</data>
 		<key>MaterialCommunityIcons.ttf</key>
 		<data>
-		DSN6NXpkKNkGErJOcadN65obBio=
+		iEMpKSoaB/KiSnpQryZBH+pXuYo=
 		</data>
 		<key>MaterialIcons.ttf</key>
 		<data>
@@ -259,7 +259,7 @@
 		</data>
 		<key>Octicons.ttf</key>
 		<data>
-		nDHzgr8cV2wncaeFbvmESHJDPUg=
+		43wPh5FmspBv+00q8kJl9AIbRBc=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -271,7 +271,7 @@
 		</data>
 		<key>PlugIns/immotchatTests.xctest.dSYM/Contents/Resources/DWARF/immotchatTests</key>
 		<data>
-		MpG7kqIvlzMAoG3/glQdGomj0pE=
+		6CElTuQJRy2+BBPVSIXOh27Dhn4=
 		</data>
 		<key>PlugIns/immotchatTests.xctest/Info.plist</key>
 		<data>
@@ -283,7 +283,7 @@
 		</data>
 		<key>PlugIns/immotchatTests.xctest/immotchatTests</key>
 		<data>
-		+gnu93p4aYGWK1eU1qCxoN+CJhI=
+		V2mXOWI6vNShIDNpzw5gHXL6KFE=
 		</data>
 		<key>Roboto-Bold.ttf</key>
 		<data>
@@ -312,11 +312,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HxX8SJoxv65tyOEY+UUb90pfpiQ=
+			3qmGJjF6nldajBQzZ8+4FpSn4+E=
 			</data>
 			<key>hash2</key>
 			<data>
-			dWRrAEEWaivWpKPEsrUITuEaTMl/PmtfAGPmk201pTo=
+			+zXR2atUASFX7bEzAANirk8aB1cWlWcylHjdaDcD0Hs=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -963,11 +963,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DSN6NXpkKNkGErJOcadN65obBio=
+			iEMpKSoaB/KiSnpQryZBH+pXuYo=
 			</data>
 			<key>hash2</key>
 			<data>
-			23dV6HNW9c2rGDZbm9uO2NLcl2/WhbSACZldABqN9m0=
+			1bSKsbDzuZUQE0oDJhp+sgYYtyyRBwyCUcQIAoyRcm4=
 			</data>
 		</dict>
 		<key>MaterialIcons.ttf</key>
@@ -985,11 +985,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nDHzgr8cV2wncaeFbvmESHJDPUg=
+			43wPh5FmspBv+00q8kJl9AIbRBc=
 			</data>
 			<key>hash2</key>
 			<data>
-			zLOa3HG6r1FR8G3HAL3RBNLhvSx9Ru2iAlXyNPR6vuo=
+			IDC914RgQrcm7e1pDO4UjqugvZKBAae3xLoaLztAPMg=
 			</data>
 		</dict>
 		<key>PlugIns/immotchatTests.xctest.dSYM/Contents/Info.plist</key>
@@ -1007,11 +1007,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MpG7kqIvlzMAoG3/glQdGomj0pE=
+			6CElTuQJRy2+BBPVSIXOh27Dhn4=
 			</data>
 			<key>hash2</key>
 			<data>
-			KI/w2uvyYkVFHn+zmonQ6ujURutqIvZKolvbPIZ44Fs=
+			wpdIUROv1RqiPRF1C+2q9MLdGCqLAypngwophRx9q9A=
 			</data>
 		</dict>
 		<key>PlugIns/immotchatTests.xctest/Info.plist</key>
@@ -1040,11 +1040,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+gnu93p4aYGWK1eU1qCxoN+CJhI=
+			V2mXOWI6vNShIDNpzw5gHXL6KFE=
 			</data>
 			<key>hash2</key>
 			<data>
-			luFKcqhW6rZoY/Ue8oUDhveXRb+1tHh4rYHZNvmfPNQ=
+			GaNHVIb1fjZPpo6nkuH7oHMv9eLQHnjIG5yHkLnKeyY=
 			</data>
 		</dict>
 		<key>Roboto-Bold.ttf</key>

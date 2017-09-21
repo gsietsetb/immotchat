@@ -17,21 +17,21 @@
      <key>kind</key><string>event</string>
      <key>location</key>
      <dict>
-      <key>line</key><integer>83</integer>
-      <key>col</key><integer>7</integer>
+      <key>line</key><integer>84</integer>
+      <key>col</key><integer>13</integer>
       <key>file</key><integer>0</integer>
      </dict>
      <key>ranges</key>
      <array>
        <array>
         <dict>
-         <key>line</key><integer>83</integer>
-         <key>col</key><integer>19</integer>
+         <key>line</key><integer>84</integer>
+         <key>col</key><integer>25</integer>
          <key>file</key><integer>0</integer>
         </dict>
         <dict>
-         <key>line</key><integer>83</integer>
-         <key>col</key><integer>102</integer>
+         <key>line</key><integer>84</integer>
+         <key>col</key><integer>108</integer>
          <key>file</key><integer>0</integer>
         </dict>
        </array>
@@ -48,14 +48,14 @@
    <key>type</key><string>Dead assignment</string>
    <key>check_name</key><string>deadcode.DeadStores</string>
    <!-- This hash is experimental and going to change! -->
-   <key>issue_hash_content_of_line_in_context</key><string>3acf11561bda3eafe6e0eaf9b4e1bc0f</string>
+   <key>issue_hash_content_of_line_in_context</key><string>fcdaeb61423945fb318c06e0a1f3d728</string>
   <key>issue_context_kind</key><string>Objective-C method</string>
   <key>issue_context</key><string>UNNotificationRequest:</string>
-  <key>issue_hash_function_offset</key><string>41</string>
+  <key>issue_hash_function_offset</key><string>43</string>
   <key>location</key>
   <dict>
-   <key>line</key><integer>83</integer>
-   <key>col</key><integer>7</integer>
+   <key>line</key><integer>84</integer>
+   <key>col</key><integer>13</integer>
    <key>file</key><integer>0</integer>
   </dict>
   </dict>
@@ -66,21 +66,21 @@
      <key>kind</key><string>event</string>
      <key>location</key>
      <dict>
-      <key>line</key><integer>86</integer>
-      <key>col</key><integer>7</integer>
+      <key>line</key><integer>87</integer>
+      <key>col</key><integer>13</integer>
       <key>file</key><integer>0</integer>
      </dict>
      <key>ranges</key>
      <array>
        <array>
         <dict>
-         <key>line</key><integer>86</integer>
-         <key>col</key><integer>19</integer>
+         <key>line</key><integer>87</integer>
+         <key>col</key><integer>25</integer>
          <key>file</key><integer>0</integer>
         </dict>
         <dict>
-         <key>line</key><integer>86</integer>
-         <key>col</key><integer>124</integer>
+         <key>line</key><integer>87</integer>
+         <key>col</key><integer>130</integer>
          <key>file</key><integer>0</integer>
         </dict>
        </array>
@@ -97,14 +97,14 @@
    <key>type</key><string>Dead assignment</string>
    <key>check_name</key><string>deadcode.DeadStores</string>
    <!-- This hash is experimental and going to change! -->
-   <key>issue_hash_content_of_line_in_context</key><string>376287b0f37b613a4ea8e1ef7e8dc94d</string>
+   <key>issue_hash_content_of_line_in_context</key><string>ad050d28527737900ef0e8dafa1b27df</string>
   <key>issue_context_kind</key><string>Objective-C method</string>
   <key>issue_context</key><string>UNNotificationRequest:</string>
-  <key>issue_hash_function_offset</key><string>44</string>
+  <key>issue_hash_function_offset</key><string>46</string>
   <key>location</key>
   <dict>
-   <key>line</key><integer>86</integer>
-   <key>col</key><integer>7</integer>
+   <key>line</key><integer>87</integer>
+   <key>col</key><integer>13</integer>
    <key>file</key><integer>0</integer>
   </dict>
   </dict>

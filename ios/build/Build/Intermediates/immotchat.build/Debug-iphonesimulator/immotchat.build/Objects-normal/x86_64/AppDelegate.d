@@ -21,4 +21,10 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRCoreSwiftNameSupport.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FIRMessaging.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FirebaseMessaging.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h

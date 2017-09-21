@@ -23,7 +23,7 @@ import styles from "./Styles/ChatScreenStyles";
 // I18n
 import I18n from "react-native-i18n";
 
-@inject("messageStore", "userStore", "nav")
+@inject("messageStore", "userStore", "nav", "roomStore")
 @observer
 class ChatScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -36,9 +36,7 @@ class ChatScreen extends React.Component {
           style={styles.headerRightButton}
           onPress={() => params.handlePressInfo()}
         >
-          <Text style={styles.headerRight}>
-            {I18n.t("Info")}
-          </Text>
+          <Text style={styles.headerRight}>{I18n.t("Info")}</Text>
         </TouchableOpacity>
       )
     };
@@ -50,33 +48,18 @@ class ChatScreen extends React.Component {
 
   constructor(props) {
     super(props);
-
     console.log("props", props);
-    // If you need scroll to bottom, consider http://bit.ly/2bMQ2BZ
 
-    /* ***********************************************************
-    * STEP 1
-    * This is an array of objects with the properties you desire
-    * Usually this should come from Redux mapStateToProps
-    *************************************************************/
     const dataObjects = [];
-
-    /* ***********************************************************
-    * STEP 2
-    * Teach datasource how to detect if rows are different
-    * Make this function fast!  Perhaps something like:
-    *   (r1, r2) => r1.id !== r2.id}
-    *************************************************************/
   }
 
   componentDidMount = () => {
-    const { navigation, messageStore } = this.props;
-    const chatRoom = navigation.state.params.chatRoom;
+    const { nav, messageStore, navigation, roomStore } = this.props;
+    const { chatRoom } = nav.params;
     console.log("chatRoom", chatRoom);
-    //fetchMessagesAttempt(chatRoom.id);
-    messageStore.getMessages(chatRoom.id, 0);
-    messageStore.subscribeToMessages(chatRoom.id);
 
+    messageStore.getMessages(chatRoom.id, 0);
+    roomStore.sendNewMessageNotifications(chatRoom.id);
     navigation.setParams({ handlePressInfo: this.handlePressInfo });
   };
 
@@ -90,58 +73,17 @@ class ChatScreen extends React.Component {
   componentWillReact = () => {
     console.log("componentWillReact chatRoom");
     const { messageStore } = this.props;
-
-    //console.log("messageList", messageStore.messageList);
-
-    /*if (roomStore.list) {
-      this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(roomStore.list.slice())
-      });
-    }*/
   };
 
   onPress = rowData => {};
-  /* ***********************************************************
-  * STEP 3
-  * `renderRow` function -How each cell/row should be rendered
-  * It's our best practice to place a single component here:
-  *
-  * e.g.
-    return <MyCustomCell title={rowData.title} description={rowData.description} />
-  *************************************************************/
 
-  /* ***********************************************************
-  * STEP 4
-  * If your datasource is driven by Redux, you'll need to
-  * reset it when new data arrives.
-  * DO NOT! place `cloneWithRows` inside of render, since render
-  * is called very often, and should remain fast!  Just replace
-  * state's datasource on newProps.
-  *
-  * e.g.
-    componentWillReceiveProps (newProps) {
-      if (newProps.someData) {
-        this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(newProps.someData)
-        })
-      }
-    }
-  *************************************************************/
-  componentWillReceiveProps(newProps) {
-    /*if (newProps.messages) {
-      this.setState({
-        messages: newProps.messages
-      });
-    }*/
-  }
-  // Used for friendly AlertMessage
-  // returns true if the dataSource is empty
+  componentWillReceiveProps(newProps) {}
 
   onSend = (messages = []) => {
     console.log("messages", messages);
-    const { navigation, messageStore } = this.props;
+    const { nav, messageStore } = this.props;
 
-    const chatRoom = navigation.state.params.chatRoom;
+    const { chatRoom } = nav.params;
 
     messageStore.sendMessage(messages[0], chatRoom.id);
   };
@@ -161,8 +103,9 @@ class ChatScreen extends React.Component {
   }
 
   onLoadEarlier = () => {
-    const { navigation, messageStore } = this.props;
-    const chatRoom = navigation.state.params.chatRoom;
+    const { nav, messageStore } = this.props;
+
+    const { chatRoom } = nav.params;
     messageStore.getMessages(chatRoom.id, messageStore.step);
   };
 
@@ -178,8 +121,9 @@ class ChatScreen extends React.Component {
     });
   };
   longPress = (context, message) => {
-    const { navigation, messageStore } = this.props;
-    const chatRoom = navigation.state.params.chatRoom;
+    const { nav, messageStore } = this.props;
+
+    const { chatRoom } = nav.params;
 
     console.log("context", context);
     console.log("message", message);
@@ -210,7 +154,7 @@ class ChatScreen extends React.Component {
       return;
     }
     const user = {
-      _id: currentUser.id,
+      _id: currentUser.uid,
       name: currentUser.displayName || ""
     };
 

@@ -40,12 +40,13 @@ class ChatListScreen extends React.Component {
     tabBarLabel: I18n.t("my_chats"),
     scrollEnabled: false,
     showIcon: true,
-    tabBarIcon: ({ tintColor }) =>
+    tabBarIcon: ({ tintColor }) => (
       <Icon
         name="chat"
         size={Metrics.icons.small}
         style={[styles.tabIcon, { color: tintColor }]}
       />
+    )
   };
 
   constructor(props) {
@@ -57,17 +58,15 @@ class ChatListScreen extends React.Component {
     //const { fetchRoomsAttempt } = this.props;
     //fetchRoomsAttempt();
 
-    console.log("componentDidMount ChatListScreen");
-
     const { roomStore } = this.props;
 
     roomStore.getList();
-    roomStore.subscribeToConversations();
+    //roomStore.subscribeToConversations();
   };
 
   componentWillReact = () => {
     console.log("componentWillReact");
-    const { roomStore } = this.props;
+    //const { roomStore } = this.props;
   };
 
   onPress = rowData => {
@@ -81,8 +80,8 @@ class ChatListScreen extends React.Component {
       return;
     }
 
-    roomStore.enterRoom(rowData, user);
-    //console.log("rowData", rowData);
+    roomStore.enterRoom(rowData.id, user);
+    console.log("rowData", rowData);
     nav.navigate("Chat", { chatRoom: rowData });
   };
   /* ***********************************************************
@@ -122,9 +121,7 @@ class ChatListScreen extends React.Component {
     const { roomStore } = this.props;
     return (
       <View style={styles.listHeaderContaiener}>
-        <Text>
-          {roomStore.count} results
-        </Text>
+        <Text>{roomStore.count} results</Text>
       </View>
     );
   };

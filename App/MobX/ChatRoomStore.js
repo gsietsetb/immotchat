@@ -3,10 +3,8 @@ import { AsyncStorage, ListView } from "react-native";
 import FCM from "react-native-fcm";
 import { Platform } from "react-native";
 
-import { observable, action, computed } from "mobx";
-
-import gql from "graphql-tag";
-
+import { observable, createTransformer, action, computed } from "mobx";
+import _ from "lodash";
 import moment from "moment";
 
 import { persist, create } from "mobx-persist";
@@ -18,113 +16,13 @@ import API from "../Services/Api";
 import FixtureAPI from "../Services/FixtureApi";
 import DebugConfig from "../Config/DebugConfig";
 
-import { graphcool } from "../Lib/graphcool";
 const api = DebugConfig.useFixtures ? FixtureAPI : API.create();
 
 console.log(DebugConfig.useFixtures);
 
-const queries = {
-  allRooms: gql`
-    query {
-      allConversations {
-        id
-        updatedAt
-        title
-        venue {
-          id
-          name
-          img
-        }
-        users {
-          id
-          email
-          firstName
-          lastName
-          displayName
-          profilePicture
-        }
-      }
-    }
-  `,
-  roomSubscription: gql`
-    subscription changedConversation {
-      Conversation(filter: { mutation_in: [CREATED, UPDATED, DELETED] }) {
-        mutation
-        node {
-          id
-          updatedAt
-          title
-          venue {
-            id
-            name
-            img
-          }
-          users {
-            id
-            email
-            firstName
-            lastName
-            displayName
-            profilePicture
-          }
-        }
-      }
-    }
-  `,
-  roomDetails: gql`
-    query($id: ID!) {
-      Conversation(id: $id) {
-        id
-        updatedAt
-        title
-        venue {
-          id
-          name
-          img
-        }
-        users {
-          id
-          email
-          firstName
-          lastName
-          displayName
-          profilePicture
-        }
-      }
-    }
-  `,
-  getUser: gql`
-    query($userID: ID!) {
-      user {
-        id
-        conversations(filter: { users_some: { id: $userID } }) {
-          id
-        }
-        _conversationsMeta(filter: { users_some: { id: $userID } }) {
-          count
-        }
-      }
-    }
-  `,
-  joinConversation: gql`
-    mutation($userId: ID!, $roomId: ID!) {
-      addToConversationsOnUser(
-        usersUserId: $userId
-        conversationsConversationId: $roomId
-      ) {
-        conversationsConversation {
-          id
-        }
-      }
-    }
-  `
-};
-
 class ChatRoomStore {
   @observable list = [];
-
   @observable details = null;
-
   @observable hydrated = false;
   @observable fetching = false;
 
@@ -144,8 +42,7 @@ class ChatRoomStore {
   @computed
   get userList() {
     if (this.details && this.details.users) {
-      console.log("userList", this.details.users);
-      return this.usersDS.cloneWithRows(this.details.users.slice());
+      return this.usersDS.cloneWithRows(this.details.users);
     }
     return this.usersDS.cloneWithRows([]);
   }
@@ -153,48 +50,21 @@ class ChatRoomStore {
   @action
   enterRoom(room, me) {
     if (me) {
-      //me.refreshToken = null;
-
-      console.log("me", me);
-      //database.ref("rooms/" + room + "/users/" + me.uid).set(me);
-
-      FCM.requestPermissions();
-      FCM.getFCMToken().then(token => {
-        console.log("getFCMToken", token);
-        // probably is better to store user tokens for multiple devices?
-      });
-      FCM.subscribeToTopic(`user-${me.id}`);
-
-      graphcool
-        .mutate({
-          mutation: queries.joinConversation,
-          variables: {
-            userId: me.id,
-            roomId: room.id
-          }
-        })
-        .then(result => {
-          console.log("joinConversation result", result);
-
-          const { data } = result;
-          if (data.addToConversationsOnUser) {
-          }
-        })
-        .catch(error => console.log("error", error));
+      me.refreshToken = null;
+      database.ref("rooms/" + room + "/users/" + me.uid).set(me);
     }
 
-    /*FCM.requestPermissions();
+    FCM.requestPermissions();
     FCM.getFCMToken().then(token => {
       console.log("getFCMToken", token);
-    });*/
-
+    });
     /*if (Platform.OS === "ios") {
       FCM.getAPNSToken().then(token => {
         console.log("APNS TOKEN (getFCMToken)", token);
       });
     }*/
 
-    //FCM.subscribeToTopic(`room-${room}`);
+    FCM.subscribeToTopic(`user-${me.uid}`);
   }
 
   @action
@@ -204,64 +74,65 @@ class ChatRoomStore {
   }
 
   @action
+  sendNewMessageNotifications(room) {
+    database
+      .ref("messages/" + room + "/messages")
+      .orderByKey()
+      .limitToLast(1)
+      .once("value")
+      .then(snapshot => {
+        console.log(_.values(snapshot.val())[0]);
+        const { text } = _.values(snapshot.val())[0];
+
+        const payload = {
+          notification: {
+            title: "New msg",
+            body: text,
+            click_action: "open_room"
+          },
+          data: {
+            room
+          }
+        };
+
+        database
+          .ref("rooms/" + room + "/users")
+          .orderByKey()
+          .once("value")
+          .then(users => {
+            const results = _.values(users.val());
+
+            console.log("results", results);
+          });
+      });
+  }
+  @action
   getDetails(room) {
-    console.log("getting details", room);
-
-    graphcool
-      .query({
-        query: queries.roomDetails,
-        variables: {
-          id: room
-        }
-      })
-      .then(result => {
-        console.log("getDetails result", result);
-
-        const { data } = result;
-        if (data.Conversation) {
-          this.details = data.Conversation;
-        }
-      })
-      .catch(error => console.log("error", error));
+    console.log("getting details");
+    database.ref("rooms/" + room).on("value", snapshot => {
+      const results = snapshot.val() || [];
+      console.log("getDetails results", results);
+      this.details = results;
+    });
   }
 
   @action
   getList() {
-    graphcool
-      .query({
-        query: queries.allRooms
-      })
-      .then(result => {
-        console.log("getList result", result);
-        const { data } = result;
-        if (data.allConversations) {
-          this.list = data.allConversations;
-        }
-      })
-      .catch(error => console.log("error", error));
-  }
-
-  @action
-  subscribeToConversations() {
-    return graphcool
-      .subscribe({
-        query: queries.roomSubscription
-      })
-      .subscribe({
-        next: data => {
-          console.log("conversation subscription", data);
-          this.getList();
-        },
-        error(error) {
-          console.error("Subscription callback with error: ", error);
-        }
+    console.log("getList start");
+    database.ref("rooms").on("value", snapshot => {
+      const results = snapshot.val() || [];
+      console.log("results", results);
+      this.list = Object.keys(results).map(key => {
+        results[key].id = key;
+        return results[key];
       });
+
+      console.log("getList result", this.list);
+    });
   }
 }
 
 export default (roomStore = new ChatRoomStore());
-//autorun(() => console.log("autorun", roomStore.allPosts)); // [{ title: 'Hello World!' }]
-//autorun(() => console.log("autorun", roomStore.roomDetails)); // [{ title: 'Hello World!' }]
 
 //const hydrate = create({ storage: AsyncStorage, jsonify: true });
 //hydrate('user', userStore).then(() => { userStore.hydrateComplete() });

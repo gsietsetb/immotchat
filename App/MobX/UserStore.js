@@ -6,59 +6,8 @@ import moment from "moment";
 
 import { persist, create } from "mobx-persist";
 
-import gql from "graphql-tag";
+import firebase from "../Lib/firebase";
 
-import { graphcool } from "../Lib/graphcool";
-
-const queries = {
-  login: gql`
-    mutation($email: String!, $password: String!) {
-      signinUser(email: { email: $email, password: $password }) {
-        token
-      }
-    }
-  `,
-  register: gql`
-    mutation($email: String!, $password: String!) {
-      createUser(
-        authProvider: { email: { email: $email, password: $password } }
-      ) {
-        id
-      }
-      signinUser(email: { email: $email, password: $password }) {
-        token
-      }
-    }
-  `,
-  getCurrent: gql`
-    query {
-      user {
-        id
-        email
-        firstName
-        lastName
-        displayName
-        profilePicture
-      }
-    }
-  `,
-  update: gql`
-    mutation($id: ID!, $profilePicture: String, $displayName: String) {
-      updateUser(
-        id: $id
-        profilePicture: $profilePicture
-        displayName: $displayName
-      ) {
-        id
-        email
-        firstName
-        lastName
-        displayName
-        profilePicture
-      }
-    }
-  `
-};
 class UserStore {
   @observable errorMessage = null;
 
@@ -69,38 +18,21 @@ class UserStore {
   @observable
   info = null;
 
-  @persist("object")
-  @observable
-  user = null;
-
   @computed
   get currentUser() {
-    return this.user;
-  }
-
-  @action
-  fetchCurrentUser() {
-    this.fetching = true;
-    this.errorMessage = null;
-
-    return graphcool
-      .query({
-        query: queries.getCurrent
-      })
-      .then(result => {
-        this.fetching = false;
-        console.log("fetchCurrentUser result", result);
-        const { data } = result;
-
-        this.user = Object.assign({}, this.user, data.user);
-        return this.user;
-      })
-      .catch(err => {
-        this.fetching = false;
-        this.info = null;
-        this.errorMessage = err.message;
-        console.log("error", err);
-      });
+    console.log("userInfo currentUser", firebase.auth().currentUser);
+    let user = firebase.auth().currentUser;
+    if (user) {
+      return {
+        displayName: user.displayName,
+        email: user.email,
+        emailVerified: user.emailVerified,
+        phoneNumber: user.emailVerified,
+        photoURL: user.photoURL,
+        refreshToken: user.refreshToken,
+        uid: user.uid
+      };
+    }
   }
 
   @action
@@ -117,36 +49,26 @@ class UserStore {
     this.errorMessage = null;
     this.fetching = true;
 
-    graphcool
-      .mutate({
-        mutation: queries.login,
-        variables: {
-          email,
-          password
-        }
-      })
-      .then(result => {
-        console.log("result", result);
-        const { data } = result;
-        if (data.signinUser) {
-          this.fetching = true;
-          this.user = Object.assign({}, this.user, {
-            token: data.signinUser.token
-          });
-
-          const currentUser = this.fetchCurrentUser()
-            .then(r => r)
-            .catch(error => console.log("error", error));
-
-          this.updateProfile().catch(error => console.log("error", error));
-          return currentUser;
-        }
-      })
-      .catch(err => {
-        console.log("err", err.message);
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(user => {
+        console.log("result", user);
         this.fetching = false;
-        this.user = null;
-        this.errorMessage = err.message;
+      })
+      .catch(error => {
+        // Handle Errors here.
+        this.fetching = false;
+        this.info = null;
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        this.errorMessage = errorMessage;
+        if (errorCode === "auth/wrong-password") {
+          console.log("Wrong password.");
+        } else {
+          console.log(errorMessage);
+        }
+        console.log(error);
       });
   }
 
@@ -154,83 +76,96 @@ class UserStore {
   createUser(email, password, profile) {
     this.fetching = true;
     this.errorMessage = null;
-
-    console.log("profile", profile);
-    graphcool
-      .mutate({
-        mutation: queries.register,
-        variables: {
-          email,
-          password
-        }
-      })
-      .then(result => {
-        const { data } = result;
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(user => {
+        console.log("result", user);
         this.fetching = false;
-        this.user = Object.assign(
-          {},
-          {
-            token: data.signinUser.token
-          }
-        );
-        const currentUser = this.fetchCurrentUser()
-          .then(r => r)
-          .catch(error => console.log("error", error));
-        this.updateProfile(profile).catch(error => console.log("error", error));
-        return currentUser;
+        this.saveProfile(profile);
       })
-      .catch(err => {
-        console.log("err", err.message);
+      .catch(function(error) {
+        // Handle Errors here.
         this.fetching = false;
         this.info = null;
-        this.errorMessage = err.message;
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        this.errorMessage = errorMessage;
+
+        if (errorCode == "auth/weak-password") {
+          console.log("Wrong password.");
+        } else {
+          console.log(errorMessage);
+        }
+        console.log(error);
       });
   }
 
   @action
-  async updateProfile(profile) {
-    this.fetching = true;
-    let user;
-    try {
-      user = await this.fetchCurrentUser();
-    } catch (err) {
-      console.log(err);
-    }
+  saveProfile(profile) {
+    let user = firebase.auth().currentUser;
+    console.log("user is auth", user);
+    if (user) {
+      this.fetching = true;
 
-    return graphcool
-      .mutate({
-        mutation: queries.update,
-        variables: {
-          id: user.id,
-          profilePicture:
-            (profile || {}).profilePicture ||
-            `https://api.adorable.io/avatars/150/${user.id}`,
-          displayName:
-            (profile || {}).displayName ||
-            user.displayName ||
-            (user.firstName &&
-              user.lastName &&
-              `${user.firstName} ${user.lastName}`) ||
-            user.email
-        }
-      })
-      .then(result => {
-        const resultUser = result.data.user;
-        this.user = Object.assign(this.user || {}, resultUser);
-        return this.user;
-      })
-      .catch(error => console.log("error", error));
+      user
+        .updateProfile({
+          displayName: profile.displayName
+        })
+        .then(
+          () => {
+            // Update successful.
+
+            console.log("updated successful");
+
+            this.fetching = false;
+          },
+          error => {
+            // An error happened.
+            console.log("updated failed");
+            this.fetching = true;
+          }
+        );
+    }
   }
 
   @action
   logout() {
     this.fetching = true;
-    this.user = null;
-    this.fetching = false;
+    firebase
+      .auth()
+      .signOut()
+      .then(
+        () => {
+          this.fetching = false;
+          this.info = null;
+        },
+        error => {
+          this.fetching = false;
+        }
+      );
   }
 }
 
 export default (userStore = new UserStore());
+
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    console.log("user connected", user);
+    userStore.info = {
+      displayName: user.displayName,
+      email: user.email,
+      emailVerified: user.emailVerified,
+      phoneNumber: user.emailVerified,
+      photoURL: user.photoURL,
+      refreshToken: user.refreshToken,
+      uid: user.uid
+    };
+  } else {
+    userStore.info = null;
+    console.log("user disconnected");
+  }
+});
 
 const hydrate = create({ storage: AsyncStorage, jsonify: true });
 hydrate("user", userStore).then(() => {

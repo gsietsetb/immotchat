@@ -33,25 +33,28 @@ class ProfileScreen extends React.Component {
   static navigationOptions = {
     title: I18n.t("Profile"),
     tabBarLabel: I18n.t("Profile"),
-    tabBarIcon: ({ tintColor }) =>
+    tabBarIcon: ({ tintColor }) => (
       <Icon
         name="user"
         size={Metrics.icons.small}
         style={[styles.tabIcon, { color: tintColor }]}
       />
+    )
   };
   constructor(props) {
     super(props);
     this.state = {
       fullName: "", //"Paolo Mosca",
-      email: "", //"paolo@idev.io",
-      password: "", //"123456",
+      email: "paolo@idev.io",
+      password: "123456",
       password2: "", //"123456",
       typeForm: "login"
     };
   }
   componentDidMount() {
     // this.props.init();
+    const { userStore } = this.props;
+    console.log("userinfo", userStore.info);
   }
 
   componentWillUnmount() {}
@@ -94,9 +97,7 @@ class ProfileScreen extends React.Component {
         style={[styles.standardButton, styles.activeButton]}
         onPress={this.logout}
       >
-        <Text style={styles.activeButtonText}>
-          {I18n.t("Disconnect")}
-        </Text>
+        <Text style={styles.activeButtonText}>{I18n.t("Disconnect")}</Text>
       </TouchableOpacity>
     );
   };
@@ -126,11 +127,7 @@ class ProfileScreen extends React.Component {
     const { errorMessage } = userStore;
 
     if (errorMessage) {
-      return (
-        <Text style={styles.errorMessage}>
-          {errorMessage}
-        </Text>
-      );
+      return <Text style={styles.errorMessage}>{errorMessage}</Text>;
     }
   };
   loginButton = () => {
@@ -153,9 +150,7 @@ class ProfileScreen extends React.Component {
           this.handleSubmit(typeForm);
         }}
       >
-        <Text style={styles.loginText}>
-          {I18n.t("signIn")}
-        </Text>
+        <Text style={styles.loginText}>{I18n.t("signIn")}</Text>
       </TouchableOpacity>
     );
   };
@@ -181,9 +176,7 @@ class ProfileScreen extends React.Component {
           this.handleSubmit(typeForm);
         }}
       >
-        <Text style={styles.loginText}>
-          {I18n.t("signUp")}
-        </Text>
+        <Text style={styles.loginText}>{I18n.t("signUp")}</Text>
       </TouchableOpacity>
     );
   };
@@ -305,41 +298,35 @@ class ProfileScreen extends React.Component {
 
   renderAccountInfo = () => {
     const { userStore } = this.props;
-    const { user } = userStore;
-    //console.log('info', info);
+    const { info } = userStore;
+    console.log("info", info);
 
-    if (user) {
+    if (info) {
       return (
         <View>
           <View header>
-            <Text style={styles.cardTitle}>
-              {I18n.t("Account Info")}
-            </Text>
+            <Text style={styles.cardTitle}>{I18n.t("Account Info")}</Text>
           </View>
-          {user.displayName &&
+          {info.displayName && (
             <View>
-              <Text style={styles.infoText}>
-                {user.displayName}
-              </Text>
-            </View>}
-          {user.email &&
+              <Text style={styles.infoText}>{info.displayName}</Text>
+            </View>
+          )}
+          {info.email && (
             <View>
-              <Text style={styles.infoText}>
-                {user.email}
-              </Text>
-            </View>}
-          <View header>
-            {this.logoutButton()}
-          </View>
+              <Text style={styles.infoText}>{info.email}</Text>
+            </View>
+          )}
+          <View header>{this.logoutButton()}</View>
         </View>
       );
     }
   };
   renderLogin = () => {
     const { userStore } = this.props;
-    const { user } = userStore;
+    const { info } = userStore;
 
-    if (!user) {
+    if (!info) {
       return (
         <View>
           {this.createForm()}
@@ -356,13 +343,9 @@ class ProfileScreen extends React.Component {
       case "login":
         return (
           <View style={styles.form}>
-            <View style={styles.row}>
-              {this.renderEmailField()}
-            </View>
+            <View style={styles.row}>{this.renderEmailField()}</View>
 
-            <View style={styles.row}>
-              {this.renderPasswordField()}
-            </View>
+            <View style={styles.row}>{this.renderPasswordField()}</View>
 
             {this.errorMessage()}
             {this.loginButton()}
@@ -372,21 +355,13 @@ class ProfileScreen extends React.Component {
       case "register":
         return (
           <View style={styles.form}>
-            <View style={styles.row}>
-              {this.renderFullNameField()}
-            </View>
+            <View style={styles.row}>{this.renderFullNameField()}</View>
 
-            <View style={styles.row}>
-              {this.renderEmailField()}
-            </View>
+            <View style={styles.row}>{this.renderEmailField()}</View>
 
-            <View style={styles.row}>
-              {this.renderPasswordField()}
-            </View>
+            <View style={styles.row}>{this.renderPasswordField()}</View>
 
-            <View style={styles.row}>
-              {this.renderPassword2Field()}
-            </View>
+            <View style={styles.row}>{this.renderPassword2Field()}</View>
             {this.errorMessage()}
             {this.registerButton()}
           </View>
@@ -408,9 +383,7 @@ class ProfileScreen extends React.Component {
               style={[styles.standardButton, styles.emptyButton]}
               onPress={this.goToRegister}
             >
-              <Text style={styles.emptyButtonText}>
-                {I18n.t("register")}
-              </Text>
+              <Text style={styles.emptyButtonText}>{I18n.t("register")}</Text>
             </TouchableOpacity>
           </View>
         );
