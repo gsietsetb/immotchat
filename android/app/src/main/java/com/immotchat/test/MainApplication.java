@@ -1,4 +1,4 @@
-package io.idev.immotchat;
+package com.immotchat.test;
 
 import android.app.Application;
 

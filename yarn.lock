@@ -86,6 +86,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+andlog@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/andlog/-/andlog-1.0.0.tgz#25b39047ac9c1e5f6b2c8e4cdb5e7bf9e65e534b"
+
 ansi-escapes@^1.1.0, ansi-escapes@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
@@ -1101,6 +1105,12 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
+
+bows@^1.6.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/bows/-/bows-1.7.0.tgz#a3598ed9cef61a7a0cab1a7240f291654865ec76"
+  dependencies:
+    andlog "^1.0.0"
 
 bplist-creator@0.0.7:
   version "0.0.7"
@@ -2692,13 +2702,13 @@ ignite-animatable@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ignite-animatable/-/ignite-animatable-1.0.0.tgz#4897448fb6118cb8b5071404bf97d33793383b5f"
 
-ignite-i18n@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ignite-i18n/-/ignite-i18n-1.0.0.tgz#4e7f5ecebf00ceeac0b52a1a2fb5227b5ecb3faa"
+ignite-i18n@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ignite-i18n/-/ignite-i18n-1.1.0.tgz#937268dc2c733fdf5ec14f2db216b9a7eaea7616"
 
-ignite-ir-boilerplate@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/ignite-ir-boilerplate/-/ignite-ir-boilerplate-2.0.2.tgz#64d5d015d93ad019febc3922483d5a867fa98e6f"
+ignite-ir-boilerplate@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ignite-ir-boilerplate/-/ignite-ir-boilerplate-2.1.1.tgz#261c1abace4cafc68feba34568a076bde85fc119"
   dependencies:
     ramda "^0.23.0"
 
@@ -4479,9 +4489,9 @@ react-dom@~15.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react-native-animatable@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.2.3.tgz#d0f0bd694833b934f3aaa1275739228b786ecb4b"
+react-native-animatable@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.2.4.tgz#b5fb7657e8f6edadbc26697057a327fb920b3039"
   dependencies:
     prop-types "^15.5.10"
 
@@ -4521,15 +4531,23 @@ react-native-drawer-layout@1.3.2:
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
 
-react-native-drawer@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-native-drawer/-/react-native-drawer-2.3.0.tgz#a0369ec80ff0b61c9f152dbdea91fe76c843113a"
+react-native-drawer@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/react-native-drawer/-/react-native-drawer-2.5.0.tgz#022cba5c0516126a9fc9cce3185cb46c644b51c4"
   dependencies:
+    prop-types "^15.5.8"
     tween-functions "^1.0.1"
 
 react-native-fcm@^9.3.0:
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/react-native-fcm/-/react-native-fcm-9.3.0.tgz#b5463744da7bebb9b485ab9da0468ce94abc94e5"
+
+react-native-firebase@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-2.2.1.tgz#7f22245eba951cce4b72e4653170d59004c9b561"
+  dependencies:
+    bows "^1.6.0"
+    prop-types "^15.5.10"
 
 react-native-gifted-chat@^0.2.7:
   version "0.2.7"

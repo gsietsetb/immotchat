@@ -4,6 +4,7 @@ import { observable, createTransformer, action, computed } from "mobx";
 
 import moment from "moment";
 
+import FCM from "react-native-fcm";
 import { persist, create } from "mobx-persist";
 
 import firebase from "../Lib/firebase";
@@ -131,6 +132,9 @@ class UserStore {
 
   @action
   logout() {
+    if (this.info && this.info.uid) {
+      FCM.unsubscribeFromTopic(`user-${this.info.uid}`);
+    }
     this.fetching = true;
     firebase
       .auth()
