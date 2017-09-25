@@ -24,5 +24,10 @@ export default StyleSheet.create({
     height: Metrics.smallLine,
     backgroundColor: Colors.listLineSeparator
   },
-  listContent: {}
+  listContent: {},
+  headerRightButton: {
+    marginRight: Metrics.baseSpace,
+    justifyContent: "center",
+    alignItems: "center"
+  }
 });

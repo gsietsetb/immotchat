@@ -103,6 +103,12 @@ export default StyleSheet.create({
     textAlign: "center",
     color: Colors.silver
   },
+  errorMessage: {
+    flex: 1,
+    textAlign: "center",
+    padding: Metrics.baseSpace,
+    color: Colors.error
+  },
   topLogo: {
     height: 50,
     marginTop: Metrics.doubleBaseMargin,

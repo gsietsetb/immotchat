@@ -24,25 +24,26 @@ export default class ChatRow extends React.Component {
 
   render() {
     const { data } = this.props;
+
+    let image = data.title;
+    let roomImg = `https://initials.herokuapp.com/${data.title}`;
+    if (data.venue && data.venue.img) {
+      roomImg = data.venue.img;
+    }
+
     return (
       <TouchableOpacity
         underlayColor={Colors.secondaryLight}
         onPress={this.onPress}
       >
         <View style={styles.row}>
-          {data.venue &&
-            <View style={styles.imgContainer}>
-              <Image source={{ uri: data.venue.img }} style={styles.image} />
-            </View>}
+          <View style={styles.imgContainer}>
+            <Image source={{ uri: roomImg }} style={styles.image} />
+          </View>
 
           <View style={styles.rightContainer}>
-            <Text style={styles.boldLabel}>
-              {data.title}
-            </Text>
-            {data.venue &&
-              <Text style={styles.label}>
-                {data.venue.name}
-              </Text>}
+            <Text style={styles.boldLabel}>{data.title}</Text>
+            {data.venue && <Text style={styles.label}>{data.venue.name}</Text>}
           </View>
         </View>
       </TouchableOpacity>

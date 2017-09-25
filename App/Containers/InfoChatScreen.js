@@ -9,7 +9,8 @@ import {
   ListView,
   Image,
   Linking,
-  TouchableOpacity
+  TouchableOpacity,
+  Share
 } from "react-native";
 
 import { observer, inject } from "mobx-react/native";
@@ -25,6 +26,7 @@ import Icon from "react-native-vector-icons/Entypo";
 
 //import AlertMessage from "../Components/AlertMessage";
 //import { connect } from "react-redux";
+import RoundedButton from "../Components/RoundedButton";
 
 //import { RoomsActions } from "../Redux/RoomRedux";
 // Styles
@@ -84,7 +86,9 @@ class InfoChatScreen extends React.Component {
         style={styles.userRow}
         onPress={() => this.pressRow(rowData)}
       >
-        <Text>{rowData.displayName}</Text>
+        <Text>
+          {rowData.displayName !== "" ? rowData.displayName : rowData.email}
+        </Text>
       </TouchableOpacity>
     );
   };
@@ -100,17 +104,18 @@ class InfoChatScreen extends React.Component {
     const { nav, roomStore } = this.props;
     const { chatRoom } = nav.params;
     console.log("chatRoom", chatRoom);
+
+    let roomImg = `https://initials.herokuapp.com/${chatRoom.title}`;
+    if (chatRoom.venue && chatRoom.venue.img) {
+      roomImg = chatRoom.venue.img;
+    }
+
     if (chatRoom) {
       return (
         <View style={styles.headerContainer}>
-          {chatRoom.venue && (
-            <View style={styles.imgContainer}>
-              <Image
-                source={{ uri: chatRoom.venue.img }}
-                style={styles.image}
-              />
-            </View>
-          )}
+          <View style={styles.imgContainer}>
+            <Image source={{ uri: roomImg }} style={styles.image} />
+          </View>
 
           <View style={styles.rightContainer}>
             <Text style={styles.boldLabel}>{chatRoom.title}</Text>
@@ -149,6 +154,37 @@ class InfoChatScreen extends React.Component {
     );
   };
 
+  share = () => {
+    const { nav } = this.props;
+    const { chatRoom } = nav.params;
+
+    let url = `immo://room/${chatRoom.id}`;
+    Share.share(
+      {
+        message: "Invite to use ImmoTchat",
+        url,
+        title: "Invite to chat"
+      },
+      {
+        dialogTitle: "Invite to use ImmoTchat"
+      }
+    )
+      .then(result => {
+        console.log("result", result);
+      })
+      .catch(error => console.log("error", error));
+  };
+
+  renderInvite = () => {
+    return (
+      <RoundedButton
+        onPress={() => {
+          this.share();
+        }}
+        text={I18n.t("invite_more")}
+      />
+    );
+  };
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -157,6 +193,7 @@ class InfoChatScreen extends React.Component {
           {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
           {this.renderHeader()}
           {this.userList()}
+          {this.renderInvite()}
         </ScrollView>
       </View>
     );

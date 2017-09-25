@@ -90,6 +90,18 @@ class ChatRoomStore {
   }
 
   @action
+  createRoom(me) {
+    let users = {};
+
+    if (me) {
+      users[me.uid] = me;
+      database.ref("rooms").push({
+        title: "new group",
+        users: users
+      });
+    }
+  }
+  @action
   sendNewMessageNotifications(room) {
     database
       .ref("messages/" + room + "/messages")

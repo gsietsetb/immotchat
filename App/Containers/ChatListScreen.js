@@ -7,12 +7,13 @@ import {
   KeyboardAvoidingView,
   View,
   ListView,
-  Linking
+  Linking,
+  TouchableOpacity
 } from "react-native";
 
 import { observer, inject } from "mobx-react/native";
 
-import { Metrics } from "../Themes";
+import { Metrics, Colors } from "../Themes";
 
 // external libs
 //import Icon from "react-native-vector-icons/FontAwesome";
@@ -36,20 +37,6 @@ const dataObjects = [];
 @inject("roomStore", "userStore", "nav")
 @observer
 class ChatListScreen extends React.Component {
-  static navigationOptions = {
-    title: I18n.t("ImmoTchat"),
-    tabBarLabel: I18n.t("my_chats"),
-    scrollEnabled: false,
-    showIcon: true,
-    tabBarIcon: ({ tintColor }) => (
-      <Icon
-        name="chat"
-        size={Metrics.icons.small}
-        style={[styles.tabIcon, { color: tintColor }]}
-      />
-    )
-  };
-
   constructor(props) {
     super(props);
     // If you need scroll to bottom, consider http://bit.ly/2bMQ2BZ
@@ -70,7 +57,26 @@ class ChatListScreen extends React.Component {
 
     //roomStore.subscribeToConversations();
   }
-
+  createNew = () => {
+    const { userStore, nav, roomStore } = this.props;
+    if (userStore.currentUser) {
+      roomStore.createRoom(userStore.currentUser);
+    }
+  };
+  renderRightButton = () => {
+    return (
+      <TouchableOpacity
+        style={styles.headerRightButton}
+        onPress={this.createNew}
+      >
+        <Icon
+          name="add-to-list"
+          size={Metrics.icons.medium}
+          color={Colors.secondaryDark}
+        />
+      </TouchableOpacity>
+    );
+  };
   componentWillReact = () => {
     console.log("componentWillReact");
     //const { roomStore } = this.props;
@@ -163,7 +169,7 @@ class ChatListScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <NavBar title="ImmoTchat" />
+        <NavBar title="ImmoTchat" rightButton={this.renderRightButton()} />
         {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
 
         {this.renderList()}

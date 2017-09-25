@@ -9,7 +9,7 @@ import { persist, create } from "mobx-persist";
 import firebase from "../Lib/firebase";
 
 class UserStore {
-  @observable errorMessage = null;
+  @observable errorMessage = "";
 
   @observable hydrated = false;
   @observable fetching = false;
@@ -98,20 +98,24 @@ class UserStore {
         this.fetching = false;
         this.saveProfile(profile);
       })
-      .catch(function(error) {
+      .catch(error => {
         // Handle Errors here.
+
+        console.log("error", error);
         this.fetching = false;
         this.info = null;
         var errorCode = error.code;
         var errorMessage = error.message;
+        console.log("errorCode", errorCode);
+        console.log("errorMessage", errorMessage);
         this.errorMessage = errorMessage;
 
-        if (errorCode == "auth/weak-password") {
+        /*if (errorCode == "auth/weak-password") {
           console.log("Wrong password.");
         } else {
           console.log(errorMessage);
         }
-        console.log(error);
+        console.log(error);*/
       });
   }
 

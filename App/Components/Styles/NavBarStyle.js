@@ -41,6 +41,14 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
+  rightWrapper: {
+    top: Metrics.statusBarHeight,
+    right: 0,
+    bottom: 0,
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "center"
+  },
   title: {
     fontSize: 17,
     color: Colors.secondaryDark,

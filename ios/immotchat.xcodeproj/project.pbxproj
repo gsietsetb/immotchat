@@ -45,8 +45,8 @@
 		521ECCA81F2F1D87002DD6DC /* immo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521ECCA51F2F1D87002DD6DC /* immo.ttf */; };
 		521ECCA91F2F1D87002DD6DC /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521ECCA61F2F1D87002DD6DC /* Roboto-Bold.ttf */; };
 		521ECCAA1F2F1D87002DD6DC /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521ECCA71F2F1D87002DD6DC /* Roboto-Regular.ttf */; };
+		522C03E71F794F410034CD3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 522C03E61F794F410034CD3B /* GoogleService-Info.plist */; };
 		527E379F1F791CEC001168BB /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
-		52C148341F753E660034B53E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52C148331F753E660034B53E /* GoogleService-Info.plist */; };
 		6A14CBB8C6DE4D028F6EC114 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D92499A44D7B43E690A68DC1 /* libReact.a */; };
 		6F13771A66244534B6D7CD68 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFCE61F69285461C87B81B36 /* MaterialIcons.ttf */; };
 		806E56608C734703A34EC0D3 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54E96F265A56443C81C92E6D /* FontAwesome.ttf */; };
@@ -348,8 +348,8 @@
 		521ECCA51F2F1D87002DD6DC /* immo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = immo.ttf; sourceTree = "<group>"; };
 		521ECCA61F2F1D87002DD6DC /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		521ECCA71F2F1D87002DD6DC /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		522C03E61F794F410034CD3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52ABDFD91F2CABC200D0BA19 /* immotchat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = immotchat.entitlements; path = immotchat/immotchat.entitlements; sourceTree = "<group>"; };
-		52C148331F753E660034B53E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "immotchat/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54E96F265A56443C81C92E6D /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		5730D1F4B031495F83315B6C /* RNI18n.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/RNI18n.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -524,8 +524,8 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
-				52C148331F753E660034B53E /* GoogleService-Info.plist */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				522C03E61F794F410034CD3B /* GoogleService-Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -1167,7 +1167,7 @@
 				936DDA87554444FA8AA729CA /* EvilIcons.ttf in Resources */,
 				806E56608C734703A34EC0D3 /* FontAwesome.ttf in Resources */,
 				AB035A39F9EC4D70A33A7E42 /* Foundation.ttf in Resources */,
-				52C148341F753E660034B53E /* GoogleService-Info.plist in Resources */,
+				522C03E71F794F410034CD3B /* GoogleService-Info.plist in Resources */,
 				08BF1A0F1CD5484D9BF94CEC /* Ionicons.ttf in Resources */,
 				AB8DF85A429543AAB93B997F /* MaterialCommunityIcons.ttf in Resources */,
 				6F13771A66244534B6D7CD68 /* MaterialIcons.ttf in Resources */,
@@ -1554,7 +1554,7 @@
 					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
 				);
 				INFOPLIST_FILE = immotchat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1585,7 +1585,7 @@
 					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
 				);
 				INFOPLIST_FILE = immotchat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

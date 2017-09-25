@@ -1,5 +1,92 @@
 dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/immotchat/AppDelegate.m \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/Firebase/Core/Sources/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRCoreSwiftNameSupport.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUser.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRPhoneAuthProvider.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRPhoneAuthCredential.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIROAuthProvider.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIREmailAuthProvider.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthUIDelegate.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthDataResult.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthAPNSTokenType.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuth.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAdditionalUserInfo.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthSwiftNameSupport.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRActionCodeSettings.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FirebaseAuthVersion.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCrash/Frameworks/FirebaseCrash.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCrash/Frameworks/FirebaseCrash.framework/Headers/FIRCrashLog.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCrash/Frameworks/FirebaseCrash.framework/Headers/FIRCrash.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCrash/Frameworks/FirebaseCrash.framework/Headers/FirebaseCrash.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseSwiftNameSupport.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Headers/FIRDynamicLinksCommon.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Headers/FIRDynamicLinks.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Headers/FIRDynamicLinksSwiftNameSupport.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Headers/FIRDynamicLink.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Headers/FDLURLComponents.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Headers/FirebaseDynamicLinks.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FIRMessaging.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FirebaseMessaging.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseRemoteConfig/Frameworks/FirebaseRemoteConfig.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseRemoteConfig/Frameworks/FirebaseRemoteConfig.framework/Headers/FIRRemoteConfig.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseRemoteConfig/Frameworks/FirebaseRemoteConfig.framework/Headers/FirebaseRemoteConfig.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Modules/module.modulemap \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageTaskSnapshot.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageUploadTask.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageReference.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageMetadata.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageTask.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageObservableTask.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageDownloadTask.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageSwiftNameSupport.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageConstants.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorage.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FirebaseStorage.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/Firebase/Core/Sources/Firebase.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/immotchat/AppDelegate.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBundleURLProvider.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
@@ -11,19 +98,4 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLinkingManager.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/../node_modules/react-native-fcm/ios/RNFIRMessaging.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Modules/module.modulemap \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRCoreSwiftNameSupport.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Modules/module.modulemap \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FIRMessaging.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FirebaseMessaging.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h

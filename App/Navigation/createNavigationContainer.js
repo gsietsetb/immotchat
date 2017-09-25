@@ -45,14 +45,14 @@ export default function createNavigationContainer(
         Linking.addEventListener("url", this.handleOpenURL);
       }
 
-      firebase.messaging().requestPermissions(); //for IOS
+      /*firebase.messaging().requestPermissions(); //for IOS
       firebase
         .messaging()
         .getToken()
         .then(token => {
           console.log("Device FCM Token: ", token);
         });
-
+      */
       firebase
         .messaging()
         .getInitialNotification()
@@ -60,21 +60,21 @@ export default function createNavigationContainer(
           console.log("INITIAL NOTIFICATION", notif);
         });
 
-      /*this.notificationListener = firebase.messaging().onMessage(notif => {
+      this.notificationListener = firebase.messaging().onMessage(notif => {
         console.log("notif: ", notif);
-      });*/
-      firebase.messaging().onMessage(message => {
+      });
+      /*firebase.messaging().onMessage(message => {
         console.log("message: ", message);
         // TODO
-      });
-      firebase.messaging().onTokenRefresh(token => {
+      });*/
+      /*firebase.messaging().onTokenRefresh(token => {
         console.log("Refreshed FCM token: ", token);
-      });
+      });*/
 
-      /*this.refreshTokenListener = firebase.messaging().onTokenRefresh(token => {
+      this.refreshTokenListener = firebase.messaging().onTokenRefresh(token => {
         console.log("refresh token: ", token);
         // fcm token may not be available on first load, catch it here
-      });*/
+      });
 
       /*
       Linking.getInitialURL()
@@ -108,8 +108,8 @@ export default function createNavigationContainer(
     }
     componentDidUnMount() {
       Linking.removeEventListener("url", this.handleOpenURL);
-      //this.notificationListener.remove();
-      //this.refreshTokenListener.remove();
+      this.notificationListener.remove();
+      this.refreshTokenListener.remove();
     }
 
     handleOpenURL = event => {

@@ -68,7 +68,7 @@ class NavBar extends React.Component {
         <View style={styles.titleWrapper} pointerEvents="box-none">
           {this.renderTitle()}
         </View>
-        {this.rightButton()}
+        <View style={styles.rightWrapper}>{this.rightButton()}</View>
       </View>
     );
   }

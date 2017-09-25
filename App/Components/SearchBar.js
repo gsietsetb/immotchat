@@ -1,35 +1,39 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
-import styles from './Styles/SearchBarStyles'
-import { Colors, Metrics } from '../Themes/'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import styles from "./Styles/SearchBarStyles";
+import { Colors, Metrics } from "../Themes/";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 export default class SearchBar extends Component {
-  static propTypes = {
+  /*static propTypes = {
     onSearch: PropTypes.func.isRequired,
     onCancel: PropTypes.func.isRequired,
     searchTerm: PropTypes.string
-  }
+  }*/
 
-  render () {
-    const { onSearch, onCancel, searchTerm } = this.props
-    const onSubmitEditing = () => onSearch(searchTerm)
+  render() {
+    const { onSearch, onCancel, searchTerm } = this.props;
+    const onSubmitEditing = () => onSearch(searchTerm);
     return (
       <View style={styles.container}>
-        <Icon name='search' size={Metrics.icons.tiny} style={styles.searchIcon} />
+        <Icon
+          name="search"
+          size={Metrics.icons.tiny}
+          style={styles.searchIcon}
+        />
         <TextInput
-          ref='searchText'
+          ref="searchText"
           autoFocus
-          placeholder='Search'
+          placeholder="Search"
           placeholderTextColor={Colors.snow}
-          underlineColorAndroid='transparent'
+          underlineColorAndroid="transparent"
           style={styles.searchInput}
           value={this.props.searchTerm}
           onChangeText={onSearch}
-          autoCapitalize='none'
+          autoCapitalize="none"
           onSubmitEditing={onSubmitEditing}
-          returnKeyType={'search'}
+          returnKeyType={"search"}
           autoCorrect={false}
           selectionColor={Colors.snow}
         />
@@ -37,6 +41,6 @@ export default class SearchBar extends Component {
           <Text style={styles.buttonLabel}>Cancel</Text>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }

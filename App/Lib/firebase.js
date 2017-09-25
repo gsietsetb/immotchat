@@ -4,7 +4,7 @@ import AppConfig from "../Config/AppConfig";
 import RNfirebase from "react-native-firebase";
 
 const firebase = RNfirebase.initializeApp({
-  debug: __DEV__ ? "*" : false,
+  //debug: __DEV__ ? "*" : false,
   errorOnMissingPlayServices: false,
   persistence: true
 });

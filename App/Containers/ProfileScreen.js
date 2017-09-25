@@ -19,7 +19,7 @@ import Icon from "react-native-vector-icons/Entypo";
 import { Metrics, Colors } from "../Themes";
 // external libs
 import TabBar from "../Components/TabBar";
-
+import NavBar from "../Components/NavBar";
 import Animatable from "react-native-animatable";
 
 import Spinner from "../Components/Spinner";
@@ -31,17 +31,6 @@ import { observer, inject } from "mobx-react/native";
 @inject("userStore", "nav")
 @observer
 class ProfileScreen extends React.Component {
-  static navigationOptions = {
-    title: I18n.t("Profile"),
-    tabBarLabel: I18n.t("Profile"),
-    tabBarIcon: ({ tintColor }) => (
-      <Icon
-        name="user"
-        size={Metrics.icons.small}
-        style={[styles.tabIcon, { color: tintColor }]}
-      />
-    )
-  };
   constructor(props) {
     super(props);
     this.state = {
@@ -309,12 +298,12 @@ class ProfileScreen extends React.Component {
           <View header>
             <Text style={styles.cardTitle}>{I18n.t("Account Info")}</Text>
           </View>
-          {info.displayName && (
+          {info.displayName !== "" && (
             <View>
               <Text style={styles.infoText}>{info.displayName}</Text>
             </View>
           )}
-          {info.email && (
+          {info.email !== "" && (
             <View>
               <Text style={styles.infoText}>{info.email}</Text>
             </View>
@@ -412,6 +401,7 @@ class ProfileScreen extends React.Component {
 
     return (
       <View style={styles.mainContainer}>
+        <NavBar title={I18n.t("Profile")} />
         <ScrollView style={styles.container}>
           {this.renderAccountInfo()}
           {this.renderLogin()}

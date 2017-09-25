@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		JWIp80WBVRIxzsrGjF4oEGNtmj0=
+		upSBaDG9PLoy0B2Zc7kbhfot51w=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -243,7 +243,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2F/gOAKHB+hLLJtzYAEW+5Qr6LM=
+		xmkJ0F6rCT35EVn/vvCXbKDldUM=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -271,7 +271,7 @@
 		</data>
 		<key>PlugIns/immotchatTests.xctest.dSYM/Contents/Resources/DWARF/immotchatTests</key>
 		<data>
-		RqS3f/9BivZ+sUh8tG2wr02XlwI=
+		37nDRizgL6ioP0NTN3UcCJlppuw=
 		</data>
 		<key>PlugIns/immotchatTests.xctest/Info.plist</key>
 		<data>
@@ -283,7 +283,7 @@
 		</data>
 		<key>PlugIns/immotchatTests.xctest/immotchatTests</key>
 		<data>
-		aGvrxncE9IMJUI2gFhBKUpNYqtg=
+		OW7O+EyEZ6RqOYMcpf7TQmMAph0=
 		</data>
 		<key>Roboto-Bold.ttf</key>
 		<data>
@@ -312,11 +312,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JWIp80WBVRIxzsrGjF4oEGNtmj0=
+			upSBaDG9PLoy0B2Zc7kbhfot51w=
 			</data>
 			<key>hash2</key>
 			<data>
-			aVwvvWragXZrzwzEaO4DbWl4upQ1Pri+qiIdsT7iKQQ=
+			/82L12XXFiCHCjc/KHGZK2xcQaoWsuP3GoKmoQ3EuqM=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -1007,11 +1007,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RqS3f/9BivZ+sUh8tG2wr02XlwI=
+			37nDRizgL6ioP0NTN3UcCJlppuw=
 			</data>
 			<key>hash2</key>
 			<data>
-			B8jp+roIX7UxeHvHAFB9OReTtcVr7Ae+gL+djUkSvSA=
+			DAYklRpEnJVTQa9ZoGpJ8Ysn561JofbmTZLEMW6Qoic=
 			</data>
 		</dict>
 		<key>PlugIns/immotchatTests.xctest/Info.plist</key>
@@ -1040,11 +1040,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aGvrxncE9IMJUI2gFhBKUpNYqtg=
+			OW7O+EyEZ6RqOYMcpf7TQmMAph0=
 			</data>
 			<key>hash2</key>
 			<data>
-			TB1cb+MD/mYLT9c9JITBVW6EV2FdJVeoDiZX3I8flhM=
+			n4uWCViZHkDaK8DJcbv0K5hf5FL5OdBl8TMGzlp3xaI=
 			</data>
 		</dict>
 		<key>Roboto-Bold.ttf</key>

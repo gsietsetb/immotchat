@@ -1,7 +1,7 @@
 // @flow
 
 import React from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 import ReactNative, {
   ScrollView,
   Text,
@@ -28,20 +28,6 @@ import I18n from "react-native-i18n";
 @inject("messageStore", "userStore", "nav", "roomStore")
 @observer
 class ChatScreen extends React.Component {
-  renderRightButton = () => {
-    return (
-      <TouchableOpacity
-        style={styles.headerRightButton}
-        onPress={this.handlePressInfo}
-      >
-        <Icon
-          name="cog"
-          size={Metrics.icons.medium}
-          color={Colors.secondaryDark}
-        />
-      </TouchableOpacity>
-    );
-  };
   constructor(props) {
     super(props);
     console.log("props", props);
@@ -58,6 +44,20 @@ class ChatScreen extends React.Component {
     roomStore.sendNewMessageNotifications(chatRoom.id);
   };
 
+  renderRightButton = () => {
+    return (
+      <TouchableOpacity
+        style={styles.headerRightButton}
+        onPress={this.handlePressInfo}
+      >
+        <Icon
+          name="cog"
+          size={Metrics.icons.medium}
+          color={Colors.secondaryDark}
+        />
+      </TouchableOpacity>
+    );
+  };
   handlePressInfo = () => {
     const { nav } = this.props;
     const { chatRoom } = nav.params;
