@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>46UKD322UG.io.idev.immotchat</string>
+	<string>46UKD322UG.com.immotchat.test</string>
 	<key>aps-environment</key>
 	<string>development</string>
 </dict>

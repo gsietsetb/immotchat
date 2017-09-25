@@ -3,12 +3,14 @@ import { addNavigationHelpers } from "react-navigation";
 import { inject, observer } from "mobx-react/native";
 import React from "react";
 
-import FCM, {
-  FCMEvent,
+import firebase from "../Lib/firebase";
+
+/*import FCM, {
   NotificationType,
   WillPresentNotificationResult,
   RemoteNotificationResult
 } from "react-native-fcm";
+*/
 
 import { Linking, Platform } from "react-native";
 
@@ -22,7 +24,7 @@ import { routeMatcher } from "route-matcher";
 export default function createNavigationContainer(
   Component: ReactClass<*>
 ): ReactClass<*> {
-  @inject("nav")
+  @inject("nav", "roomStore", "userStore")
   @handleBackButton
   @observer
   class NavigationContainer extends React.Component {
@@ -43,53 +45,37 @@ export default function createNavigationContainer(
         Linking.addEventListener("url", this.handleOpenURL);
       }
 
-      FCM.getInitialNotification().then(notif => {
-        console.log("INITIAL NOTIFICATION", notif);
-      });
+      firebase.messaging().requestPermissions(); //for IOS
+      firebase
+        .messaging()
+        .getToken()
+        .then(token => {
+          console.log("Device FCM Token: ", token);
+        });
 
-      this.notificationListener = FCM.on(FCMEvent.Notification, async notif => {
+      firebase
+        .messaging()
+        .getInitialNotification()
+        .then(notif => {
+          console.log("INITIAL NOTIFICATION", notif);
+        });
+
+      /*this.notificationListener = firebase.messaging().onMessage(notif => {
         console.log("notif: ", notif);
-        if (notif.local_notification) {
-          //this is a local notification
-        }
-        if (notif.opened_from_tray) {
-          console.log("opened_from_tray: ", notif);
-          //app is open/resumed because user clicked banner
-        }
-
-        if (Platform.OS === "ios") {
-          //optional
-          //iOS requires developers to call completionHandler to end notification process.
-          //This library handles it for you automatically with default behavior (for remote notification, finish with NoData; for WillPresent, finish depend on "show_in_foreground"). However if you want to return different result, follow the following code to override
-          //notif._notificationType is available for iOS platfrom
-          switch (notif._notificationType) {
-            case NotificationType.Remote:
-              notif.finish(RemoteNotificationResult.NewData); //other types available: RemoteNotificationResult.NewData, RemoteNotificationResult.ResultFailed
-              break;
-            case NotificationType.NotificationResponse:
-              notif.finish();
-              break;
-            case NotificationType.WillPresent:
-              notif.finish(WillPresentNotificationResult.All); //other types available: WillPresentNotificationResult.None
-              break;
-          }
-        } else {
-          FCM.presentLocalNotification({
-            id: notif.room,
-            title: notif.fcm.title,
-            body: notif.fcm.body,
-            sound: "default",
-            priority: "high",
-            click_action: "ACTION",
-            icon: "ic_launcher",
-            show_in_foreground: true
-          });
-        }
+      });*/
+      firebase.messaging().onMessage(message => {
+        console.log("message: ", message);
+        // TODO
       });
-      this.refreshTokenListener = FCM.on(FCMEvent.RefreshToken, token => {
+      firebase.messaging().onTokenRefresh(token => {
+        console.log("Refreshed FCM token: ", token);
+      });
+
+      /*this.refreshTokenListener = firebase.messaging().onTokenRefresh(token => {
         console.log("refresh token: ", token);
         // fcm token may not be available on first load, catch it here
-      });
+      });*/
+
       /*
       Linking.getInitialURL()
         .then(url => {
@@ -122,6 +108,8 @@ export default function createNavigationContainer(
     }
     componentDidUnMount() {
       Linking.removeEventListener("url", this.handleOpenURL);
+      //this.notificationListener.remove();
+      //this.refreshTokenListener.remove();
     }
 
     handleOpenURL = event => {
@@ -158,7 +146,7 @@ export default function createNavigationContainer(
     };
 
     navigate = url => {
-      const { nav } = this.props;
+      const { nav, userStore, roomStore } = this.props;
 
       if (url) {
         const route = url.replace(/.*?:\/\//g, "");
@@ -168,6 +156,7 @@ export default function createNavigationContainer(
         if (found) {
           console.log("found", found);
           const { roomId } = found;
+          roomStore.enterRoom(roomId, userStore.currentUser);
           nav.navigate("Chat", { chatRoom: { id: roomId } });
         }
       }

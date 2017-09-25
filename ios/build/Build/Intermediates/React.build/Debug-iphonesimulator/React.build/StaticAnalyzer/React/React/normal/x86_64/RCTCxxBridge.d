@@ -20,6 +20,7 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/CxxBridge/RCTCxxBridgeDelegate.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/CxxModule/RCTCxxModule.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/CxxModule/RCTCxxUtils.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSCExecutor.h \
@@ -412,6 +413,7 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Profiler/RCTProfile.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Modules/RCTRedBox.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTErrorCustomizer.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/CxxUtils/RCTFollyConvert.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/CxxNativeModule.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/CxxModule.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/Instance.h \

@@ -4,7 +4,6 @@ import { observable, createTransformer, action, computed } from "mobx";
 
 import moment from "moment";
 
-import FCM from "react-native-fcm";
 import { persist, create } from "mobx-persist";
 
 import firebase from "../Lib/firebase";
@@ -20,11 +19,25 @@ class UserStore {
   info = null;
 
   @computed
+  get isLoggedIn() {
+    if (this.info) {
+      return true;
+    }
+    return;
+  }
+
+  @computed
   get currentUser() {
-    console.log("userInfo currentUser", firebase.auth().currentUser);
-    let user = firebase.auth().currentUser;
+    //console.log("userInfo currentUser", firebase.auth().currentUser);
+    return this.info;
+  }
+
+  @action
+  refreshUser() {
+    //console.log("userInfo currentUser", firebase.auth().currentUser);
+    /*let user = firebase.auth().currentUser;
     if (user) {
-      return {
+      this.info = {
         displayName: user.displayName,
         email: user.email,
         emailVerified: user.emailVerified,
@@ -33,14 +46,14 @@ class UserStore {
         refreshToken: user.refreshToken,
         uid: user.uid
       };
-    }
+    }*/
   }
 
   @action
   hydrateComplete() {
     this.hydrated = true;
 
-    console.log("hydrateComplete");
+    console.log("userStore hydrateComplete");
   }
 
   @action
@@ -132,8 +145,9 @@ class UserStore {
 
   @action
   logout() {
+    this.info = null;
     if (this.info && this.info.uid) {
-      FCM.unsubscribeFromTopic(`user-${this.info.uid}`);
+      firebase.messaging().unsubscribeFromTopic(`user-${this.info.uid}`);
     }
     this.fetching = true;
     firebase
@@ -142,7 +156,6 @@ class UserStore {
       .then(
         () => {
           this.fetching = false;
-          this.info = null;
         },
         error => {
           this.fetching = false;

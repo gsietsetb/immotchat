@@ -1,6 +1,5 @@
 import { AsyncStorage, ListView } from "react-native";
 
-import FCM from "react-native-fcm";
 import { Platform } from "react-native";
 
 import { observable, createTransformer, action, computed } from "mobx";
@@ -26,8 +25,21 @@ class ChatRoomStore {
   @observable hydrated = false;
   @observable fetching = false;
 
+  @persist("object")
+  @observable
+  inviteData = null;
+
   ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   usersDS = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+
+  @action
+  hydrateComplete() {
+    this.hydrated = true;
+
+    /* TODO - invite data pending */
+
+    console.log("ChatRoomStore hydrateComplete");
+  }
 
   @computed
   get count() {
@@ -54,17 +66,21 @@ class ChatRoomStore {
       database.ref("rooms/" + room + "/users/" + me.uid).set(me);
     }
 
-    FCM.requestPermissions();
-    FCM.getFCMToken().then(token => {
-      console.log("getFCMToken", token);
-    });
+    if (Platform.OS === "ios") {
+      firebase.messaging().requestPermissions();
+    }
+    firebase
+      .messaging()
+      .getToken()
+      .then(token => {
+        console.log("Device FCM Token: ", token);
+      });
+    firebase.messaging().subscribeToTopic(`user-${me.uid}`);
     /*if (Platform.OS === "ios") {
       FCM.getAPNSToken().then(token => {
         console.log("APNS TOKEN (getFCMToken)", token);
       });
     }*/
-
-    FCM.subscribeToTopic(`user-${me.uid}`);
   }
 
   @action
@@ -117,22 +133,30 @@ class ChatRoomStore {
   }
 
   @action
-  getList() {
-    console.log("getList start");
-    database.ref("rooms").on("value", snapshot => {
-      const results = snapshot.val() || [];
-      console.log("results", results);
-      this.list = Object.keys(results).map(key => {
-        results[key].id = key;
-        return results[key];
-      });
+  getList(user) {
+    console.log("getList start", user);
+    if (user && user.uid) {
+      database
+        .ref("rooms")
+        .orderByChild(`users/${user.uid}/uid`)
+        .equalTo(user.uid)
+        .on("value", snapshot => {
+          const results = snapshot.val() || [];
+          console.log("results", results);
+          this.list = Object.keys(results).map(key => {
+            results[key].id = key;
+            return results[key];
+          });
 
-      console.log("getList result", this.list);
-    });
+          console.log("getList result", this.list);
+        });
+    }
   }
 }
 
 export default (roomStore = new ChatRoomStore());
 
-//const hydrate = create({ storage: AsyncStorage, jsonify: true });
-//hydrate('user', userStore).then(() => { userStore.hydrateComplete() });
+const hydrate = create({ storage: AsyncStorage, jsonify: true });
+hydrate("room", roomStore).then(() => {
+  roomStore.hydrateComplete();
+});

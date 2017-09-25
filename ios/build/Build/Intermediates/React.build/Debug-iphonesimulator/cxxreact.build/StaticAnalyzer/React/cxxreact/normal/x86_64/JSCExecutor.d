@@ -384,12 +384,17 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/json.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCHelpers.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Memory.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/InspectorInterfaces.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSBigString.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSBundleType.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/Platform.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/MessageQueueThread.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/SystraceSection.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSCLegacyTracing.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSCMemory.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSCPerfStats.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSCSamplingProfiler.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSCTracing.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSCUtils.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/JSModulesUnbundle.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/RecoverableError.h
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/Platform.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../ReactCommon/cxxreact/MessageQueueThread.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/RecoverableError.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/ReactCommon/cxxreact/SystraceSection.h

@@ -25,11 +25,14 @@ const colors = {
   text: "#E0D7E5",
   primaryDark: "#2d2d2d",
   primaryNormal: "#2d2d2dCC",
-  secondaryDark: "#00BCD4",
-  secondaryLight: "#00BCD480",
+  secondaryDark: "#5688a2",
+  secondaryLight: "#5688a280",
   primaryLight: "#2d2d2d80",
   whiteFull: "#ffffff",
-  listLineSeparator: "#cccccc"
+  listLineSeparator: "#cccccc",
+  listImageBorder: "#cccccc",
+  tabColor: "#efefef",
+  navBarColor: "#efefef"
 };
 
 export default colors;

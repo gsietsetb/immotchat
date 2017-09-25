@@ -28,5 +28,6 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTViewManager.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/Libraries/Text/RCTBackedTextInputDelegate.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/Libraries/Text/RCTTextSelection.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/Libraries/Text/RCTUITextField.h

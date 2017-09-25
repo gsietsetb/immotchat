@@ -18,4 +18,5 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTAssert.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTUtils.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Profiler/RCTProfile.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h

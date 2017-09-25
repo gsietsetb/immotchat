@@ -31,12 +31,12 @@ export default StyleSheet.create({
     height: 50,
     borderRadius: Metrics.buttonRadius,
     borderWidth: Metrics.smallLine,
-    backgroundColor: "#33333380",
+    backgroundColor: Colors.listImageBorder,
     borderColor: Colors.listImageBorder
   },
   boldLabel: {
     fontWeight: "bold",
-    /*color: Colors.snow,*/
+    color: Colors.secondaryDark,
     textAlign: "left",
     marginBottom: Metrics.smallMargin
   },

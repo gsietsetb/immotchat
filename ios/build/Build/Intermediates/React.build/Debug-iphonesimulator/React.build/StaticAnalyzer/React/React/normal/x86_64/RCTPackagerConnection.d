@@ -21,7 +21,7 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../Libraries/WebSocket/RCTReconnectingWebSocket.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../Libraries/WebSocket/RCTSRWebSocket.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTWebSocketObserverProtocol.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../Libraries/WebSocket/RCTWebSocketObserver.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/DevSupport/RCTPackagerConnectionBridgeConfig.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/DevSupport/RCTPackagerConnectionConfig.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/DevSupport/RCTReloadPackagerMethod.h \

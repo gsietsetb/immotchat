@@ -1,6 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { Colors, Metrics, ApplicationStyles } from '../../Themes/'
-
+import { StyleSheet } from "react-native";
+import { Colors, Metrics, ApplicationStyles } from "../../Themes/";
 
 export default StyleSheet.create({
   ...ApplicationStyles.Text,
@@ -9,16 +8,20 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.background,
     marginTop: 0,
-    alignItems: 'stretch',
-    justifyContent: 'center'
+    alignItems: "stretch",
+    justifyContent: "center"
+  },
+  logoContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#5688a2"
   },
   logo: {
     width: 250,
-    alignSelf: 'center',
-    resizeMode: 'contain'
+    alignSelf: "center",
+    resizeMode: "contain"
   },
-  container: {
-  },
+  container: {},
   form: {
     // backgroundColor: Colors.snow,
     // borderRadius: 4
@@ -26,14 +29,14 @@ export default StyleSheet.create({
   },
   boxGoogle: {
     padding: Metrics.doublePadding,
-    borderStyle: 'dashed',
+    borderStyle: "dashed",
     borderWidth: Metrics.borderLine,
     borderColor: Colors.primary,
-    backgroundColor: '#dfe4e7',
+    backgroundColor: "#dfe4e7",
     marginHorizontal: -1
   },
   googleButton: {
-    backgroundColor: '#35A5AA'
+    backgroundColor: "#35A5AA"
   },
   row: {
     paddingVertical: Metrics.baseMargin
@@ -57,12 +60,12 @@ export default StyleSheet.create({
     color: Colors.steel
   },
   submitRow: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginHorizontal: 0
   },
   spinner: {
-    alignSelf: 'center'
+    alignSelf: "center"
   },
   loginButtonWrapper: {
     marginHorizontal: 0
@@ -78,34 +81,32 @@ export default StyleSheet.create({
     marginTop: 10,
     marginHorizontal: 10,
     borderRadius: 4,
-    justifyContent: 'center',
+    justifyContent: "center",
     backgroundColor: Colors.primaryLight
   },
 
   emptyButton: {
-    backgroundColor: 'transparent'
+    backgroundColor: "transparent"
   },
   emptyButtonText: {
-    textAlign: 'center',
+    textAlign: "center",
     color: Colors.secondaryDark
   },
   activeButton: {
-    backgroundColor: Colors.fire
+    backgroundColor: "#5688a2"
   },
   activeButtonText: {
-    textAlign: 'center',
+    textAlign: "center",
     color: Colors.whiteFull
   },
   loginText: {
-    textAlign: 'center',
+    textAlign: "center",
     color: Colors.silver
   },
   topLogo: {
     height: 50,
     marginTop: Metrics.doubleBaseMargin,
-    alignSelf: 'center',
-    resizeMode: 'contain'
+    alignSelf: "center",
+    resizeMode: "contain"
   }
-
-
 });

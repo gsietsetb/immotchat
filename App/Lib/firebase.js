@@ -1,6 +1,14 @@
 import AppConfig from "../Config/AppConfig";
-import firebase from "firebase";
+//import firebase from "firebase";
 
-firebase.initializeApp(AppConfig.firebaseConfig);
+import RNfirebase from "react-native-firebase";
+
+const firebase = RNfirebase.initializeApp({
+  debug: __DEV__ ? "*" : false,
+  errorOnMissingPlayServices: false,
+  persistence: true
+});
+
+//firebase.initializeApp(AppConfig.firebaseConfig);
 
 export default firebase;

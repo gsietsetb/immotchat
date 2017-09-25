@@ -1,7 +1,6 @@
 dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/immotchat/AppDelegate.m \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/immotchat/AppDelegate.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/Pods/Firebase/Core/Sources/module.modulemap \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBundleURLProvider.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \

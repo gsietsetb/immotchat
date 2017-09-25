@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +39,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RNFirebase.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Yoga.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>leveldb-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +62,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>025AC0066DC478B9EA49EDCAFDAE4867</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>38C6F569010AED07B9DE2D2352EF51B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3DCF2BFC67F03E31AF0BA460B8505911</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>796E75475E8CE9018A13DC2640A727EF</key>
+		<key>6114F7C8E932C8FB4D8F8B320ABA8873</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94337A5472F38625D4DF7C2F530B1582</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B5A332045F283D7CBDB0441FD27CBF17</key>
+		<key>CE408B5A26B3D06727D24A7BBE3E7D4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E208CF439178E30007E622D6F0274C08</key>
+		<key>D7547C77A8D9E6F05651CC80251E9C66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA9D13261AF395CF5D54BB3203DF2A6E</key>
+		<key>DE868725B18AE240E550C5515AE66BC4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F68E60B8851BA2F4FF960CB4662EACC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

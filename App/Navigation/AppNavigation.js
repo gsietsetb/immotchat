@@ -6,55 +6,52 @@ import InfoChatScreen from "../Containers/InfoChatScreen";
 import UserScreen from "../Containers/UserScreen";
 import ProfileScreen from "../Containers/ProfileScreen";
 import LaunchScreen from "../Containers/LaunchScreen";
+import LoginScreen from "../Containers/LoginScreen";
 
 import { Colors, Metrics } from "../Themes";
 import styles from "./Styles/NavigationStyles";
 
 // Manifest of possible screens
-const PrimaryNav = TabNavigator(
+const TabNav = TabNavigator(
   {
-    ChatListScreen: {
+    ChatTab: {
       screen: ChatListScreen
       //tabBarIcon: {}
     },
-    ProfileScreen: {
+    ProfileTab: {
       screen: ProfileScreen
     }
   },
   {
-    tabBarOptions: {
-      activeTintColor: Colors.secondaryDark,
-      inactiveTintColor: Colors.primaryLight,
-      labelStyle: {
-        fontSize: 12
-      },
-      style: {
-        backgroundColor: Colors.clear
-      }
-    },
-
+    headerMode: "none",
+    swipeEnabled: false,
+    animationEnabled: false,
     lazy: true,
+    navigationOptions: { tabBarVisible: false },
     // Default config for all screens
     //headerMode: "none",
-    initialRouteName: "ChatListScreen"
+    initialRouteName: "ChatTab"
   }
 );
 
 const StackNav = StackNavigator(
   {
     Home: {
-      screen: PrimaryNav
+      screen: TabNav
     },
     Chat: { screen: ChatScreen },
     InfoChat: { screen: InfoChatScreen },
-    User: { screen: UserScreen }
+    User: { screen: UserScreen },
+    Login: {
+      screen: LoginScreen,
+      navigationOptions: {
+        header: null
+      }
+    }
   },
   {
+    headerMode: "none",
     navigationOptions: {
-      headerStyle: {
-        marginTop: Metrics.statusBar
-      }
-
       /*headerStyle: {
         marginTop: 24
       }*/

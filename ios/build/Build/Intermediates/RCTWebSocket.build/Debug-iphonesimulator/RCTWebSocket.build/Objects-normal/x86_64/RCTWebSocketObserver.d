@@ -2,7 +2,6 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/Libraries/WebSocket/RCTWebSocketObserver.m \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/Libraries/WebSocket/RCTWebSocketObserver.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTWebSocketObserverProtocol.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \

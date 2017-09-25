@@ -14,8 +14,10 @@ import ReactNative, {
 import { observer, inject } from "mobx-react/native";
 
 import { GiftedChat, MessageText } from "react-native-gifted-chat";
+import NavBar from "../Components/NavBar";
+import Icon from "react-native-vector-icons/Entypo";
 
-import { Metrics } from "../Themes";
+import { Metrics, Colors } from "../Themes";
 
 // Styles
 import styles from "./Styles/ChatScreenStyles";
@@ -26,26 +28,20 @@ import I18n from "react-native-i18n";
 @inject("messageStore", "userStore", "nav", "roomStore")
 @observer
 class ChatScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    const { params = {} } = navigation.state;
-
-    return {
-      title: "chat",
-      headerRight: (
-        <TouchableOpacity
-          style={styles.headerRightButton}
-          onPress={() => params.handlePressInfo()}
-        >
-          <Text style={styles.headerRight}>{I18n.t("Info")}</Text>
-        </TouchableOpacity>
-      )
-    };
+  renderRightButton = () => {
+    return (
+      <TouchableOpacity
+        style={styles.headerRightButton}
+        onPress={this.handlePressInfo}
+      >
+        <Icon
+          name="cog"
+          size={Metrics.icons.medium}
+          color={Colors.secondaryDark}
+        />
+      </TouchableOpacity>
+    );
   };
-
-  state: {
-    dataSource: Object
-  };
-
   constructor(props) {
     super(props);
     console.log("props", props);
@@ -54,13 +50,12 @@ class ChatScreen extends React.Component {
   }
 
   componentDidMount = () => {
-    const { nav, messageStore, navigation, roomStore } = this.props;
+    const { nav, messageStore, roomStore } = this.props;
     const { chatRoom } = nav.params;
     console.log("chatRoom", chatRoom);
 
     messageStore.getMessages(chatRoom.id, 0);
     roomStore.sendNewMessageNotifications(chatRoom.id);
-    navigation.setParams({ handlePressInfo: this.handlePressInfo });
   };
 
   handlePressInfo = () => {
@@ -178,6 +173,7 @@ class ChatScreen extends React.Component {
     console.log("count messages", messageStore.count);
     return (
       <View style={styles.container}>
+        <NavBar leftButton={true} rightButton={this.renderRightButton()} />
         {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
         {this.renderMessages()}
       </View>

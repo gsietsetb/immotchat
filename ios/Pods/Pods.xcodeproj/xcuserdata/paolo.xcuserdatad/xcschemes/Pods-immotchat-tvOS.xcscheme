@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B5A332045F283D7CBDB0441FD27CBF17'
+               BlueprintIdentifier = 'D7547C77A8D9E6F05651CC80251E9C66'
                BlueprintName = 'Pods-immotchat-tvOS'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-immotchat-tvOS.a'>

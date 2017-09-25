@@ -12,7 +12,7 @@ export default StyleSheet.create({
   },
   listHeaderContaiener: {
     padding: 10,
-    backgroundColor: "#ff000080"
+    backgroundColor: Colors.secondaryLight
   },
   listFooterContaiener: {
     padding: 10,

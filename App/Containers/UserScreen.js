@@ -14,6 +14,7 @@ import { observer, inject } from "mobx-react/native";
 
 import { Metrics } from "../Themes";
 
+import NavBar from "../Components/NavBar";
 // external libs
 import Icon from "react-native-vector-icons/Entypo";
 
@@ -51,10 +52,9 @@ class UserScreen extends React.Component {
     if (user) {
       return (
         <View style={styles.userContainer}>
-          {user.displayName &&
-            <Text style={styles.infoText}>
-              {user.displayName}
-            </Text>}
+          {user.displayName && (
+            <Text style={styles.infoText}>{user.displayName}</Text>
+          )}
         </View>
       );
     }
@@ -62,10 +62,13 @@ class UserScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.container}>
-        {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
-        {this.userInfo()}
-      </ScrollView>
+      <View style={styles.mainContainer}>
+        <NavBar leftButton={true} />
+        <ScrollView style={styles.container}>
+          {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
+          {this.userInfo()}
+        </ScrollView>
+      </View>
     );
   }
 }

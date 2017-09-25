@@ -15,7 +15,7 @@ import {
 import { observer, inject } from "mobx-react/native";
 
 import { Metrics } from "../Themes";
-
+import NavBar from "../Components/NavBar";
 // external libs
 //import Icon from "react-native-vector-icons/FontAwesome";
 import Icon from "react-native-vector-icons/Entypo";
@@ -84,9 +84,7 @@ class InfoChatScreen extends React.Component {
         style={styles.userRow}
         onPress={() => this.pressRow(rowData)}
       >
-        <Text>
-          {rowData.displayName}
-        </Text>
+        <Text>{rowData.displayName}</Text>
       </TouchableOpacity>
     );
   };
@@ -105,22 +103,20 @@ class InfoChatScreen extends React.Component {
     if (chatRoom) {
       return (
         <View style={styles.headerContainer}>
-          {chatRoom.venue &&
+          {chatRoom.venue && (
             <View style={styles.imgContainer}>
               <Image
                 source={{ uri: chatRoom.venue.img }}
                 style={styles.image}
               />
-            </View>}
+            </View>
+          )}
 
           <View style={styles.rightContainer}>
-            <Text style={styles.boldLabel}>
-              {chatRoom.title}
-            </Text>
-            {chatRoom.venue &&
-              <Text style={styles.label}>
-                {chatRoom.venue.name}
-              </Text>}
+            <Text style={styles.boldLabel}>{chatRoom.title}</Text>
+            {chatRoom.venue && (
+              <Text style={styles.label}>{chatRoom.venue.name}</Text>
+            )}
           </View>
         </View>
       );
@@ -131,9 +127,7 @@ class InfoChatScreen extends React.Component {
     const { roomStore } = this.props;
     return (
       <View style={styles.listHeaderContaiener}>
-        <Text>
-          {I18n.t("Partecipants")}
-        </Text>
+        <Text>{I18n.t("Partecipants")}</Text>
       </View>
     );
   };
@@ -157,11 +151,14 @@ class InfoChatScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.container}>
-        {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
-        {this.renderHeader()}
-        {this.userList()}
-      </ScrollView>
+      <View style={styles.mainContainer}>
+        <NavBar leftButton={true} />
+        <ScrollView style={styles.container}>
+          {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
+          {this.renderHeader()}
+          {this.userList()}
+        </ScrollView>
+      </View>
     );
   }
 }

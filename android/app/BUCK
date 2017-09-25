@@ -45,12 +45,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "io.idev.immotchat",
+    package = "com.immotchat.test",
 )
 
 android_resource(
     name = "res",
-    package = "io.idev.immotchat",
+    package = "com.immotchat.test",
     res = "src/main/res",
 )
 

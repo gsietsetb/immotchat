@@ -18,6 +18,7 @@ import Icon from "react-native-vector-icons/Entypo";
 
 import { Metrics, Colors } from "../Themes";
 // external libs
+import TabBar from "../Components/TabBar";
 
 import Animatable from "react-native-animatable";
 
@@ -27,7 +28,7 @@ import styles from "./Styles/ProfileScreenStyles";
 
 import { observer, inject } from "mobx-react/native";
 
-@inject("userStore")
+@inject("userStore", "nav")
 @observer
 class ProfileScreen extends React.Component {
   static navigationOptions = {
@@ -80,8 +81,9 @@ class ProfileScreen extends React.Component {
   };
 
   logout = () => {
-    const { userStore } = this.props;
+    const { userStore, nav } = this.props;
     userStore.logout();
+    nav.reset("Login");
   };
 
   logoutButton = () => {
@@ -409,10 +411,13 @@ class ProfileScreen extends React.Component {
     console.log("props", this.props);
 
     return (
-      <ScrollView style={styles.container}>
-        {this.renderAccountInfo()}
-        {this.renderLogin()}
-      </ScrollView>
+      <View style={styles.mainContainer}>
+        <ScrollView style={styles.container}>
+          {this.renderAccountInfo()}
+          {this.renderLogin()}
+        </ScrollView>
+        <TabBar selected="profile" />
+      </View>
     );
   }
 }

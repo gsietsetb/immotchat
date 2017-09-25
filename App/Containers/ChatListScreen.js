@@ -18,7 +18,8 @@ import { Metrics } from "../Themes";
 //import Icon from "react-native-vector-icons/FontAwesome";
 import Icon from "react-native-vector-icons/Entypo";
 //import Animatable from "react-native-animatable";
-
+import TabBar from "../Components/TabBar";
+import NavBar from "../Components/NavBar";
 import ChatRow from "../Components/ChatRow";
 // Styles
 import styles from "./Styles/ChatListScreenStyles";
@@ -54,15 +55,21 @@ class ChatListScreen extends React.Component {
     // If you need scroll to bottom, consider http://bit.ly/2bMQ2BZ
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     //const { fetchRoomsAttempt } = this.props;
     //fetchRoomsAttempt();
 
-    const { roomStore } = this.props;
+    const { nav, roomStore } = this.props;
 
-    roomStore.getList();
+    if (userStore.currentUser) {
+      //roomStore.refreshUser();
+      roomStore.getList(userStore.currentUser);
+    } else {
+      nav.reset("Login");
+    }
+
     //roomStore.subscribeToConversations();
-  };
+  }
 
   componentWillReact = () => {
     console.log("componentWillReact");
@@ -156,9 +163,11 @@ class ChatListScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <NavBar title="ImmoTchat" />
         {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
 
         {this.renderList()}
+        <TabBar selected="chat" />
       </View>
     );
   }

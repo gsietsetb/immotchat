@@ -23,6 +23,7 @@ const metrics = {
   horizontalLineHeight: 1,
   searchBarHeight: 30,
   statusBar: Platform.OS === "ios" ? 0 : 0,
+  statusBarHeight: Platform.OS === "ios" ? 18 : 0,
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
   navBarHeight: Platform.OS === "ios" ? 64 : 54,

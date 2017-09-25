@@ -29,6 +29,8 @@ export default StyleSheet.create({
   },
   listContent: {},
   headerRightButton: {
-    margin: Metrics.baseSpace
+    marginRight: Metrics.baseSpace,
+    justifyContent: "center",
+    alignItems: "center"
   }
 });

@@ -40,4 +40,5 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTShadowView.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTRootViewInternal.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTScrollableProtocol.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTShadowView+Hierarchy.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Modules/RCTUIManagerObserverCoordinator.h

@@ -7,17 +7,6 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTInvalidating.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/MessageQueueThread.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/CxxModule/RCTCxxUtils.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTConvert.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTAnimationType.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTBorderStyle.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSCExecutor.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSCNativeModules.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/ModuleRegistry.h \
@@ -400,4 +389,6 @@ dependencies: \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/Unicode.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/noncopyable.h \
   /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/json.h \
-  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCHelpers.h
+  /Users/paolo/Documents/RNWorkspace/immochat-app/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCHelpers.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/paolo/Documents/RNWorkspace/immochat-app/node_modules/react-native/React/Base/RCTAssert.h
