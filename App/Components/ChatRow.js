@@ -25,7 +25,6 @@ export default class ChatRow extends React.Component {
   render() {
     const { data } = this.props;
 
-    let image = data.title;
     let roomImg = `https://initials.herokuapp.com/${data.title}`;
     if (data.venue && data.venue.img) {
       roomImg = data.venue.img;

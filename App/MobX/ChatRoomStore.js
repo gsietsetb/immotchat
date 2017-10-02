@@ -9,6 +9,9 @@ import moment from "moment";
 import { persist, create } from "mobx-persist";
 import firebase from "../Lib/firebase";
 
+import FCM from "react-native-fcm";
+
+//const FCM = firebase.messaging()
 const database = firebase.database();
 
 import API from "../Services/Api";
@@ -67,20 +70,17 @@ class ChatRoomStore {
     }
 
     if (Platform.OS === "ios") {
-      firebase.messaging().requestPermissions();
+      FCM.requestPermissions();
     }
-    firebase
-      .messaging()
-      .getToken()
-      .then(token => {
-        console.log("Device FCM Token: ", token);
-      });
-    firebase.messaging().subscribeToTopic(`user-${me.uid}`);
-    /*if (Platform.OS === "ios") {
+    FCM.getFCMToken().then(token => {
+      console.log("Device FCM Token: ", token);
+    });
+    FCM.subscribeToTopic(`user-${me.uid}`);
+    if (Platform.OS === "ios") {
       FCM.getAPNSToken().then(token => {
         console.log("APNS TOKEN (getFCMToken)", token);
       });
-    }*/
+    }
   }
 
   @action

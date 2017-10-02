@@ -7,27 +7,28 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-#import <Firebase.h>
+//#import <Firebase.h>
 #import "AppDelegate.h"
-
+#import <react-native-branch/RNBranch.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
-#import <React/RCTLinkingManager.h>
-#import "RNFirebaseMessaging.h"
-
+//#import <React/RCTLinkingManager.h>
+//#import "RNFirebaseMessaging.h"
+#import "RNFIRMessaging.h"
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-  return [RCTLinkingManager application:application openURL:url
-                      sourceApplication:sourceApplication annotation:annotation];
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+  if (![RNBranch.branch application:application openURL:url options:options]) {
+    // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
+  }
+  return YES;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [RNBranch initSessionWithLaunchOptions:launchOptions isReferrable:YES];
   NSURL *jsCodeLocation;
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
@@ -54,6 +55,7 @@
   return YES;
 }
 
+/* react-native-firebase
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
   [RNFirebaseMessaging didReceiveLocalNotification:notification];
 }
@@ -90,30 +92,50 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)())completionHandler {
   [RNFirebaseMessaging didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
 }
+*/
 
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
+ {
+   [RNFIRMessaging willPresentNotification:notification withCompletionHandler:completionHandler];
+ }
+
+ - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler
+ {
+   [RNFIRMessaging didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+ }
+
+ //You can skip this method if you don't want to use local notification
+ -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+   [RNFIRMessaging didReceiveLocalNotification:notification];
+ }
+
+ - (void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler{
+   [RNFIRMessaging didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+ }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
  {
  NSLog(@"error! \n");
  NSLog(@"error %@", error);
  }
- 
+
  - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
  {
  NSString * deviceTokenString = [[[[deviceToken description]
  stringByReplacingOccurrencesOfString: @"<" withString: @""]
  stringByReplacingOccurrencesOfString: @">" withString: @""]
  stringByReplacingOccurrencesOfString: @" " withString: @""];
- 
+
  NSLog(@"The generated device token string is : %@",deviceTokenString);
  }
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
  restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
 {
- return [RCTLinkingManager application:application
+ /*return [RCTLinkingManager application:application
                   continueUserActivity:userActivity
-                    restorationHandler:restorationHandler];
+                    restorationHandler:restorationHandler];*/
+  return [RNBranch continueUserActivity:userActivity];
 }
 
 

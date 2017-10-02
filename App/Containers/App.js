@@ -3,6 +3,7 @@ import DebugConfig from "../Config/DebugConfig";
 import React, { Component } from "react";
 
 import { Provider } from "mobx-react/native";
+import branch from "react-native-branch";
 
 import { autorun } from "mobx";
 
@@ -21,7 +22,23 @@ autorun("NavigationStore State", () => {
   console.log("current state", stores.nav.state);
 });
 
-class App extends Component {
+let _unsubscribeFromBranch = null;
+export default class App extends Component {
+  componentWillMount() {
+    //OneSignal.addEventListener("received", this.onReceived);
+
+    _unsubscribeFromBranch = branch.subscribe(results => {
+      const { error, params } = results;
+      console.log("error", error);
+      console.log("params", params);
+    });
+  }
+  componentWillUnmount() {
+    if (_unsubscribeFromBranch) {
+      _unsubscribeFromBranch();
+      _unsubscribeFromBranch = null;
+    }
+  }
   render() {
     return (
       <Provider {...stores}>
@@ -30,6 +47,3 @@ class App extends Component {
     );
   }
 }
-
-// allow reactotron overlay for fast design in dev mode
-export default (DebugConfig.useReactotron ? console.tron.overlay(App) : App);

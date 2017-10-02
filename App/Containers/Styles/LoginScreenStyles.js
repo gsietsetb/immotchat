@@ -39,18 +39,18 @@ export default StyleSheet.create({
     backgroundColor: "#35A5AA"
   },
   row: {
-    paddingVertical: Metrics.baseMargin
+    paddingTop: Metrics.smallSpace
     // paddingHorizontal: Metrics.baseMargin
   },
   rowLabel: {
     color: Colors.charcoal
   },
   textInput: {
-    marginHorizontal: Metrics.section,
+    marginHorizontal: Metrics.baseSpace,
     height: Metrics.inputHeight,
     borderRadius: Metrics.baseRadius,
     borderWidth: Metrics.borderLine,
-    borderColor: Colors.primary,
+    borderColor: Colors.primaryLight,
     backgroundColor: Colors.snow,
     padding: Metrics.baseSpace,
     color: Colors.primary
@@ -78,15 +78,14 @@ export default StyleSheet.create({
   standardButton: {
     flex: 1,
     height: Metrics.buttonHeight,
-    marginTop: 10,
-    marginHorizontal: 10,
-    borderRadius: 4,
+    marginTop: Metrics.smallSpace,
+    marginHorizontal: Metrics.baseSpace,
+    borderRadius: Metrics.baseRadius,
     justifyContent: "center",
     backgroundColor: Colors.primaryLight
   },
-
   emptyButton: {
-    backgroundColor: "transparent"
+    backgroundColor: Colors.transparent
   },
   emptyButtonText: {
     textAlign: "center",

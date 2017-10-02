@@ -37,8 +37,8 @@ class LoginScreen extends React.Component {
     this.state = {
       fullName: "",
       username: "",
-      email: "paolo@idev.io",
-      password: "123456",
+      email: __DEV__ ? "paolo@idev.io" : "",
+      password: __DEV__ ? "123456" : "",
       password2: "",
       typeForm: "login"
     };

@@ -133,6 +133,10 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-branch')
+    compile project(':react-native-fcm')
+    compile project(':react-native-device-info')
+    compile project(':react-native-config')
     compile project(':react-native-i18n')
     compile project(':react-native-vector-icons')
     compile 'com.google.firebase:firebase-core:10.0.1'

@@ -5,7 +5,9 @@ import { observable, createTransformer, action, computed } from "mobx";
 import moment from "moment";
 
 import { persist, create } from "mobx-persist";
+import FCM from "react-native-fcm";
 
+//const FCM = firebase.messaging()
 import firebase from "../Lib/firebase";
 
 class UserStore {
@@ -151,7 +153,7 @@ class UserStore {
   logout() {
     this.info = null;
     if (this.info && this.info.uid) {
-      firebase.messaging().unsubscribeFromTopic(`user-${this.info.uid}`);
+      FCM.unsubscribeFromTopic(`user-${this.info.uid}`);
     }
     this.fetching = true;
     firebase

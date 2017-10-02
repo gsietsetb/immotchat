@@ -12,7 +12,7 @@ const metrics = {
   doubleSpace: 20,
   baseRadius: 4,
   borderLine: 0.5,
-  inputHeight: 45,
+  inputHeight: 44,
   line: 1,
   smallLine: 0.5,
   baseSpace: 10,
@@ -27,7 +27,7 @@ const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
   navBarHeight: Platform.OS === "ios" ? 64 : 54,
-  buttonHeight: 45,
+  buttonHeight: 44,
   buttonRadius: 4,
   icons: {
     tiny: 15,

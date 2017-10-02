@@ -1,59 +1,46 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+#platform :ios, '9.2'
 
-pod "Yoga", :path => "../node_modules/react-native/ReactCommon/yoga"
-pod 'React', :path => '../node_modules/react-native', :subspecs => [
-  'BatchedBridge', # Required For React Native 0.45.0+
-  'Core',
-  'DevSupport'
-  # Add any other subspecs you want to use in your project
-]
 
-pod 'Firebase/Auth'
-pod 'Firebase/Analytics'
-pod 'Firebase/Core'
-pod 'Firebase/Crash'
-pod 'Firebase/Database'
-pod 'Firebase/DynamicLinks'
-pod 'Firebase/Messaging'
-pod 'Firebase/RemoteConfig'
-pod 'Firebase/Storage'
-
-pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
 
 
 target 'immotchat' do
+  platform :ios, '8.0'
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
   # Pods for immotchat
 
+#    pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+#    pod 'React', :path => '../node_modules/react-native', :subspecs => [
+#    'BatchedBridge', # Required For React Native 0.45.0+
+#    'Core',
+#    'DevSupport',
+#  #  'RCTText',
+#    'RCTNetwork',
+#    'RCTWebSocket', # needed for debugging
+#    # Add any other subspecs you want to use in your project
+#    ]
+
+#pod 'Firebase/Analytics'
+#pod 'Firebase/Auth'
+#pod 'Firebase/Core'
+#pod 'Firebase/Database'
+#pod 'Firebase/Messaging'
+pod 'FirebaseMessaging'
+pod "FirebaseInstanceID", "2.0.0"
+#pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
 
 
-  target 'immotchatTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end
 
-target 'immotchat-tvOS' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
 
-  # Pods for immotchat-tvOS
-
-  target 'immotchat-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    if target.name == "React"
-      target.remove_from_project
-    end
-  end
-end
+#post_install do |installer|
+#  installer.pods_project.targets.each do |target|
+#    if target.name == "React"
+#      target.remove_from_project
+#    end
+#  end
+#  system("rm -rf Pods/leveldb-library/port/win")
+#end

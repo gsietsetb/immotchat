@@ -4,117 +4,30 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>GTMSessionFetcher.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>Pods-immotchat-tvOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
-		</dict>
-		<key>Pods-immotchat-tvOSTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
 		<key>Pods-immotchat.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
-		</dict>
-		<key>Pods-immotchatTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
 		<key>Protobuf.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>10</integer>
-		</dict>
-		<key>RNFirebase.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>11</integer>
-		</dict>
-		<key>Yoga.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>12</integer>
-		</dict>
-		<key>leveldb-library.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>025AC0066DC478B9EA49EDCAFDAE4867</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>38C6F569010AED07B9DE2D2352EF51B6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3DCF2BFC67F03E31AF0BA460B8505911</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6114F7C8E932C8FB4D8F8B320ABA8873</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>94337A5472F38625D4DF7C2F530B1582</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B03558A2F9922551CA63F46438ABC1D1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CE408B5A26B3D06727D24A7BBE3E7D4C</key>
+		<key>796E75475E8CE9018A13DC2640A727EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -124,17 +37,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7547C77A8D9E6F05651CC80251E9C66</key>
+		<key>E208CF439178E30007E622D6F0274C08</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE868725B18AE240E550C5515AE66BC4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F68E60B8851BA2F4FF960CB4662EACC9</key>
+		<key>FA9D13261AF395CF5D54BB3203DF2A6E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
