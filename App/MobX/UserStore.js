@@ -7,14 +7,26 @@ import moment from "moment";
 import { persist, create } from "mobx-persist";
 import FCM from "react-native-fcm";
 
+import branch from "react-native-branch";
+
+import I18n from "react-native-i18n";
 //const FCM = firebase.messaging()
 import firebase from "../Lib/firebase";
-
+const database = firebase.database();
 class UserStore {
   @observable errorMessage = "";
 
   @observable hydrated = false;
   @observable fetching = false;
+
+  @observable branchObj = null;
+
+  @persist
+  @observable
+  roomAfterLogin = null;
+  @persist
+  @observable
+  userInviteAfterLogin = null;
 
   @persist("object")
   @observable
@@ -34,6 +46,34 @@ class UserStore {
     return this.info;
   }
 
+  @action
+  async createBranchObj() {
+    console.log("this.info", this.info);
+
+    let branchUniversalObject = await branch.createBranchUniversalObject(
+      `userinvite/${this.currentUser.uid}`, // canonical identifier
+      {
+        title: "Download ImmoTchat",
+        contentDescription: "Download ImmoTchat to chat with me",
+        metadata: {
+          inviter_name: this.currentUser.displayName,
+          user_id: this.currentUser.uid
+        }
+      }
+    );
+    console.log("branchUniversalObject", branchUniversalObject);
+    this.branchObj = branchUniversalObject;
+
+    //this.inviteLink = ciccio.url;
+  }
+
+  @action
+  releaseBranch() {
+    if (this.branchObj) {
+      this.branchObj.release();
+      this.branchObj = null;
+    }
+  }
   @action
   refreshUser() {
     //console.log("userInfo currentUser", firebase.auth().currentUser);
@@ -98,6 +138,15 @@ class UserStore {
       .then(user => {
         console.log("result", user);
         this.fetching = false;
+
+        database.ref("users/" + user.uid).set({
+          uid: user.uid,
+          displayName: user.displayName,
+          email: user.email,
+          phoneNumber: user.phoneNumber,
+          photoURL: user.photoURL
+        });
+
         this.saveProfile(profile);
       })
       .catch(error => {
@@ -155,16 +204,16 @@ class UserStore {
     if (this.info && this.info.uid) {
       FCM.unsubscribeFromTopic(`user-${this.info.uid}`);
     }
-    this.fetching = true;
+    //this.fetching = true;
     firebase
       .auth()
       .signOut()
       .then(
         () => {
-          this.fetching = false;
+          //this.fetching = false;
         },
         error => {
-          this.fetching = false;
+          //this.fetching = false;
         }
       );
   }
@@ -174,7 +223,17 @@ export default (userStore = new UserStore());
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
+    branch.setIdentity(user.uid);
     console.log("user connected", user);
+
+    database.ref("users/" + user.uid).set({
+      uid: user.uid,
+      displayName: user.displayName,
+      email: user.email,
+      phoneNumber: user.phoneNumber,
+      photoURL: user.photoURL
+    });
+
     userStore.info = {
       displayName: user.displayName,
       email: user.email,
@@ -187,6 +246,7 @@ firebase.auth().onAuthStateChanged(user => {
   } else {
     userStore.info = null;
     console.log("user disconnected");
+    branch.logout();
   }
 });
 

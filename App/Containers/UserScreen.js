@@ -27,13 +27,13 @@ import I18n from "react-native-i18n";
 @inject("nav")
 @observer
 class UserScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
+  /*static navigationOptions = ({ navigation }) => {
     const { user } = navigation.state.params;
 
     return {
       title: user.displayName
     };
-  };
+  };*/
 
   constructor(props) {
     super(props);
@@ -44,6 +44,19 @@ class UserScreen extends React.Component {
     const { nav } = this.props;
     const { user } = nav.params;
     //roomStore.getDetails(chatRoom.id);
+  };
+
+  userAvatar = () => {
+    const { nav } = this.props;
+    const { user } = nav.params;
+    if (user) {
+      let avatarImg = `https://initials.herokuapp.com/${user.displayName}`;
+      return (
+        <View>
+          <Image source={{ uri: avatarImg }} style={styles.avatar} />
+        </View>
+      );
+    }
   };
 
   userInfo = () => {
@@ -66,6 +79,7 @@ class UserScreen extends React.Component {
         <NavBar leftButton={true} />
         <ScrollView style={styles.container}>
           {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
+          {this.userAvatar()}
           {this.userInfo()}
         </ScrollView>
       </View>

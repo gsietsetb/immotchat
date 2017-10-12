@@ -142,7 +142,7 @@ export default function createNavigationContainer(
         */
     }
     componentDidUnMount() {
-      Linking.removeEventListener("url", this.handleOpenURL);
+      //Linking.removeEventListener("url", this.handleOpenURL);
       this.notificationListener.remove();
       this.refreshTokenListener.remove();
     }

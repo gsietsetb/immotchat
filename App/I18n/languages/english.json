@@ -36,5 +36,12 @@
   "my_chats": "Chats",
   "Info": "Info",
   "Partecipants": "Partecipants",
-  "invite_more": "Invite more users"
+  "invite_more": "Invite more users",
+  "invites": {
+    "open_chat": "Go to chat",
+    "ignore": "Ignore",
+    "user_invitation": "{{name}} invited you to chat in Immotchat",
+    "room_invitation": "You've been invited to join a chat in Immotchat",
+    "user_invitation_anonymous": "Someone invited you to chat in Immotchat"
+  }
 }

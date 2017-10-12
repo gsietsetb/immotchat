@@ -6,6 +6,7 @@ import {
   Text,
   View,
   TextInput,
+  Image,
   KeyboardAvoidingView,
   TouchableOpacity,
   LayoutAnimation
@@ -293,10 +294,11 @@ class ProfileScreen extends React.Component {
     console.log("info", info);
 
     if (info) {
+      let avatarImg = `https://initials.herokuapp.com/${info.displayName}`;
       return (
         <View>
           <View header>
-            <Text style={styles.cardTitle}>{I18n.t("Account Info")}</Text>
+            <Image source={{ uri: avatarImg }} style={styles.avatar} />
           </View>
           {info.displayName !== "" && (
             <View>

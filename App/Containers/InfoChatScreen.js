@@ -42,14 +42,6 @@ import I18n from "react-native-i18n";
 @inject("roomStore", "userStore", "nav")
 @observer
 class InfoChatScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    const { chatRoom } = navigation.state.params;
-
-    return {
-      title: chatRoom.title
-    };
-  };
-
   constructor(props) {
     super(props);
     // If you need scroll to bottom, consider http://bit.ly/2bMQ2BZ
@@ -77,6 +69,8 @@ class InfoChatScreen extends React.Component {
 
   pressRow = rowData => {
     const { nav } = this.props;
+
+    console.log("user", rowData);
     nav.navigate("User", { user: rowData });
   };
   renderRow = rowData => {
@@ -105,12 +99,11 @@ class InfoChatScreen extends React.Component {
     const { chatRoom } = nav.params;
     console.log("chatRoom", chatRoom);
 
-    let roomImg = `https://initials.herokuapp.com/${chatRoom.title}`;
-    if (chatRoom.venue && chatRoom.venue.img) {
-      roomImg = chatRoom.venue.img;
-    }
-
-    if (chatRoom) {
+    if (chatRoom && !chatRoom.direct) {
+      let roomImg = `https://initials.herokuapp.com/${chatRoom.title}`;
+      if (chatRoom.venue && chatRoom.venue.img) {
+        roomImg = chatRoom.venue.img;
+      }
       return (
         <View style={styles.headerContainer}>
           <View style={styles.imgContainer}>
@@ -176,14 +169,17 @@ class InfoChatScreen extends React.Component {
   };
 
   renderInvite = () => {
-    return (
-      <RoundedButton
-        onPress={() => {
-          this.share();
-        }}
-        text={I18n.t("invite_more")}
-      />
-    );
+    const { nav } = this.props;
+    const { chatRoom } = nav.params;
+    if (chatRoom && !chatRoom.direct)
+      return (
+        <RoundedButton
+          onPress={() => {
+            this.share();
+          }}
+          text={I18n.t("invite_more")}
+        />
+      );
   };
   render() {
     return (

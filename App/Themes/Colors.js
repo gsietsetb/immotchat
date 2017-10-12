@@ -32,7 +32,9 @@ const colors = {
   listLineSeparator: "#cccccc",
   listImageBorder: "#cccccc",
   tabColor: "#efefef",
-  navBarColor: "#efefef"
+  navBarColor: "#efefef",
+  blueFull: "#5688a2",
+  blueLight: "#5688a280"
 };
 
 export default colors;

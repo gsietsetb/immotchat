@@ -63,6 +63,26 @@ class ChatRoomStore {
   }
 
   @action
+  async createChatWithUser(user, me) {
+    let users = {};
+
+    if (user) {
+      users[user.uid] = user;
+    }
+    if (me) {
+      me.refreshToken = null;
+      users[me.uid] = me;
+    }
+
+    let newRoom = await database.ref("rooms").push({
+      title: "Direct Chat",
+      direct: true,
+      users: users
+    }).key;
+
+    return newRoom;
+  }
+  @action
   enterRoom(room, me) {
     if (me) {
       me.refreshToken = null;

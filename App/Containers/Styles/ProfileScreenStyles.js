@@ -84,5 +84,12 @@ export default StyleSheet.create({
   },
   infoText: {
     padding: Metrics.baseSpace
+  },
+  avatar: {
+    marginTop: 50,
+    width: 100,
+    height: 100,
+    alignSelf: "center",
+    borderRadius: 50
   }
 });

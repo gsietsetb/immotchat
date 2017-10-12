@@ -22,6 +22,9 @@ import Icon from "react-native-vector-icons/Entypo";
 import TabBar from "../Components/TabBar";
 import NavBar from "../Components/NavBar";
 import ChatRow from "../Components/ChatRow";
+
+import LinkModal from "../Components/LinkModal";
+
 // Styles
 import styles from "./Styles/ChatListScreenStyles";
 
@@ -40,6 +43,10 @@ class ChatListScreen extends React.Component {
   constructor(props) {
     super(props);
     // If you need scroll to bottom, consider http://bit.ly/2bMQ2BZ
+
+    this.state = {
+      modalVisible: false
+    };
   }
 
   componentDidMount() {
@@ -51,12 +58,41 @@ class ChatListScreen extends React.Component {
     if (userStore.currentUser) {
       //roomStore.refreshUser();
       roomStore.getList(userStore.currentUser);
+      userStore.createBranchObj();
+      //userStore.roomAfterLogin = "-KnZUG1LMdOlBa9ixO24";
     } else {
       nav.reset("Login");
     }
 
     //roomStore.subscribeToConversations();
   }
+
+  inviteUser = async () => {
+    console.log("inviteUser");
+    const { userStore } = this.props;
+    if (userStore.branchObj) {
+      const linkProperties = {
+        feature: "share",
+        channel: "in-app"
+      };
+      const shareOptions = {
+        messageHeader: "Download ImmoTchat",
+        messageBody: "Download ImmoTchat to chat with me"
+      };
+
+      let {
+        channel,
+        completed,
+        error
+      } = await userStore.branchObj.showShareSheet(
+        shareOptions,
+        linkProperties
+      );
+      console.log("channel", channel);
+      console.log("completed", completed);
+      console.log("error", error);
+    }
+  };
   createNew = () => {
     const { userStore, nav, roomStore } = this.props;
     if (userStore.currentUser) {
@@ -67,11 +103,11 @@ class ChatListScreen extends React.Component {
     return (
       <TouchableOpacity
         style={styles.headerRightButton}
-        onPress={this.createNew}
+        onPress={this.inviteUser}
       >
         <Icon
-          name="add-to-list"
-          size={Metrics.icons.medium}
+          name="add-user"
+          size={Metrics.icons.small}
           color={Colors.secondaryDark}
         />
       </TouchableOpacity>
@@ -106,7 +142,10 @@ class ChatListScreen extends React.Component {
     return <MyCustomCell title={rowData.title} description={rowData.description} />
   *************************************************************/
   renderRow = rowData => {
-    return <ChatRow onPress={this.onPress} data={rowData} />;
+    const { userStore } = this.props;
+    return (
+      <ChatRow userStore={userStore} onPress={this.onPress} data={rowData} />
+    );
   };
 
   /* ***********************************************************
@@ -166,9 +205,17 @@ class ChatListScreen extends React.Component {
       />
     );
   };
+
+  renderModal = () => {
+    const { userStore } = this.props;
+    if (userStore.roomAfterLogin || userStore.userInviteAfterLogin) {
+      return <LinkModal visible={true} />;
+    }
+  };
   render() {
     return (
       <View style={styles.container}>
+        {this.renderModal()}
         <NavBar title="ImmoTchat" rightButton={this.renderRightButton()} />
         {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
 
