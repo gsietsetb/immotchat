@@ -48,9 +48,16 @@ class InfoChatScreen extends React.Component {
   }
 
   componentDidMount = () => {
-    const { nav } = this.props;
+    const { nav, roomStore } = this.props;
     const { chatRoom } = nav.params;
     roomStore.getDetails(chatRoom.id);
+
+    if (chatRoom.id) {
+      //roomStore.refreshUser();
+
+      roomStore.createBranchObj(chatRoom.id);
+      //userStore.roomAfterLogin = "-KnZUG1LMdOlBa9ixO24";
+    }
   };
 
   componentWillReact = () => {
@@ -147,25 +154,36 @@ class InfoChatScreen extends React.Component {
     );
   };
 
-  share = () => {
-    const { nav } = this.props;
-    const { chatRoom } = nav.params;
+  componentWillUnmount() {
+    const { roomStore } = stores;
+    roomStore.releaseBranch();
+  }
 
-    let url = `immo://room/${chatRoom.id}`;
-    Share.share(
-      {
-        message: "Invite to use ImmoTchat",
-        url,
-        title: "Invite to chat"
-      },
-      {
-        dialogTitle: "Invite to use ImmoTchat"
-      }
-    )
-      .then(result => {
-        console.log("result", result);
-      })
-      .catch(error => console.log("error", error));
+  share = async () => {
+    console.log("inviteUser");
+    const { roomStore } = this.props;
+    if (roomStore.branchObj) {
+      const linkProperties = {
+        feature: "share",
+        channel: "in-app"
+      };
+      const shareOptions = {
+        messageHeader: "Download ImmoTchat",
+        messageBody: "Download ImmoTchat to chat with me"
+      };
+
+      let {
+        channel,
+        completed,
+        error
+      } = await userStore.branchObj.showShareSheet(
+        shareOptions,
+        linkProperties
+      );
+      console.log("channel", channel);
+      console.log("completed", completed);
+      console.log("error", error);
+    }
   };
 
   renderInvite = () => {

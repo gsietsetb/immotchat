@@ -49,6 +49,9 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
+  logo: {
+    width: 120
+  },
   title: {
     fontSize: 17,
     color: Colors.secondaryDark,

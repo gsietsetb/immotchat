@@ -6,6 +6,8 @@ import { observable, createTransformer, action, computed } from "mobx";
 import _ from "lodash";
 import moment from "moment";
 
+import branch from "react-native-branch";
+
 import { persist, create } from "mobx-persist";
 import firebase from "../Lib/firebase";
 
@@ -28,6 +30,8 @@ class ChatRoomStore {
   @observable hydrated = false;
   @observable fetching = false;
 
+  @observable branchObj = null;
+
   @persist("object")
   @observable
   inviteData = null;
@@ -42,6 +46,31 @@ class ChatRoomStore {
     /* TODO - invite data pending */
 
     console.log("ChatRoomStore hydrateComplete");
+  }
+
+  @action
+  async createBranchObj(room) {
+    let branchUniversalObject = await branch.createBranchUniversalObject(
+      `roominvite/${room}`, // canonical identifier
+      {
+        title: "Download ImmoTchat",
+        contentDescription: "Download ImmoTchat to chat with me",
+        metadata: {
+          roomId: room
+        }
+      }
+    );
+    console.log("branchUniversalObject", branchUniversalObject);
+    this.branchObj = branchUniversalObject;
+
+    //this.inviteLink = ciccio.url;
+  }
+  @action
+  releaseBranch() {
+    if (this.branchObj) {
+      this.branchObj.release();
+      this.branchObj = null;
+    }
   }
 
   @computed

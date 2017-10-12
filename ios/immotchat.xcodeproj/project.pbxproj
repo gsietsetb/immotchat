@@ -27,6 +27,7 @@
 		17EF439472414030B67FC114 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFAC56FDEC1442DA92CC853 /* libRNDeviceInfo.a */; };
 		185818BBD4A54F23A4FF47E9 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37548B8202BC48F5B840654D /* Feather.ttf */; };
 		1A41DA7CFEA2462EA104FED0 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 631D1A25CD644CA4B164FC0D /* Octicons.ttf */; };
+		1D8D1F347D59466C98AF9C66 /* branch.json in Resources */ = {isa = PBXBuildFile; fileRef = D97F7383E202405693697FFB /* branch.json */; };
 		2938E5367E0C489EB9CA97FE /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FED5AABA17F140DCB1412A88 /* libRNVectorIcons.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -39,6 +40,7 @@
 		2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E941DF850E9000B6D8A /* libRCTText-tvOS.a */; };
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* immotchatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* immotchatTests.m */; };
+		32E41799805D4CFA8A22993C /* libreact-native-branch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6410F6C26B1F4DB39C927FEF /* libreact-native-branch.a */; };
 		38AA0D2F78D86D02ED78CABF /* libPods-immotchat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A582839017286E3899891FD8 /* libPods-immotchat.a */; };
 		40854A3295384670B569EE6E /* libjschelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3579BE3033004909BA56D727 /* libjschelpers.a */; };
 		45594BA0B89E41A084A99093 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1896505B7F34F3085BFADFB /* SimpleLineIcons.ttf */; };
@@ -60,8 +62,6 @@
 		AB8DF85A429543AAB93B997F /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BBBCEE725464CA69CACD386 /* MaterialCommunityIcons.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		BBD43AB5779B43239DC457F6 /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE40EB2948848D2A66A7BF7 /* libcxxreact.a */; };
-		C78A326C0A224E7B80FD2E32 /* branch.json in Resources */ = {isa = PBXBuildFile; fileRef = 77A419195A20422B8DDF4CF0 /* branch.json */; };
-		C979060193D344F3A8EC97EE /* libreact-native-branch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EDFABDD43841638FDB61B9 /* libreact-native-branch.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,19 +247,19 @@
 			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
 			remoteInfo = "React-tvOS";
 		};
+		5282F1DD1F8FC56800E3F089 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F7C256228984724B39D45C1 /* RNBranch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B3A3CC361C5B0A070016AC52;
+			remoteInfo = RNBranch;
+		};
 		5287DCFD1F7A39C900A8A799 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 15A9F857AB8A49AD8F438013 /* RNFIRMessaging.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNFIRMessaging;
-		};
-		528B7DDF1F7E4F2000A31750 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9C1CC93848334635BD9F07BA /* RNBranch.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B3A3CC361C5B0A070016AC52;
-			remoteInfo = RNBranch;
 		};
 		52ABDFC11F2CABAB00D0BA19 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -372,11 +372,11 @@
 		15A9F857AB8A49AD8F438013 /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFIRMessaging.xcodeproj; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* immotchat-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "immotchat-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* immotchat-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "immotchat-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F7C256228984724B39D45C1 /* RNBranch.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNBranch.xcodeproj; path = "../node_modules/react-native-branch/ios/RNBranch.xcodeproj"; sourceTree = "<group>"; };
 		3049AB91E5340AA8B8DA996B /* Pods-immotchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-immotchat.release.xcconfig"; path = "Pods/Target Support Files/Pods-immotchat/Pods-immotchat.release.xcconfig"; sourceTree = "<group>"; };
 		345CF672797646169F38AA7B /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		3579BE3033004909BA56D727 /* libjschelpers.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libjschelpers.a; sourceTree = "<group>"; };
 		37548B8202BC48F5B840654D /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		38EDFABDD43841638FDB61B9 /* libreact-native-branch.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libreact-native-branch.a"; sourceTree = "<group>"; };
 		4B688A672D7F4CD1A19F42E0 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		521ECCA51F2F1D87002DD6DC /* immo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = immo.ttf; sourceTree = "<group>"; };
 		521ECCA61F2F1D87002DD6DC /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -388,14 +388,13 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5FFAC56FDEC1442DA92CC853 /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
 		631D1A25CD644CA4B164FC0D /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		6410F6C26B1F4DB39C927FEF /* libreact-native-branch.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libreact-native-branch.a"; sourceTree = "<group>"; };
 		70F5FC415C344DA6A188FC4E /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		71C2995EBD594F0399DF791E /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		77A419195A20422B8DDF4CF0 /* branch.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = branch.json; path = ../branch.json; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		79223022C61C2622AE4E85DF /* Pods-immotchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-immotchat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-immotchat/Pods-immotchat.debug.xcconfig"; sourceTree = "<group>"; };
 		7BBBCEE725464CA69CACD386 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		9C1CC93848334635BD9F07BA /* RNBranch.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNBranch.xcodeproj; path = "../node_modules/react-native-branch/ios/RNBranch.xcodeproj"; sourceTree = "<group>"; };
 		9DE40EB2948848D2A66A7BF7 /* libcxxreact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libcxxreact.a; sourceTree = "<group>"; };
 		A3E48A4825C645E19BBCBD16 /* libRNFIRMessaging.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFIRMessaging.a; sourceTree = "<group>"; };
 		A582839017286E3899891FD8 /* libPods-immotchat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-immotchat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -406,6 +405,7 @@
 		C6B358BE668759623FAD2D72 /* libPods-immotchatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-immotchatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A59E0A63DA4641A9776A4E /* libReactNativeConfig.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeConfig.a; sourceTree = "<group>"; };
 		D92499A44D7B43E690A68DC1 /* libReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReact.a; sourceTree = "<group>"; };
+		D97F7383E202405693697FFB /* branch.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = branch.json; path = ../branch.json; sourceTree = "<group>"; };
 		E48969ED1350435C8163818B /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeConfig.xcodeproj; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; };
 		E88FFFE814E3497DB065DAC5 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		E994697076CDEEA0D9701900 /* libPods-immotchat-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-immotchat-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -447,7 +447,7 @@
 				5E7FB80715214D0EA6DE3696 /* libReactNativeConfig.a in Frameworks */,
 				17EF439472414030B67FC114 /* libRNDeviceInfo.a in Frameworks */,
 				99DC637F938648A1A7ECE14E /* libRNFIRMessaging.a in Frameworks */,
-				C979060193D344F3A8EC97EE /* libreact-native-branch.a in Frameworks */,
+				32E41799805D4CFA8A22993C /* libreact-native-branch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +564,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				77A419195A20422B8DDF4CF0 /* branch.json */,
+				D97F7383E202405693697FFB /* branch.json */,
 			);
 			name = immotchat;
 			sourceTree = "<group>";
@@ -604,18 +604,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5287DCD91F7A39C900A8A799 /* Products */ = {
+		5282F1BA1F8FC56700E3F089 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5287DCFE1F7A39C900A8A799 /* libRNFIRMessaging.a */,
+				5282F1DE1F8FC56800E3F089 /* libreact-native-branch.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		528B7DBC1F7E4F2000A31750 /* Products */ = {
+		5287DCD91F7A39C900A8A799 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				528B7DE01F7E4F2000A31750 /* libreact-native-branch.a */,
+				5287DCFE1F7A39C900A8A799 /* libRNFIRMessaging.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -707,7 +707,7 @@
 				E48969ED1350435C8163818B /* ReactNativeConfig.xcodeproj */,
 				70F5FC415C344DA6A188FC4E /* RNDeviceInfo.xcodeproj */,
 				15A9F857AB8A49AD8F438013 /* RNFIRMessaging.xcodeproj */,
-				9C1CC93848334635BD9F07BA /* RNBranch.xcodeproj */,
+				2F7C256228984724B39D45C1 /* RNBranch.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -953,8 +953,8 @@
 					ProjectRef = E48969ED1350435C8163818B /* ReactNativeConfig.xcodeproj */;
 				},
 				{
-					ProductGroup = 528B7DBC1F7E4F2000A31750 /* Products */;
-					ProjectRef = 9C1CC93848334635BD9F07BA /* RNBranch.xcodeproj */;
+					ProductGroup = 5282F1BA1F8FC56700E3F089 /* Products */;
+					ProjectRef = 2F7C256228984724B39D45C1 /* RNBranch.xcodeproj */;
 				},
 				{
 					ProductGroup = 522F08C21F798EB300C3F754 /* Products */;
@@ -1152,18 +1152,18 @@
 			remoteRef = 527E36F01F790F57001168BB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		5282F1DE1F8FC56800E3F089 /* libreact-native-branch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libreact-native-branch.a";
+			remoteRef = 5282F1DD1F8FC56800E3F089 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5287DCFE1F7A39C900A8A799 /* libRNFIRMessaging.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNFIRMessaging.a;
 			remoteRef = 5287DCFD1F7A39C900A8A799 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		528B7DE01F7E4F2000A31750 /* libreact-native-branch.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libreact-native-branch.a";
-			remoteRef = 528B7DDF1F7E4F2000A31750 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		52ABDFC21F2CABAB00D0BA19 /* libthird-party.a */ = {
@@ -1281,7 +1281,7 @@
 				45594BA0B89E41A084A99093 /* SimpleLineIcons.ttf in Resources */,
 				85C49873755F4D79985D1598 /* Zocial.ttf in Resources */,
 				185818BBD4A54F23A4FF47E9 /* Feather.ttf in Resources */,
-				C78A326C0A224E7B80FD2E32 /* branch.json in Resources */,
+				1D8D1F347D59466C98AF9C66 /* branch.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1468,7 +1468,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1502,7 +1501,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1520,6 +1518,7 @@
 			baseConfigurationReference = 79223022C61C2622AE4E85DF /* Pods-immotchat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = immotchat/immotchat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1556,6 +1555,7 @@
 			baseConfigurationReference = 3049AB91E5340AA8B8DA996B /* Pods-immotchat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = immotchat/immotchat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1614,7 +1614,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1658,7 +1657,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1690,7 +1688,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.immotchat-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1715,7 +1712,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.immotchat-tvOSTests";

@@ -22,7 +22,13 @@ class NavBar extends React.Component {
   renderTitle = () => {
     const { showLogo, title } = this.props;
     if (showLogo) {
-      return <Image source={Images.logoSmall} resizeMode="contain" />;
+      return (
+        <Image
+          source={Images.logoHeader}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+      );
     } else {
       return (
         <Text numberOfLines={1} style={styles.title} ellipsizeMode="tail">

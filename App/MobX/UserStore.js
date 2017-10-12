@@ -56,8 +56,7 @@ class UserStore {
         title: "Download ImmoTchat",
         contentDescription: "Download ImmoTchat to chat with me",
         metadata: {
-          inviter_name: this.currentUser.displayName,
-          user_id: this.currentUser.uid
+          userId: this.currentUser.uid
         }
       }
     );

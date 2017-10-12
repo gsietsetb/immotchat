@@ -53,7 +53,7 @@ class ChatListScreen extends React.Component {
     //const { fetchRoomsAttempt } = this.props;
     //fetchRoomsAttempt();
 
-    const { nav, roomStore } = this.props;
+    const { nav, roomStore, userStore } = this.props;
 
     if (userStore.currentUser) {
       //roomStore.refreshUser();
@@ -66,6 +66,11 @@ class ChatListScreen extends React.Component {
 
     //roomStore.subscribeToConversations();
   }
+
+  componentWillUnmount = () => {
+    const { userStore } = stores;
+    userStore.releaseBranch();
+  };
 
   inviteUser = async () => {
     console.log("inviteUser");
@@ -216,7 +221,7 @@ class ChatListScreen extends React.Component {
     return (
       <View style={styles.container}>
         {this.renderModal()}
-        <NavBar title="ImmoTchat" rightButton={this.renderRightButton()} />
+        <NavBar showLogo={true} rightButton={this.renderRightButton()} />
         {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
 
         {this.renderList()}
