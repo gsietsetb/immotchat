@@ -68,7 +68,7 @@ class ChatListScreen extends React.Component {
   }
 
   componentWillUnmount = () => {
-    const { userStore } = stores;
+    const { userStore } = this.props;
     userStore.releaseBranch();
   };
 

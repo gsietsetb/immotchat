@@ -21,7 +21,8 @@ export default StyleSheet.create({
   },
   backButton: {
     marginLeft: 10,
-    justifyContent: "center",
+    justifyContent: "flex-start",
+    width: 50,
     alignItems: "center",
     flex: 0,
     flexDirection: "row"

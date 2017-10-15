@@ -63,7 +63,6 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
-
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -76,7 +75,5 @@
 	<false/>
 	<key>branch_key</key>
 	<string>key_live_mfCRdSkNj6CuDtzV4JJksbkbCrlsZsri</string>
-
 </dict>
-
 </plist>

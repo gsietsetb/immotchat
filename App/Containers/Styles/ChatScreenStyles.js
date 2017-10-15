@@ -29,8 +29,10 @@ export default StyleSheet.create({
   },
   listContent: {},
   headerRightButton: {
+    width: 50,
+    height: 45,
     marginRight: Metrics.baseSpace,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "flex-end"
   }
 });

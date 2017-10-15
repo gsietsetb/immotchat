@@ -155,7 +155,7 @@ class InfoChatScreen extends React.Component {
   };
 
   componentWillUnmount() {
-    const { roomStore } = stores;
+    const { roomStore } = this.props;
     roomStore.releaseBranch();
   }
 
