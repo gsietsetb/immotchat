@@ -53,8 +53,8 @@ class UserStore {
     let branchUniversalObject = await branch.createBranchUniversalObject(
       `userinvite/${this.currentUser.uid}`, // canonical identifier
       {
-        title: "Download ImmoTchat",
-        contentDescription: "Download ImmoTchat to chat with me",
+        title: I18n.t("invites.download.title"),
+        contentDescription: I18n.t("invites.download.inviteUser"),
         metadata: {
           userId: this.currentUser.uid
         }

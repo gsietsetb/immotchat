@@ -15,7 +15,40 @@
       },
       "oauth_client": [
         {
-          "client_id": "31411352854-ovak6o7cere78k12mrivrad0cbco9vq5.apps.googleusercontent.com",
+          "client_id":
+            "31411352854-ovak6o7cere78k12mrivrad0cbco9vq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN-WHb6e1k-BVgU_eoid-MEwdRgpyGxeU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31411352854:android:ac74ee9b99c00b7a",
+        "android_client_info": {
+          "package_name": "com.immotchat.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id":
+            "31411352854-ovak6o7cere78k12mrivrad0cbco9vq5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

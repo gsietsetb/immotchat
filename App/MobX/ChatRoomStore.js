@@ -20,6 +20,8 @@ import API from "../Services/Api";
 import FixtureAPI from "../Services/FixtureApi";
 import DebugConfig from "../Config/DebugConfig";
 
+import I18n from "react-native-i18n";
+
 const api = DebugConfig.useFixtures ? FixtureAPI : API.create();
 
 console.log(DebugConfig.useFixtures);
@@ -53,8 +55,8 @@ class ChatRoomStore {
     let branchUniversalObject = await branch.createBranchUniversalObject(
       `roominvite/${room}`, // canonical identifier
       {
-        title: "Download ImmoTchat",
-        contentDescription: "Download ImmoTchat to chat with me",
+        title: I18n.t("invites.download.title"),
+        contentDescription: I18n.t("invites.download.inviteUser"),
         metadata: {
           roomId: room
         }

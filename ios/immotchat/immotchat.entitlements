@@ -6,8 +6,10 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>immotchat.test-app.link</string>
-		<string>immotchat.app.link</string>
+		<string>applinks:immotchat.app.link</string>
+		<string>applinks:immotchat.app-test.link</string>
+		<string>applinks:immotchat-alternate.app.link</string>
+		<string>applinks:immotchat-alternate.app-test.link</string>
 	</array>
 </dict>
 </plist>

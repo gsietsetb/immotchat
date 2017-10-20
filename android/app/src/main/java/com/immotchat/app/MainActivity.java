@@ -1,4 +1,4 @@
-package com.immotchat.test;
+package com.immotchat.app;
 
 import com.facebook.react.ReactActivity;
 import io.branch.rnbranch.*;

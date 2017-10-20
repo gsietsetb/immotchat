@@ -8,7 +8,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_578323cf333257ff755ee67af0555f8a386ee2df.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/okhttp-urlconnection-3.6.0_578323cf333257ff755ee67af0555f8a386ee2df.jar" />
     </item>
     <item
         is-multidex="false"
@@ -21,12 +21,30 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.2.6/jars/classes.jar"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.48.3/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="8f83a631abfdb790591a720e0cfb5f41329831c3">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-10.2.6_85641d9f2295cb9f3753eeb6e730bfde6d181052.jar" />
+        sha1="56d3e81fee5f47a7a12ab65f4620f580c9c71d1e">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.react-react-native-0.48.3_a2523e443c2095419dd67a58eb42baa6274cb341.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/immotchat/react-native-branch/unspecified/jars/libs/Branch-2.12.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="87461f7c826f4046878595c43944c04848f8447b">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/Branch-2.12.1_d80a8d5fa7707e210c283ddd397a113102a1fecd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.48.3/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/infer-annotations-4.0_293750dee9d9b02e05be3a35184c6751c1af350d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -39,6 +57,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_bc4ebda040a90eec84a0e18c8ab93ee3313c2d2a.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.2.6/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -48,57 +75,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_5a514448a4113024826c0cb79242e8a831520395.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.2/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="576b5113887747a7592650ae14d980e1c57983c4">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.47.2_a4745e71f0926dc049dbf70d30314b9165a8916d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.2.0_b34c2b9c802caa339505cb2181d5b5a095843aba.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.0.1_280c85a08ac9ef3dc67ba4acba7afb98c4d85d9f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.0.1_41c20106353499bd7177038c2c29d96c771ed362.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.0.1_65a63ac3903ded908d6ab8ef3999518b5909e8e4.jar" />
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fresco-1.3.0_c765752d50678f00a3be3983c38cc9b60e219a80.jar" />
     </item>
     <item
         is-multidex="false"
@@ -111,66 +93,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.0.1_86210f2cf780d288ac1cfe4c69929c0a3b4b589c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.2.6/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d79c575e1d97b0298746a4c032a0c1dc201c2f82">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-10.2.6_7c0f46d18c2901e19ef7c25e631275e21a6b19cd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.2.0_ccf4c373ca7327da4a874f8305de5fe29e27b76d.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.6/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
         <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.6_4412aeb1754f22f6a65741a06e8ebcd9a11546eb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.2/jars/libs/infer-annotations-4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_78301a43b661af30c4f0c5b2f5e9aa728b21ccb6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.2.0_e4838ec9adeba6f256a4b060ed06e6520b5408dc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.2.0_85e8725e3469c3e76199019a89bc3158177ef1de.jar" />
     </item>
     <item
         is-multidex="false"
@@ -183,93 +111,39 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.2.6/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9ff5114aff3bfb387577ba92a11408dcf0441c24">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-messaging-10.2.6_fa4282c9206d339efd65eed2a452cf68ac45e16a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/immotchat/react-native-i18n/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="265d5a9330ad02283d16b9886fe8acebb306cd1e">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/immotchat-react-native-i18n-unspecified_ad6a3161d1bad86fc19ad4ccd13c807434a5c0c1.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/paolo/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_756747837b286a723d4035e5b11740880163b790.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/javax.inject-1_756747837b286a723d4035e5b11740880163b790.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.0.1/jars/classes.jar"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/immotchat/react-native-config/unspecified/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.0.1_95cc997b80b4bddfb42fc4379593e850956b4bf3.jar" />
+        sha1="45586990f4e58db6e2dcad1eeb38f0179ba6b06d">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/immotchat-react-native-config-unspecified_e35f6b7b6de667167f5b635cebf81dbd1382f08b.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.0.1/jars/classes.jar"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/10.2.6/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.0.1_8a566a1a156f39edf88f379f6119ca15a0bfae07.jar" />
+        sha1="215363c803a119c16058c8bc0ccd0a4ee62e7157">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-gcm-10.2.6_8e632bcfc68c205c9d6d00ec23448781245dd0c6.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/immotchat/react-native-fcm/unspecified/jars/classes.jar"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="64d1a97aafb7f2f35bbf5e71798160b3180bd6d1">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/immotchat-react-native-fcm-unspecified_a44d5b26bfa779e89f6811e1d34f7ee8db2e55c8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.0.1_a4024cd756538dbd9763335488272ac6f8b8dcd8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.0.1_1a1e51a03c93b884578f4c5e298b8648d8a483a3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.2.6/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="0a534044236cf81b002604643d23e7ca56bd1ee0">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-10.2.6_cf13509a3aafd544acab04ea5aa3e25d6af0e407.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.2.6/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="da832806828ba407284c0c4b1d87b8f9ed9f2520">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-10.2.6_d5b5b3546be224b06ac6cd40872306fa1b7e3499.jar" />
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fbcore-1.3.0_07f042505c887c293658d6c287068a916080a4d5.jar" />
     </item>
     <item
         is-multidex="false"
@@ -287,16 +161,16 @@
         optimize="true"
         revision="23.0.1"
         sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_d1306e7b1f607fe9bd3694acb66ff0645785f623.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/support-annotations-25.2.0_d1306e7b1f607fe9bd3694acb66ff0645785f623.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.0.1/jars/classes.jar"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.6/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.0.1_fd4e270096f9334b80d69f7c97ed4cdcd8392fd5.jar" />
+        sha1="3f0a85e6000998ac322ddd50750e8cf91601a84b">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-base-10.2.6_d2ffd3421628a4fc79268784a39fb2320654c576.jar" />
     </item>
     <item
         is-multidex="false"
@@ -309,30 +183,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/immotchat/react-native-vector-icons/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="b319ff9834bbeb9be394687614eb86892699ea14">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/immotchat-react-native-vector-icons-unspecified_fdeae7e003f6ba81de30c992e7bb4044f7508045.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.0.1_48606dd8557bb386a34d311f0f99d2ec6375564c.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/immotchat/react-native-fcm/unspecified/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="6f4193e6a0afb80def681504e96127e6114032c0">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/immotchat-react-native-fcm-unspecified_495bc356a17cd1057bfefc0d728ca5bb99fe7fcc.jar" />
+        sha1="0c3de4c9ce51277aed48d3daa7551a965297d0e8">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/immotchat-react-native-fcm-unspecified_495bc356a17cd1057bfefc0d728ca5bb99fe7fcc.jar" />
     </item>
     <item
         is-multidex="false"
@@ -342,6 +198,24 @@
         revision="23.0.1"
         sha1="248218f163235e6d2a81188eaa1db0ec61193055">
         <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/me.leolin-ShortcutBadger-1.1.17_b06975d87c047dd6c24dde268288d514ba2fe448.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/immotchat/react-native-device-info/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2e4336ffc2b7653868134d7f6f8b28523ef54645">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/immotchat-react-native-device-info-unspecified_f24edae0a7f1b36d30bcbd096188ff7a1363635d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-1.3.0_e2e86931e6ee18efcbb39be2d56c9a64dbf1ba3b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -372,12 +246,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.6/jars/classes.jar"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="900a290779cdb4eb2e63b6f7806fd9f30ce4f60d">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.6_3d8197673b266fdf1acbfd75bd2141c1657b22ab.jar" />
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-drawee-1.3.0_e9e4c008fa3ab0d4a75520c40789c6c2945bc3b4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -386,7 +260,16 @@
         optimize="true"
         revision="23.0.1"
         sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_5dfeace59ebebf43e250ec39101045accc368461.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/okhttp-3.6.0_5dfeace59ebebf43e250ec39101045accc368461.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/immotchat/react-native-branch/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="82d449a893231251f50e1279074629ffe9128212">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/immotchat-react-native-branch-unspecified_161ff1d3025392cfb8af57463b4ed9cf107f961e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -404,25 +287,25 @@
         optimize="true"
         revision="23.0.1"
         sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_16a86ded309545177b3a8f2a1209ec38b813086e.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/jsr305-3.0.0_16a86ded309545177b3a8f2a1209ec38b813086e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/jars/classes.jar"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.2.0_2f4404d454a2044b398559159511a0b8f61bcf8e.jar" />
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-base-1.3.0_c70159f805eb730cefd4886a042a50374ba94ddb.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.6/jars/classes.jar"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/10.2.6/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.6_32319ac4c631b0901d52c0a3396df3a1effabfc4.jar" />
+        sha1="d54a722583c1b99735f62d395806fa38bf5669ae">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-iid-10.2.6_71fe41904472a480e9b62f3b305e6b68e2d8f6bd.jar" />
     </item>
     <item
         is-multidex="false"
@@ -431,7 +314,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_7082949e05394354e1e9a7c786834d2bef1cab13.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/okio-1.13.0_7082949e05394354e1e9a7c786834d2bef1cab13.jar" />
     </item>
     <item
         is-multidex="false"
@@ -444,39 +327,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/me.leolin/ShortcutBadger/1.1.10/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c6792fb346d4f11b5b9e6c1a5df3a99c140a9e70">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/me.leolin-ShortcutBadger-1.1.10_73a1ec19ee198be6872342680f46bd4aeab57fc6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.2.0_aa2fd9f02cc8e259d06de9623bcc0c502ecd6a68.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.6/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="900a290779cdb4eb2e63b6f7806fd9f30ce4f60d">
         <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.6_160b035c66dfcab33290433b978d291fc934a907.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.0.1_5b541792dcb284d8df562ec973307f29b8e89a68.jar" />
     </item>
     <item
         is-multidex="false"
@@ -498,15 +354,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.0.1_4cad794617d2e364dfdaaf8f1fcb44f533f5e2e7.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -516,21 +363,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.46.4/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c5526d30278eb171f4a1325bd6b927c9057c91f4">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.46.4_2ea3240508efa76dfa9d7871767726ec2d8fdd2c.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/paolo/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_a9cb8dce915c94a1587e6b0543077f129070e1fb.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/bolts-tasks-1.4.0_a9cb8dce915c94a1587e6b0543077f129070e1fb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -539,34 +377,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_78e6d2e928a02df31e793e4b18f923a61ce1dcdb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.46.4/jars/libs/infer-annotations-4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_8095be9a2cd4219fd00b51effffe843c147049f9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_e06601aabf32f33f708ce3847c6f69e178f86de6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_8736a4e4947d0f00f2d505340d0c8f8419f695f4.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/staticlayout-proxy-1.0_78e6d2e928a02df31e793e4b18f923a61ce1dcdb.jar" />
     </item>
     <item
         is-multidex="false"

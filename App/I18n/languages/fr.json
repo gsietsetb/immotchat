@@ -1,25 +1,44 @@
 {
-  "signIn": "Se connecter",
-  "logOut": "Se déconnecter",
-  "loginLogoutExampleTitle": "Connexion / Déconnexion Redux + Sagas Exemple",
-  "progressiveImageComponent": "Composant Image Progressive",
-  "api": "Mon Dieu!  Une API pour vous!",
-  "locale": "I18n Paramètres régionaux",
-  "rnVectorIcons": "RN icônes vectorielles",
-  "loginWithFacebook": "Se connecter avec Facebook",
-  "rni18n": "RN i18n",
-  "igniteGenerated": "Ignite Générer des Écrans",
+  "signIn": "Connectez-vous",
+  "logOut": "Déconnectez-vous",
+  "api": "API",
+  "locale": "I18n Locale",
   "forgotPassword": "Mot de passe oublié",
-  "username": "Nom d'utilisateur",
+  "username": "Utilisateur",
   "password": "Mot de passe",
   "cancel": "Annuler",
   "welcome": "Bienvenue",
   "login": "S'identifier",
-  "tempIndicator": "C",
-  "componentExamples": "Exemples de Composants",
-  "usageExamples": "Exemples d'utilisation",
-  "apiTesting": "API Testing",
-  "themeSettings": "Réglage des thèmes",
-  "deviceDetails": "Détails du périphérique",
-  "noItems": "Aucun"
+  "noItems": "Pas d'objet",
+  "search": "Rechercher",
+  "ImmoTchat": "immotchat",
+  "Profile": "Profil",
+  "register": "Enregistrez-vous",
+  "retype_password": "Confirmez votre mot de passe",
+  "already_have_account": "J'ai déjà un compte",
+  "signUp": "Créer un compte",
+  "placeholder_fullName": "Nom Prénom",
+  "Account Info": "Informations",
+  "Disconnect": "Déconnectez-vous",
+  "email": "Adresse email",
+  "login needed":
+    "Merci de vous connecter ou de créer un compte pour rejoindre une conversation",
+  "my_chats": "Messages",
+  "Info": "Info",
+  "Partecipants": "Participants",
+  "invite_more": "Inviter des personnes",
+  "invites": {
+    "open_chat": "Rejoignez une conversation",
+    "ignore": "Ignorer",
+    "user_invitation":
+      "Vous êtes invité à rejoindre une conversation dans immotchat",
+    "room_invitation":
+      "Vous avez été invité à rejoindre une conversation dans immotchat",
+    "user_invitation_anonymous":
+      "{{name}} vous invite à converser dans immotchat",
+    "download": {
+      "title": "Téléchargez immotchat",
+      "inviteUser": "Téléchargez immotchat pour converser avec moi"
+    }
+  }
 }

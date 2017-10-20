@@ -4,7 +4,7 @@
     <string name="firebase_database_url" translatable="false">https://immotchat-2e7a5.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">31411352854</string>
     <string name="google_api_key" translatable="false">AIzaSyDN-WHb6e1k-BVgU_eoid-MEwdRgpyGxeU</string>
-    <string name="google_app_id" translatable="false">1:31411352854:android:661e06184b51a440</string>
+    <string name="google_app_id" translatable="false">1:31411352854:android:ac74ee9b99c00b7a</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDN-WHb6e1k-BVgU_eoid-MEwdRgpyGxeU</string>
     <string name="google_storage_bucket" translatable="false">immotchat-2e7a5.appspot.com</string>
 </resources>

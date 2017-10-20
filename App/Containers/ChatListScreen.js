@@ -81,8 +81,8 @@ class ChatListScreen extends React.Component {
         channel: "in-app"
       };
       const shareOptions = {
-        messageHeader: "Download ImmoTchat",
-        messageBody: "Download ImmoTchat to chat with me"
+        messageHeader: I18n.t("invites.download.title"),
+        messageBody: I18n.t("invites.download.inviteUser")
       };
 
       let {
