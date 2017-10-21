@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/Users/paolo/Documents/RNWorkspace/immotchat/android/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
-        "source": "/Users/paolo/Documents/RNWorkspace/immotchat/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
         "source": "/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     }
