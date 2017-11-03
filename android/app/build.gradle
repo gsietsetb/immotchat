@@ -72,6 +72,8 @@ import com.android.build.OutputFile
  * ]
  */
 
+
+
 apply from: "../../node_modules/react-native/react.gradle"
 
 /**
@@ -148,6 +150,9 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-image-resizer')
+    compile project(':react-native-image-picker')
+    compile project(':react-native-fetch-blob')
     compile project(':react-native-branch')
     compile project(':react-native-fcm')
     compile project(':react-native-device-info')

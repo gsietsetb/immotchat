@@ -97,7 +97,7 @@ class ChatRoomStore {
   async createChatWithUser(user, me) {
     let users = {};
 
-    if (user) {
+    if (user && user.uid) {
       users[user.uid] = user;
     }
     if (me) {
@@ -144,7 +144,7 @@ class ChatRoomStore {
   createRoom(me) {
     let users = {};
 
-    if (me) {
+    if (me && me.uid) {
       users[me.uid] = me;
       database.ref("rooms").push({
         title: "new group",

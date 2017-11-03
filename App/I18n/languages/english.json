@@ -36,5 +36,17 @@
       "title": "Download immotchat",
       "inviteUser": "Download immotchat to chat with me"
     }
+  },
+  "profile": {
+    "links": {
+      "privacy": "Privacy Policy"
+    },
+    "login": {
+      "privacy": {
+        "rules": "Signing up or logging in, you accept our #PrivacyPolicy.",
+
+        "title": "Privacy Policy"
+      }
+    }
   }
 }

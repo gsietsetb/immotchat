@@ -7,25 +7,31 @@ import ReactNative, {
   Text,
   KeyboardAvoidingView,
   View,
+  Image,
   ListView,
   TouchableOpacity
 } from "react-native";
+
+import ImagePicker from "react-native-image-picker";
+import ImageResizer from "react-native-image-resizer";
+
+import uuid from "uuid";
 
 import { observer, inject } from "mobx-react/native";
 
 import { GiftedChat, MessageText } from "react-native-gifted-chat";
 import NavBar from "../Components/NavBar";
-import Icon from "react-native-vector-icons/Entypo";
-
+import Icon from "react-native-vector-icons/Ionicons";
+import MessageImage from "../Components/MessageImage";
 import { Metrics, Colors } from "../Themes";
-
+import Spinner from "../Components/Spinner";
 // Styles
 import styles from "./Styles/ChatScreenStyles";
 
 // I18n
 import I18n from "react-native-i18n";
 
-@inject("messageStore", "userStore", "nav", "roomStore")
+@inject("messageStore", "userStore", "nav", "roomStore", "uploader")
 @observer
 class ChatScreen extends React.Component {
   constructor(props) {
@@ -51,7 +57,7 @@ class ChatScreen extends React.Component {
         onPress={this.handlePressInfo}
       >
         <Icon
-          name="cog"
+          name="ios-settings"
           size={Metrics.icons.medium}
           color={Colors.secondaryDark}
         />
@@ -74,6 +80,14 @@ class ChatScreen extends React.Component {
 
   componentWillReceiveProps(newProps) {}
 
+  onSendMedia = (messages = []) => {
+    console.log("messages", messages);
+    const { nav, messageStore } = this.props;
+
+    const { chatRoom } = nav.params;
+
+    messageStore.sendMedia(messages[0], chatRoom.id);
+  };
   onSend = (messages = []) => {
     console.log("messages", messages);
     const { nav, messageStore } = this.props;
@@ -96,6 +110,13 @@ class ChatScreen extends React.Component {
       />
     );
   }
+
+  renderMessageImage = props => {
+    const { nav } = this.props;
+    console.log("props", props);
+
+    return <MessageImage {...props} nav={nav} />;
+  };
 
   onLoadEarlier = () => {
     const { nav, messageStore } = this.props;
@@ -140,6 +161,68 @@ class ChatScreen extends React.Component {
       }
     });
   };
+
+  renderActions = () => {
+    const { uploader } = this.props;
+    console.log("uploader", uploader.sending);
+    if (uploader.sending) {
+      return (
+        <View style={styles.actionBtn}>
+          <Spinner style={styles.spinner} color={Colors.secondaryDark} />
+        </View>
+      );
+    }
+    return (
+      <TouchableOpacity style={styles.actionBtn} onPress={this.imagePicker}>
+        <Icon
+          name="ios-camera"
+          size={Metrics.icons.medium}
+          style={styles.actionIco}
+        />
+      </TouchableOpacity>
+    );
+  };
+
+  imagePicker = () => {
+    const { uploader, userStore } = this.props;
+
+    ImagePicker.showImagePicker(
+      {
+        title: I18n.t("chat.imagePicker.title")
+      },
+      response => {
+        let { uri } = response;
+        if (response.didCancel) return false;
+
+        Image.getSize(uri, async (captureWidth, captureHeight) => {
+          let resizedHeight = 1080 * (captureWidth / captureWidth);
+
+          const resized = await ImageResizer.createResizedImage(
+            uri,
+            1080,
+            resizedHeight,
+            "JPEG",
+            80,
+            0,
+            null
+          );
+
+          console.log("resized = ", resized);
+          const uploadUrl = await uploader.singleUpload(resized.uri);
+          console.log("uploadUrl = ", uploadUrl);
+
+          const currentUser = userStore.currentUser;
+          if (uploadUrl && currentUser && currentUser.uid) {
+            const user = {
+              _id: currentUser.uid,
+              name: currentUser.displayName || ""
+            };
+            this.onSendMedia([{ _id: uuid.v4(), image: uploadUrl, user }]);
+          }
+        });
+      }
+    );
+  };
   renderMessages = () => {
     const { messageStore, userStore } = this.props;
 
@@ -163,14 +246,17 @@ class ChatScreen extends React.Component {
         onLoadEarlier={this.onLoadEarlier}
         messages={messageStore.messageList}
         renderMessageText={this.renderMessageText}
+        renderMessageImage={this.renderMessageImage}
         onSend={this.onSend}
+        renderActions={this.renderActions}
         user={user}
       />
     );
   };
   render() {
-    const { messageStore } = this.props;
+    const { messageStore, uploader } = this.props;
     console.log("count messages", messageStore.count);
+    console.log("uploader", uploader.sending);
     return (
       <View style={styles.container}>
         <NavBar leftButton={true} rightButton={this.renderRightButton()} />

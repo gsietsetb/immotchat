@@ -42,6 +42,9 @@ export default class LinkModal extends Component {
   openDirectChat = async user => {
     const { userStore, roomStore, nav, invitations } = this.props;
     console.log("user", user);
+    if (!user) {
+      return;
+    }
     const me = userStore.currentUser;
     const rooms = roomStore.list.slice();
     let found = null;

@@ -46,10 +46,24 @@ class MessageStore {
   }
 
   @action
+  sendMedia(message, room) {
+    message.createdAt = moment().toISOString();
+    message.dateInverse = -moment().unix();
+
+    console.log("sending here", message);
+    database.ref("messages/" + room + "/messages").push(message);
+    database.ref("rooms/" + room + "/media").push(message);
+    database.ref("rooms/" + room + "/last").set(message);
+  }
+
+  @action
   sendMessage(message, room) {
     message.createdAt = moment().toISOString();
     message.dateInverse = -moment().unix();
+
+    console.log("sending here", message);
     database.ref("messages/" + room + "/messages").push(message);
+    database.ref("rooms/" + room + "/last").set(message);
   }
 
   @action

@@ -91,5 +91,27 @@ export default StyleSheet.create({
     height: 100,
     alignSelf: "center",
     borderRadius: 50
+  },
+  boxLinks: {
+    marginTop: 50,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  rowLink: {
+    height: 50,
+    paddingVertical: Metrics.baseSpace,
+    paddingHorizontal: Metrics.baseSpace
+  },
+  rowText: {
+    color: Colors.secondaryDark
+  },
+  privacyText: {
+    padding: Metrics.baseSpace,
+    color: Colors.secondaryDark,
+    textAlign: "center"
+  },
+  privacyButton: {
+    color: Colors.secondaryDark,
+    fontWeight: "bold"
   }
 });

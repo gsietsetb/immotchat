@@ -190,25 +190,26 @@ class ChatListScreen extends React.Component {
   };
 
   renderList = () => {
-    const { roomStore } = this.props;
+    const { roomStore, userStore } = this.props;
 
     //console.log("chatlist", roomStore.allConversations);
 
     //console.log("allPosts", roomStore.list);
     console.log("renderList rooms", roomStore.allRooms);
-
-    return (
-      <ListView
-        contentContainerStyle={styles.listContent}
-        dataSource={roomStore.dataSource}
-        renderRow={this.renderRow}
-        renderHeader={this.renderHeader}
-        renderSeparator={this.renderSeparator}
-        onEndReached={this.endReached}
-        enableEmptySections={true}
-        pageSize={15}
-      />
-    );
+    if (userStore.currentUser) {
+      return (
+        <ListView
+          contentContainerStyle={styles.listContent}
+          dataSource={roomStore.dataSource}
+          renderRow={this.renderRow}
+          renderHeader={this.renderHeader}
+          renderSeparator={this.renderSeparator}
+          onEndReached={this.endReached}
+          enableEmptySections={true}
+          pageSize={15}
+        />
+      );
+    }
   };
 
   renderModal = () => {

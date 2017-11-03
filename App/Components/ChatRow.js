@@ -29,7 +29,7 @@ export default class ChatRow extends React.Component {
 
     let roomImg = "";
     if (data.direct) {
-      console.log("users", data.users);
+      //console.log("users", data.users);
       let others = _.filter(data.users, function(o) {
         return o.uid != me.uid;
       });

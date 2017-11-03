@@ -113,5 +113,14 @@ export default StyleSheet.create({
     marginTop: Metrics.doubleBaseMargin,
     alignSelf: "center",
     resizeMode: "contain"
+  },
+  privacyText: {
+    padding: Metrics.baseSpace,
+    color: Colors.secondaryDark,
+    textAlign: "center"
+  },
+  privacyButton: {
+    color: Colors.secondaryDark,
+    fontWeight: "bold"
   }
 });

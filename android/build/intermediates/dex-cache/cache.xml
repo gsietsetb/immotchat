@@ -8,7 +8,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_578323cf333257ff755ee67af0555f8a386ee2df.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/okhttp-urlconnection-3.6.0_578323cf333257ff755ee67af0555f8a386ee2df.jar" />
     </item>
     <item
         is-multidex="false"
@@ -17,34 +17,16 @@
         optimize="true"
         revision="23.0.1"
         sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/immotchat-react-native-vector-icons-unspecified_af35bac6c0aeb12de2a913b11b1d18985afeb8f1.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/immotchat-react-native-vector-icons-unspecified_af35bac6c0aeb12de2a913b11b1d18985afeb8f1.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.48.3/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="56d3e81fee5f47a7a12ab65f4620f580c9c71d1e">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.48.3_a2523e443c2095419dd67a58eb42baa6274cb341.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/immotchat/react-native-branch/unspecified/jars/libs/Branch-2.12.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="87461f7c826f4046878595c43944c04848f8447b">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/Branch-2.12.1_d80a8d5fa7707e210c283ddd397a113102a1fecd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.48.3/jars/libs/infer-annotations-4.0.jar"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.48.4/jars/libs/infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_293750dee9d9b02e05be3a35184c6751c1af350d.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/infer-annotations-4.0_f27c92191bec3ed1af832750fd90f204e5949f99.jar" />
     </item>
     <item
         is-multidex="false"
@@ -53,7 +35,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.2.0_bf2473ee309fff0d6dbba6215e725e3d5839af02.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-fragment-25.2.0_bf2473ee309fff0d6dbba6215e725e3d5839af02.jar" />
     </item>
     <item
         is-multidex="false"
@@ -62,7 +44,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_bc4ebda040a90eec84a0e18c8ab93ee3313c2d2a.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_bc4ebda040a90eec84a0e18c8ab93ee3313c2d2a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -71,7 +53,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="0a534044236cf81b002604643d23e7ca56bd1ee0">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-10.2.6_56c1474536319c2aa454a21a5615d187c932468a.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-common-10.2.6_56c1474536319c2aa454a21a5615d187c932468a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -80,7 +62,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_c765752d50678f00a3be3983c38cc9b60e219a80.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fresco-1.3.0_c765752d50678f00a3be3983c38cc9b60e219a80.jar" />
     </item>
     <item
         is-multidex="false"
@@ -89,7 +71,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_7333f34696889aab5e5e1348f9342533459d9f33.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.soloader-soloader-0.1.0_7333f34696889aab5e5e1348f9342533459d9f33.jar" />
     </item>
     <item
         is-multidex="false"
@@ -98,7 +80,16 @@
         optimize="true"
         revision="23.0.1"
         sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.6_4412aeb1754f22f6a65741a06e8ebcd9a11546eb.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-tasks-10.2.6_4412aeb1754f22f6a65741a06e8ebcd9a11546eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/immotchat/react-native-branch/unspecified/jars/libs/Branch-2.12.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="872831ad816d4a7f658a9b362459c97bf6d9163f">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/Branch-2.12.2_d51e55555477c98c18aae6e2e4fb736ba16eb606.jar" />
     </item>
     <item
         is-multidex="false"
@@ -107,7 +98,16 @@
         optimize="true"
         revision="23.0.1"
         sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.2.0_054b8d688c0ac62dc1cf0a5d8a4e44cd216d4516.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-media-compat-25.2.0_054b8d688c0ac62dc1cf0a5d8a4e44cd216d4516.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.48.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="56d3e81fee5f47a7a12ab65f4620f580c9c71d1e">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.react-react-native-0.48.4_63cac8de7e176ae0965af8437e9f3c7c836b9ecd.jar" />
     </item>
     <item
         is-multidex="false"
@@ -116,7 +116,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_756747837b286a723d4035e5b11740880163b790.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/javax.inject-1_756747837b286a723d4035e5b11740880163b790.jar" />
     </item>
     <item
         is-multidex="false"
@@ -125,7 +125,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="45586990f4e58db6e2dcad1eeb38f0179ba6b06d">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/immotchat-react-native-config-unspecified_e35f6b7b6de667167f5b635cebf81dbd1382f08b.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/immotchat-react-native-config-unspecified_e35f6b7b6de667167f5b635cebf81dbd1382f08b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -134,7 +134,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="215363c803a119c16058c8bc0ccd0a4ee62e7157">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-10.2.6_8e632bcfc68c205c9d6d00ec23448781245dd0c6.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-gcm-10.2.6_8e632bcfc68c205c9d6d00ec23448781245dd0c6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -143,7 +143,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_07f042505c887c293658d6c287068a916080a4d5.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fbcore-1.3.0_07f042505c887c293658d6c287068a916080a4d5.jar" />
     </item>
     <item
         is-multidex="false"
@@ -152,7 +152,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_8005803f28e217d6c9be70218d2b2986fa3be290.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-23.0.1_8005803f28e217d6c9be70218d2b2986fa3be290.jar" />
     </item>
     <item
         is-multidex="false"
@@ -161,7 +161,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_d1306e7b1f607fe9bd3694acb66ff0645785f623.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/support-annotations-25.2.0_d1306e7b1f607fe9bd3694acb66ff0645785f623.jar" />
     </item>
     <item
         is-multidex="false"
@@ -170,7 +170,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="3f0a85e6000998ac322ddd50750e8cf91601a84b">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.6_d2ffd3421628a4fc79268784a39fb2320654c576.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-base-10.2.6_d2ffd3421628a4fc79268784a39fb2320654c576.jar" />
     </item>
     <item
         is-multidex="false"
@@ -179,7 +179,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="da832806828ba407284c0c4b1d87b8f9ed9f2520">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-10.2.6_768be592858f6e982e4e10f654591764ef16cbf5.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-analytics-impl-10.2.6_768be592858f6e982e4e10f654591764ef16cbf5.jar" />
     </item>
     <item
         is-multidex="false"
@@ -188,7 +188,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="0c3de4c9ce51277aed48d3daa7551a965297d0e8">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/immotchat-react-native-fcm-unspecified_495bc356a17cd1057bfefc0d728ca5bb99fe7fcc.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/immotchat-react-native-fcm-unspecified_495bc356a17cd1057bfefc0d728ca5bb99fe7fcc.jar" />
     </item>
     <item
         is-multidex="false"
@@ -197,7 +197,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="248218f163235e6d2a81188eaa1db0ec61193055">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/me.leolin-ShortcutBadger-1.1.17_b06975d87c047dd6c24dde268288d514ba2fe448.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/me.leolin-ShortcutBadger-1.1.17_b06975d87c047dd6c24dde268288d514ba2fe448.jar" />
     </item>
     <item
         is-multidex="false"
@@ -205,8 +205,8 @@
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="2e4336ffc2b7653868134d7f6f8b28523ef54645">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/immotchat-react-native-device-info-unspecified_f24edae0a7f1b36d30bcbd096188ff7a1363635d.jar" />
+        sha1="1e1a863e7c4255b67cd4cd9def2e3bea63baa9d6">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/immotchat-react-native-device-info-unspecified_f24edae0a7f1b36d30bcbd096188ff7a1363635d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -215,7 +215,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_e2e86931e6ee18efcbb39be2d56c9a64dbf1ba3b.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-1.3.0_e2e86931e6ee18efcbb39be2d56c9a64dbf1ba3b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -224,7 +224,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.2.0_03c549f7c572991eea4cddd67608bea65ab2f5f1.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-core-utils-25.2.0_03c549f7c572991eea4cddd67608bea65ab2f5f1.jar" />
     </item>
     <item
         is-multidex="false"
@@ -233,7 +233,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="8f83a631abfdb790591a720e0cfb5f41329831c3">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-10.2.6_b169ad3d2409208a74e76b9203ab60c5d2df7c63.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-iid-10.2.6_b169ad3d2409208a74e76b9203ab60c5d2df7c63.jar" />
     </item>
     <item
         is-multidex="false"
@@ -242,7 +242,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_05ac4181222155341765214e6dd1a26ad7087765.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_05ac4181222155341765214e6dd1a26ad7087765.jar" />
     </item>
     <item
         is-multidex="false"
@@ -251,7 +251,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_e9e4c008fa3ab0d4a75520c40789c6c2945bc3b4.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-drawee-1.3.0_e9e4c008fa3ab0d4a75520c40789c6c2945bc3b4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -260,7 +260,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_5dfeace59ebebf43e250ec39101045accc368461.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/okhttp-3.6.0_5dfeace59ebebf43e250ec39101045accc368461.jar" />
     </item>
     <item
         is-multidex="false"
@@ -268,8 +268,8 @@
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="82d449a893231251f50e1279074629ffe9128212">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/immotchat-react-native-branch-unspecified_161ff1d3025392cfb8af57463b4ed9cf107f961e.jar" />
+        sha1="4c433f072250e84cea3dd0ce56233dad601678e6">
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/immotchat-react-native-branch-unspecified_161ff1d3025392cfb8af57463b4ed9cf107f961e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -278,7 +278,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="9ff5114aff3bfb387577ba92a11408dcf0441c24">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-messaging-10.2.6_a57caeba1d9b72cf7214eb9c1deec689f1079654.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-messaging-10.2.6_a57caeba1d9b72cf7214eb9c1deec689f1079654.jar" />
     </item>
     <item
         is-multidex="false"
@@ -287,7 +287,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_16a86ded309545177b3a8f2a1209ec38b813086e.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/jsr305-3.0.0_16a86ded309545177b3a8f2a1209ec38b813086e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -296,7 +296,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_c70159f805eb730cefd4886a042a50374ba94ddb.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-base-1.3.0_c70159f805eb730cefd4886a042a50374ba94ddb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -305,7 +305,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="d54a722583c1b99735f62d395806fa38bf5669ae">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-iid-10.2.6_71fe41904472a480e9b62f3b305e6b68e2d8f6bd.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-iid-10.2.6_71fe41904472a480e9b62f3b305e6b68e2d8f6bd.jar" />
     </item>
     <item
         is-multidex="false"
@@ -314,7 +314,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_7082949e05394354e1e9a7c786834d2bef1cab13.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/okio-1.13.0_7082949e05394354e1e9a7c786834d2bef1cab13.jar" />
     </item>
     <item
         is-multidex="false"
@@ -323,7 +323,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.2.0_8d95d90e6f68678de985fe65b6360075d527052f.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-compat-25.2.0_8d95d90e6f68678de985fe65b6360075d527052f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -332,7 +332,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="900a290779cdb4eb2e63b6f7806fd9f30ce4f60d">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.6_160b035c66dfcab33290433b978d291fc934a907.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-basement-10.2.6_160b035c66dfcab33290433b978d291fc934a907.jar" />
     </item>
     <item
         is-multidex="false"
@@ -341,7 +341,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.2.0_38a262d4705045f049b65651d9fc4b274556b6dd.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-25.2.0_38a262d4705045f049b65651d9fc4b274556b6dd.jar" />
     </item>
     <item
         is-multidex="false"
@@ -350,7 +350,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="265d5a9330ad02283d16b9886fe8acebb306cd1e">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/immotchat-react-native-i18n-unspecified_82393c08aa86d683eaf18ae689994dd91a5d18b8.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/immotchat-react-native-i18n-unspecified_82393c08aa86d683eaf18ae689994dd91a5d18b8.jar" />
     </item>
     <item
         is-multidex="false"
@@ -359,7 +359,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.2.0_b745b7e00b6081a6a83214403d609207b0d04728.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-core-ui-25.2.0_b745b7e00b6081a6a83214403d609207b0d04728.jar" />
     </item>
     <item
         is-multidex="false"
@@ -368,7 +368,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_a9cb8dce915c94a1587e6b0543077f129070e1fb.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/bolts-tasks-1.4.0_a9cb8dce915c94a1587e6b0543077f129070e1fb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -377,7 +377,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_78e6d2e928a02df31e793e4b18f923a61ce1dcdb.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/staticlayout-proxy-1.0_78e6d2e928a02df31e793e4b18f923a61ce1dcdb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -386,7 +386,7 @@
         optimize="true"
         revision="23.0.1"
         sha1="d79c575e1d97b0298746a4c032a0c1dc201c2f82">
-        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-10.2.6_dc9f91cf002bccce23bd7618e6ea7897ebb250f5.jar" />
+        <dex dex="/Users/paolo/Documents/RNWorkspace/immochat-app/android/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-analytics-10.2.6_dc9f91cf002bccce23bd7618e6ea7897ebb250f5.jar" />
     </item>
 
 </items>

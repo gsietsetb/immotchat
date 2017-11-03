@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />  
 
 
 
@@ -21,17 +23,17 @@
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
 
-      <service android:name="io.invertase.firebase.messaging.MessagingService" android:enabled="true" android:exported="true">
-         <intent-filter>
-           <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-         </intent-filter>
-      </service>
+      <service android:name="com.evollu.react.fcm.MessagingService" android:enabled="true" android:exported="true">
+       <intent-filter>
+         <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+       </intent-filter>
+     </service>
 
-      <service android:name="io.invertase.firebase.messaging.InstanceIdService" android:exported="false">
-        <intent-filter>
-          <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-        </intent-filter>
-      </service>
+     <service android:name="com.evollu.react.fcm.InstanceIdService" android:exported="false">
+       <intent-filter>
+         <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+       </intent-filter>
+     </service>
 
       <activity
         android:name=".MainActivity"
@@ -59,18 +61,20 @@
 
       <meta-data android:name="io.branch.sdk.BranchKey" android:value="@string/branch_id" />
 
-      <receiver android:name="io.invertase.firebase.messaging.RNFirebaseLocalMessagingPublisher"/>
+
+    <receiver android:name="com.evollu.react.fcm.FIRLocalMessagingPublisher"/>
       <receiver
         android:enabled="true"
         android:exported="true"
-        android:name="io.invertase.firebase.messaging.RNFirebaseSystemBootEventReceiver">
-        <intent-filter>
-        <action android:name="android.intent.action.BOOT_COMPLETED"/>
-        <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
-        <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
-        <category android:name="android.intent.category.DEFAULT" />
-      </intent-filter>
-    </receiver>
+        android:name="com.evollu.react.fcm.FIRSystemBootEventReceiver">
+          <intent-filter>
+              <action android:name="android.intent.action.BOOT_COMPLETED"/>
+              <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+              <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+              <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+      </receiver>
+
 
     </application>
 

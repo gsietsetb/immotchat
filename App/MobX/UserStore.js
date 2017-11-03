@@ -50,18 +50,20 @@ class UserStore {
   async createBranchObj() {
     console.log("this.info", this.info);
 
-    let branchUniversalObject = await branch.createBranchUniversalObject(
-      `userinvite/${this.currentUser.uid}`, // canonical identifier
-      {
-        title: I18n.t("invites.download.title"),
-        contentDescription: I18n.t("invites.download.inviteUser"),
-        metadata: {
-          userId: this.currentUser.uid
+    if (this.currentUser && this.currentUser.uid) {
+      let branchUniversalObject = await branch.createBranchUniversalObject(
+        `userinvite/${this.currentUser.uid}`, // canonical identifier
+        {
+          title: I18n.t("invites.download.title"),
+          contentDescription: I18n.t("invites.download.inviteUser"),
+          metadata: {
+            userId: this.currentUser.uid
+          }
         }
-      }
-    );
-    console.log("branchUniversalObject", branchUniversalObject);
-    this.branchObj = branchUniversalObject;
+      );
+      console.log("branchUniversalObject", branchUniversalObject);
+      this.branchObj = branchUniversalObject;
+    }
 
     //this.inviteLink = ciccio.url;
   }
@@ -199,10 +201,10 @@ class UserStore {
 
   @action
   logout() {
-    this.info = null;
     if (this.info && this.info.uid) {
       FCM.unsubscribeFromTopic(`user-${this.info.uid}`);
     }
+    this.info = null;
     //this.fetching = true;
     firebase
       .auth()
@@ -221,7 +223,7 @@ class UserStore {
 export default (userStore = new UserStore());
 
 firebase.auth().onAuthStateChanged(user => {
-  if (user) {
+  if (user && user.uid) {
     branch.setIdentity(user.uid);
     console.log("user connected", user);
 

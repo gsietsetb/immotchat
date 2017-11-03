@@ -34,5 +34,14 @@ export default StyleSheet.create({
     marginRight: Metrics.baseSpace,
     justifyContent: "center",
     alignItems: "flex-end"
+  },
+  actionBtn: {
+    height: 44,
+    width: 50,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  actionIco: {
+    color: Colors.secondaryDark
   }
 });

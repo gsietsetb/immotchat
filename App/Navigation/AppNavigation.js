@@ -7,6 +7,8 @@ import UserScreen from "../Containers/UserScreen";
 import ProfileScreen from "../Containers/ProfileScreen";
 import LaunchScreen from "../Containers/LaunchScreen";
 import LoginScreen from "../Containers/LoginScreen";
+import BrowserScreen from "../Containers/BrowserScreen";
+import GalleryScreen from "../Containers/GalleryScreen";
 
 import { Colors, Metrics } from "../Themes";
 import styles from "./Styles/NavigationStyles";
@@ -42,6 +44,12 @@ const StackNav = StackNavigator(
     Chat: { screen: ChatScreen },
     InfoChat: { screen: InfoChatScreen },
     User: { screen: UserScreen },
+    Browser: {
+      screen: BrowserScreen
+    },
+    Gallery: {
+      screen: GalleryScreen
+    },
     Login: {
       screen: LoginScreen,
       navigationOptions: {

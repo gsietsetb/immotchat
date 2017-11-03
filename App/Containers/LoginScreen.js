@@ -11,6 +11,7 @@ import {
 } from "react-native";
 
 import Spinner from "../Components/Spinner";
+import ParsedText from "react-native-parsed-text";
 
 // import { Card, CardItem, Content, Body } from 'native-base';
 import I18n from "react-native-i18n";
@@ -243,6 +244,32 @@ class LoginScreen extends React.Component {
       />
     );
   };
+
+  goToPrivacy = () => {
+    console.log("goToPrivacy");
+    const { nav } = this.props;
+    nav.navigate("Browser", {
+      title: I18n.t("profile.login.privacy.title"),
+      url: "https://www.google.com"
+    });
+  };
+  renderPrivacy = () => {
+    return (
+      <ParsedText
+        style={styles.privacyText}
+        parse={[
+          {
+            pattern: /#PrivacyPolicy/,
+            style: styles.privacyButton,
+            renderText: I18n.t("profile.login.privacy.title"),
+            onPress: this.goToPrivacy
+          }
+        ]}
+      >
+        {I18n.t("profile.login.privacy.rules")}
+      </ParsedText>
+    );
+  };
   createForm = () => {
     const { typeForm } = this.state;
 
@@ -262,6 +289,8 @@ class LoginScreen extends React.Component {
             >
               <Text style={styles.emptyButtonText}>{I18n.t("register")}</Text>
             </TouchableOpacity>
+
+            {this.renderPrivacy()}
           </View>
         );
         break;
@@ -285,6 +314,8 @@ class LoginScreen extends React.Component {
                 {I18n.t("already_have_account")}
               </Text>
             </TouchableOpacity>
+
+            {this.renderPrivacy()}
           </View>
         );
         break;

@@ -398,6 +398,43 @@ class ProfileScreen extends React.Component {
     }
   };
 
+  goToPrivacy = () => {
+    console.log("goToPrivacy");
+    const { nav } = this.props;
+    nav.navigate("Browser", {
+      title: I18n.t("profile.login.privacy.title"),
+      url: "https://www.google.com"
+    });
+  };
+
+  otherLinks = () => {
+    return (
+      <View style={styles.boxLinks}>
+        <TouchableOpacity style={styles.rowLink} onPress={this.goToPrivacy}>
+          <Text style={styles.rowText}>{I18n.t("profile.links.privacy")}</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
+  renderPrivacy = () => {
+    return (
+      <ParsedText
+        style={styles.privacyText}
+        parse={[
+          {
+            pattern: /#PrivacyPolicy/,
+            style: styles.privacyButton,
+            renderText: I18n.t("profile.login.privacy.title"),
+            onPress: this.goToPrivacy
+          }
+        ]}
+      >
+        {I18n.t("profile.login.privacy.rules")}
+      </ParsedText>
+    );
+  };
+
   render() {
     console.log("props", this.props);
 
@@ -407,6 +444,7 @@ class ProfileScreen extends React.Component {
         <ScrollView style={styles.container}>
           {this.renderAccountInfo()}
           {this.renderLogin()}
+          {this.otherLinks()}
         </ScrollView>
         <TabBar selected="profile" />
       </View>
