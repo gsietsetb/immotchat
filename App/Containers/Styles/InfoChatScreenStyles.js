@@ -11,11 +11,11 @@ export default StyleSheet.create({
     backgroundColor: Colors.background
   },
   listHeaderContaiener: {
-    padding: 10,
+    padding: Metrics.baseSpace,
     backgroundColor: Colors.secondaryLight
   },
   listFooterContaiener: {
-    padding: 10,
+    padding: Metrics.baseSpace,
     alignItems: "center",
     justifyContent: "center"
   },
@@ -32,14 +32,14 @@ export default StyleSheet.create({
   },
   rightContainer: {
     flexDirection: "column",
-    padding: 10,
+    padding: Metrics.baseSpace,
     alignItems: "stretch",
     flexWrap: "wrap",
     flex: 1
   },
   imgContainer: {
     width: 60,
-    paddingVertical: 10,
+    paddingVertical: Metrics.baseSpace,
     alignItems: "flex-end",
     justifyContent: "center"
   },
@@ -66,5 +66,20 @@ export default StyleSheet.create({
     padding: Metrics.baseSpace,
     alignItems: "stretch",
     justifyContent: "center"
+  },
+  itemGrid: {
+    flex: 1,
+    width: Metrics.screenWidth / 4,
+    height: Metrics.screenWidth / 4,
+    padding: 2,
+    backgroundColor: "#eeeeee"
+  },
+  mediaGrid: {
+    justifyContent: "flex-start",
+    margin: 0
+  },
+  imageGrid: {
+    width: Metrics.screenWidth / 4 - 4,
+    height: Metrics.screenWidth / 4 - 4
   }
 });

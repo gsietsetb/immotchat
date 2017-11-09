@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.3</string>
+	<string>1.0.5</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>6</string>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
@@ -42,12 +42,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Allow this app to share pictures/videos</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allow this app to share pictures/videos</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Allow this app to access to your microphone in videos</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow this app to share pictures/videos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>

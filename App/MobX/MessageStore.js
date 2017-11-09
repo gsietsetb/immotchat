@@ -5,6 +5,7 @@ import { observable, action, computed } from "mobx";
 import _ from "lodash";
 
 import moment from "moment";
+import { getUrl, extractMeta } from "../Lib/Utilities";
 
 import { persist, create } from "mobx-persist";
 import firebase from "../Lib/firebase";
@@ -18,6 +19,8 @@ class MessageStore {
   @observable hydrated = false;
   @observable fetching = false;
   @observable sending = false;
+
+  sendingMeta = false;
 
   @computed
   get count() {
@@ -66,6 +69,24 @@ class MessageStore {
     database.ref("rooms/" + room + "/last").set(message);
   }
 
+  @action
+  async addMetadata(message, room) {
+    if (this.sendingMeta || message.meta) {
+      //console.log(message.meta);
+      return;
+    }
+    const url = getUrl(message.text);
+    if (url[0]) {
+      console.log("searching meta for url", url[0]);
+      this.sendingMeta = true;
+      const meta = await extractMeta(url[0]);
+      console.log("meta", meta);
+      if (meta) {
+        database.ref(`messages/${room}/messages/${message.id}/meta`).set(meta);
+      }
+      this.sendingMeta = false;
+    }
+  }
   @action
   getMessages(room, limit) {
     let limitMessages = this.limit;

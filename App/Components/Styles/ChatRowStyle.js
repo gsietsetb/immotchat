@@ -43,5 +43,19 @@ export default StyleSheet.create({
   label: {
     textAlign: "left"
     /*color: Colors.snow*/
+  },
+  partecipants: {
+    color: Colors.secondaryDark,
+    fontWeight: "bold",
+    fontSize: 11
+  },
+  lastMessageText: {
+    fontSize: 11,
+    color: "#666666"
+  },
+  nameContainer: {
+    height: 18,
+    alignItems: "stretch",
+    justifyContent: "center"
   }
 });

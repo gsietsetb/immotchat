@@ -15,12 +15,16 @@ import {
 
 import { observer, inject } from "mobx-react/native";
 
+import FastImage from "react-native-fast-image";
+
+import _ from "lodash";
 import { Metrics } from "../Themes";
 import NavBar from "../Components/NavBar";
 // external libs
 //import Icon from "react-native-vector-icons/FontAwesome";
 import Icon from "react-native-vector-icons/Entypo";
 //import Animatable from "react-native-animatable";
+import Grid from "react-native-grid-component";
 
 //import FooterBrand from "../Components/FooterBrand";
 
@@ -128,6 +132,47 @@ class InfoChatScreen extends React.Component {
     }
   };
 
+  renderGridItem = (data, i) => {
+    console.log("log data", data);
+    return (
+      <View style={styles.itemGrid} key={i}>
+        <FastImage
+          style={styles.imageGrid}
+          resizeMode={FastImage.resizeMode.cover}
+          source={{
+            uri: data.photo,
+            priority: FastImage.priority.normal
+          }}
+        />
+      </View>
+    );
+  };
+  renderMediaList = () => {
+    const { roomStore, nav } = this.props;
+    const { chatRoom } = nav.params;
+
+    if (chatRoom.media) {
+      const media = [];
+      _.each(chatRoom.media, item => {
+        console.log("media item", item);
+        media.push({
+          photo: item.image
+        });
+      });
+
+      console.log("media", media);
+      if (media.length > 0) {
+        return (
+          <Grid
+            style={styles.mediaGrid}
+            renderItem={this.renderGridItem}
+            data={media}
+            itemsPerRow={4}
+          />
+        );
+      }
+    }
+  };
   renderHeaderList = () => {
     const { roomStore } = this.props;
     return (
@@ -200,17 +245,24 @@ class InfoChatScreen extends React.Component {
       );
   };
   render() {
-    return (
-      <View style={styles.mainContainer}>
-        <NavBar leftButton={true} />
-        <ScrollView style={styles.container}>
-          {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
-          {this.renderHeader()}
-          {this.userList()}
-          {this.renderInvite()}
-        </ScrollView>
-      </View>
-    );
+    const { nav } = this.props;
+    const { chatRoom } = nav.params;
+
+    if (chatRoom) {
+      return (
+        <View style={styles.mainContainer}>
+          <NavBar leftButton={true} />
+          <ScrollView style={styles.container}>
+            {/*<AlertMessage title='No results' show={this.noRowData()} />*/}
+            {this.renderHeader()}
+            {this.renderMediaList()}
+            {this.userList()}
+            {this.renderInvite()}
+          </ScrollView>
+        </View>
+      );
+    }
+    return <View />;
   }
 }
 

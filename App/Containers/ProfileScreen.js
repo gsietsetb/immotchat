@@ -401,10 +401,15 @@ class ProfileScreen extends React.Component {
   goToPrivacy = () => {
     console.log("goToPrivacy");
     const { nav } = this.props;
-    nav.navigate("Browser", {
+
+    nav.navigate("Privacy", {
+      title: I18n.t("profile.login.privacy.title")
+    });
+
+    /*nav.navigate("Browser", {
       title: I18n.t("profile.login.privacy.title"),
       url: "https://www.google.com"
-    });
+    });*/
   };
 
   otherLinks = () => {

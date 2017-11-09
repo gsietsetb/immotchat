@@ -8,6 +8,7 @@ import {
   TouchableOpacity
 } from "react-native";
 //import Lightbox from 'react-native-lightbox';
+import FastImage from "react-native-fast-image";
 
 import { observer } from "mobx-react/native";
 
@@ -15,7 +16,6 @@ import { observer } from "mobx-react/native";
 export default class MessageImage extends React.Component {
   openZoom = () => {
     const { nav, currentMessage } = this.props;
-    console.log("currentMessage", currentMessage);
 
     if (currentMessage.image) {
       nav.navigate("Gallery", {
@@ -25,19 +25,18 @@ export default class MessageImage extends React.Component {
     }
   };
   render() {
+    const { currentMessage } = this.props;
+
     return (
       <View style={[styles.container, this.props.containerStyle]}>
-        <TouchableOpacity
-          activeProps={{
-            style: styles.imageActive
-          }}
-          {...this.props.lightboxProps}
-          onPress={this.openZoom}
-        >
-          <Image
-            {...this.props.imageProps}
-            style={[styles.image, this.props.imageStyle]}
-            source={{ uri: this.props.currentMessage.image }}
+        <TouchableOpacity onPress={this.openZoom}>
+          <FastImage
+            style={[styles.image]}
+            resizeMode={FastImage.resizeMode.cover}
+            source={{
+              uri: currentMessage.image,
+              priority: FastImage.priority.normal
+            }}
           />
         </TouchableOpacity>
       </View>
@@ -51,12 +50,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 100,
     borderRadius: 13,
-    margin: 3,
-    resizeMode: "cover"
-  },
-  imageActive: {
-    flex: 1,
-    resizeMode: "contain"
+    margin: 3
   }
 });
 

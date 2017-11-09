@@ -37,6 +37,9 @@
       "inviteUser": "Download immotchat to chat with me"
     }
   },
+  "messages": {
+    "user_uploaded_image": "{{name}}: uploaded a Picture"
+  },
   "profile": {
     "links": {
       "privacy": "Privacy Policy"

@@ -15,6 +15,10 @@ import { observer, inject } from "mobx-react/native";
 
 import { Metrics, Colors } from "../Themes";
 
+import { extractMeta } from "../Lib/Utilities";
+
+import FastImage from "react-native-fast-image";
+
 // external libs
 //import Icon from "react-native-vector-icons/FontAwesome";
 import Icon from "react-native-vector-icons/Entypo";

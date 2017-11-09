@@ -19,14 +19,18 @@ import uuid from "uuid";
 
 import { observer, inject } from "mobx-react/native";
 
-import { GiftedChat, MessageText } from "react-native-gifted-chat";
+import { GiftedChat } from "react-native-gifted-chat";
 import NavBar from "../Components/NavBar";
 import Icon from "react-native-vector-icons/Ionicons";
 import MessageImage from "../Components/MessageImage";
+import MessageText from "../Components/MessageText";
+
 import { Metrics, Colors } from "../Themes";
 import Spinner from "../Components/Spinner";
 // Styles
 import styles from "./Styles/ChatScreenStyles";
+
+import { hasUrl } from "../Lib/Utilities";
 
 // I18n
 import I18n from "react-native-i18n";
@@ -36,7 +40,6 @@ import I18n from "react-native-i18n";
 class ChatScreen extends React.Component {
   constructor(props) {
     super(props);
-    console.log("props", props);
 
     const dataObjects = [];
   }
@@ -97,11 +100,19 @@ class ChatScreen extends React.Component {
     messageStore.sendMessage(messages[0], chatRoom.id);
   };
 
-  renderMessageText(props) {
+  renderMessageText = props => {
+    const { nav, messageStore } = this.props;
+    const { chatRoom } = nav.params;
+
     const textStyle = {
       fontSize: 14,
       fontFamily: "roboto-regular"
     };
+    const { currentMessage } = props;
+
+    if (hasUrl(currentMessage.text)) {
+      messageStore.addMetadata(currentMessage, chatRoom.id);
+    }
 
     return (
       <MessageText
@@ -109,11 +120,10 @@ class ChatScreen extends React.Component {
         {...props}
       />
     );
-  }
+  };
 
   renderMessageImage = props => {
     const { nav } = this.props;
-    console.log("props", props);
 
     return <MessageImage {...props} nav={nav} />;
   };
@@ -168,7 +178,11 @@ class ChatScreen extends React.Component {
     if (uploader.sending) {
       return (
         <View style={styles.actionBtn}>
-          <Spinner style={styles.spinner} color={Colors.secondaryDark} />
+          <Spinner
+            style={styles.spinner}
+            size="small"
+            color={Colors.secondaryDark}
+          />
         </View>
       );
     }

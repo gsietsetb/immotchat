@@ -8,6 +8,8 @@ import ProfileScreen from "../Containers/ProfileScreen";
 import LaunchScreen from "../Containers/LaunchScreen";
 import LoginScreen from "../Containers/LoginScreen";
 import BrowserScreen from "../Containers/BrowserScreen";
+import PrivacyScreen from "../Containers/PrivacyScreen";
+
 import GalleryScreen from "../Containers/GalleryScreen";
 
 import { Colors, Metrics } from "../Themes";
@@ -46,6 +48,9 @@ const StackNav = StackNavigator(
     User: { screen: UserScreen },
     Browser: {
       screen: BrowserScreen
+    },
+    Privacy: {
+      screen: PrivacyScreen
     },
     Gallery: {
       screen: GalleryScreen
