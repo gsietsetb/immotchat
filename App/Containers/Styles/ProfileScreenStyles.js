@@ -86,7 +86,6 @@ export default StyleSheet.create({
     padding: Metrics.baseSpace
   },
   avatar: {
-    marginTop: 50,
     width: 100,
     height: 100,
     alignSelf: "center",
@@ -113,5 +112,43 @@ export default StyleSheet.create({
   privacyButton: {
     color: Colors.secondaryDark,
     fontWeight: "bold"
+  },
+  header: {
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  loadingAction: {
+    padding: 20,
+    height: 140,
+    alignSelf: "center",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  photoContainer: {
+    flexDirection: "row",
+    alignSelf: "center",
+    justifyContent: "center"
+  },
+  pictureHeaderText: {
+    top: 0,
+    alignSelf: "center",
+    position: "absolute",
+    textAlign: "center",
+    padding: Metrics.smallSpace,
+    fontSize: 11,
+    fontWeight: "bold"
+  },
+  pickerAction: {
+    padding: 20,
+    alignSelf: "center",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  pickerIco: {
+    position: "absolute",
+    alignSelf: "center",
+    backgroundColor: Colors.transparent,
+    color: "#ffffff80",
+    fontSize: 60
   }
 });

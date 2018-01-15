@@ -9,6 +9,7 @@ import LaunchScreen from "../Containers/LaunchScreen";
 import LoginScreen from "../Containers/LoginScreen";
 import BrowserScreen from "../Containers/BrowserScreen";
 import PrivacyScreen from "../Containers/PrivacyScreen";
+import PreferencesScreen from "../Containers/PreferencesScreen";
 
 import GalleryScreen from "../Containers/GalleryScreen";
 
@@ -34,6 +35,7 @@ const TabNav = TabNavigator(
     navigationOptions: { tabBarVisible: false },
     // Default config for all screens
     //headerMode: "none",
+    //initialRouteName: "ChatTab",
     initialRouteName: "ChatTab"
   }
 );
@@ -46,6 +48,9 @@ const StackNav = StackNavigator(
     Chat: { screen: ChatScreen },
     InfoChat: { screen: InfoChatScreen },
     User: { screen: UserScreen },
+    Preferences: {
+      screen: PreferencesScreen
+    },
     Browser: {
       screen: BrowserScreen
     },

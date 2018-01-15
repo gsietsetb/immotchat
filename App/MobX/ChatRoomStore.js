@@ -195,23 +195,59 @@ class ChatRoomStore {
     });
   }
 
+  async userDetail(userId) {
+    const snapUser = await database.ref(`users/${userId}`).once("value");
+    return snapUser.val();
+  }
+
   @action
   getList(user) {
     console.log("getList start", user);
+
     if (user && user.uid) {
       database
         .ref("rooms")
         .orderByChild(`users/${user.uid}/uid`)
         .equalTo(user.uid)
         .on("value", snapshot => {
-          const results = snapshot.val() || [];
-          console.log("results", results);
-          this.list = Object.keys(results).map(key => {
-            results[key].id = key;
-            return results[key];
-          });
+          let results = snapshot.val() || [];
+          //console.log("results", results);
 
-          console.log("getList result", this.list);
+          /*if (result) {
+            result.id = snapshot.key;
+
+            Object.keys(result.users).map(keyUser => {
+              let refUser = database.ref("users").child(keyUser);
+              refUser.once("value", snapUser => {
+                result.users[keyUser] = snapUser.val();
+              });
+            });
+
+            console.log("result", result);
+            list.push(result);
+          }*/
+
+          this.list = Object.keys(results).map(key => {
+            let roomItem = results[key];
+            roomItem.id = key;
+
+            /*let promises = [];
+
+            Object.keys(roomItem.users).map(keyUser => {
+              promises.push(this.userDetail(keyUser));
+            });
+
+            console.log("promises", promises);
+            let users = await Promises.all(promises);
+            console.log("users", users);
+            */
+            /*Object.keys(roomItem.users).map(async keyUser => {
+              const details = await this.userDetail(keyUser);
+
+              roomItem.users[keyUser] = details;
+            });*/
+            return roomItem;
+          });
         });
     }
   }

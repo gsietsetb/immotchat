@@ -15,6 +15,11 @@ import ReactNative, {
 import ImagePicker from "react-native-image-picker";
 import ImageResizer from "react-native-image-resizer";
 
+/*import {
+  DocumentPicker,
+  DocumentPickerUtil
+} from "react-native-document-picker";
+*/
 import uuid from "uuid";
 
 import { observer, inject } from "mobx-react/native";
@@ -156,20 +161,23 @@ class ChatScreen extends React.Component {
 
     const options = ["Report Abuse", "Cancel"];
     const cancelButtonIndex = options.length - 1;
-    context.actionSheet().showActionSheetWithOptions({
-      options,
-      cancelButtonIndex
-    }, buttonIndex => {
-      switch (buttonIndex) {
-        case 0:
-          console.log("report abuse");
+    context.actionSheet().showActionSheetWithOptions(
+      {
+        options,
+        cancelButtonIndex
+      },
+      buttonIndex => {
+        switch (buttonIndex) {
+          case 0:
+            console.log("report abuse");
 
-          messageStore.reportAbuse(message, chatRoom.id);
-          break;
+            messageStore.reportAbuse(message, chatRoom.id);
+            break;
 
-        default:
+          default:
+        }
       }
-    });
+    );
   };
 
   renderActions = () => {
@@ -199,6 +207,22 @@ class ChatScreen extends React.Component {
 
   imagePicker = () => {
     const { uploader, userStore } = this.props;
+
+    /*DocumentPicker.show(
+      {
+        filetype: [DocumentPickerUtil.allFiles()]
+      },
+      (error, res) => {
+        // Android
+        console.log(
+          res.uri,
+          res.type, // mime type
+          res.fileName,
+          res.fileSize
+        );
+      }
+    );
+    return;*/
 
     ImagePicker.showImagePicker(
       {

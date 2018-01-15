@@ -9,13 +9,18 @@ import {
   Image,
   KeyboardAvoidingView,
   TouchableOpacity,
-  LayoutAnimation
+  Platform
 } from "react-native";
 
 // I18n
 import I18n from "react-native-i18n";
 
-import Icon from "react-native-vector-icons/Entypo";
+import FastImage from "react-native-fast-image";
+
+import ImagePicker from "react-native-image-picker";
+import ImageResizer from "react-native-image-resizer";
+
+import Icon from "react-native-vector-icons/Ionicons";
 
 import { Metrics, Colors } from "../Themes";
 // external libs
@@ -29,7 +34,7 @@ import styles from "./Styles/ProfileScreenStyles";
 
 import { observer, inject } from "mobx-react/native";
 
-@inject("userStore", "nav")
+@inject("userStore", "nav", "uploader")
 @observer
 class ProfileScreen extends React.Component {
   constructor(props) {
@@ -64,10 +69,6 @@ class ProfileScreen extends React.Component {
     this.setState({
       typeForm: "password"
     });
-  };
-
-  componentWillUpdate = () => {
-    LayoutAnimation.spring();
   };
 
   logout = () => {
@@ -288,29 +289,177 @@ class ProfileScreen extends React.Component {
     );
   };
 
+  imagePicker = field => {
+    const { uploader, userStore } = this.props;
+
+    ImagePicker.launchImageLibrary(
+      {
+        title: I18n.t("chat.imagePicker.title")
+      },
+      response => {
+        let { uri } = response;
+
+        console.log("uri", uri);
+        if (response.didCancel) return false;
+
+        Image.getSize(uri, async (captureWidth, captureHeight) => {
+          let resizedHeight = 1080 * (captureWidth / captureWidth);
+
+          const resized = await ImageResizer.createResizedImage(
+            uri,
+            1080,
+            resizedHeight,
+            "JPEG",
+            80,
+            0,
+            null
+          );
+          console.log("resized = ", resized);
+          const uploadUrl = await uploader.singleUpload(
+            resized.uri,
+            "application/octet-stream",
+            field
+          );
+          console.log("uploadUrl = ", uploadUrl);
+          let profile = {};
+          profile[field] = uploadUrl;
+          userStore.updateUserProfile(profile);
+        });
+      }
+    );
+  };
+
+  renderAgency = () => {
+    const { userStore, uploader } = this.props;
+    const { info } = userStore;
+    if (info.type !== "agent") {
+      return;
+    }
+    if (uploader.sending && uploader.field === "logoAgency") {
+      return (
+        <View style={styles.loadingAction}>
+          <Spinner style={styles.spinner} color={Colors.secondaryDark} />
+        </View>
+      );
+    }
+    let avatarImg = `https://initials.herokuapp.com/a`;
+    if (info.logoAgency) {
+      avatarImg = info.logoAgency;
+    }
+
+    if (Platform.OS === "ios") {
+      return (
+        <TouchableOpacity
+          style={styles.pickerAction}
+          onPress={() => this.imagePicker("logoAgency")}
+        >
+          <Text style={styles.pictureHeaderText}>
+            {I18n.t("profile.agency_picture")}
+          </Text>
+
+          <FastImage
+            style={styles.avatar}
+            resizeMode={FastImage.resizeMode.cover}
+            source={{
+              uri: avatarImg,
+              priority: FastImage.priority.normal
+            }}
+          />
+          <Icon name="ios-camera" style={styles.pickerIco} />
+        </TouchableOpacity>
+      );
+    }
+    return (
+      <TouchableOpacity
+        style={styles.pickerAction}
+        onPress={() => this.imagePicker("logoAgency")}
+      >
+        <Text style={styles.pictureHeaderText}>
+          {I18n.t("profile.agency_picture")}
+        </Text>
+
+        <Image source={{ uri: avatarImg }} style={styles.avatar} />
+        <Icon name="ios-camera" style={styles.pickerIco} />
+      </TouchableOpacity>
+    );
+  };
+  renderAvatar = () => {
+    const { userStore, uploader } = this.props;
+    const { info } = userStore;
+    if (!info) {
+      return;
+    }
+
+    if (uploader.sending && uploader.field === "photo") {
+      return (
+        <View style={styles.loadingAction}>
+          <Spinner style={styles.spinner} color={Colors.secondaryDark} />
+        </View>
+      );
+    }
+    let avatarImg = `https://initials.herokuapp.com/${info.fullName}`;
+    if (info.photo) {
+      avatarImg = info.photo;
+    }
+
+    if (Platform.OS === "ios") {
+      return (
+        <TouchableOpacity
+          style={styles.pickerAction}
+          onPress={() => this.imagePicker("photo")}
+        >
+          <Text style={styles.pictureHeaderText}>
+            {I18n.t("profile.profile_picture")}
+          </Text>
+          <FastImage
+            style={styles.avatar}
+            resizeMode={FastImage.resizeMode.cover}
+            source={{
+              uri: avatarImg,
+              priority: FastImage.priority.normal
+            }}
+          />
+          <Icon name="ios-camera" style={styles.pickerIco} />
+        </TouchableOpacity>
+      );
+    }
+    return (
+      <TouchableOpacity
+        style={styles.pickerAction}
+        onPress={() => this.imagePicker("photo")}
+      >
+        <Text style={styles.pictureHeaderText}>
+          {I18n.t("profile.profile_picture")}
+        </Text>
+        <Image source={{ uri: avatarImg }} style={styles.avatar} />
+        <Icon name="ios-camera" style={styles.pickerIco} />
+      </TouchableOpacity>
+    );
+  };
   renderAccountInfo = () => {
     const { userStore } = this.props;
     const { info } = userStore;
     console.log("info", info);
 
     if (info) {
-      let avatarImg = `https://initials.herokuapp.com/${info.displayName}`;
       return (
-        <View>
-          <View header>
-            <Image source={{ uri: avatarImg }} style={styles.avatar} />
+        <View style={styles.header}>
+          <View style={styles.photoContainer}>
+            {this.renderAvatar()}
+            {this.renderAgency()}
           </View>
-          {info.displayName !== "" && (
-            <View>
-              <Text style={styles.infoText}>{info.displayName}</Text>
-            </View>
-          )}
-          {info.email !== "" && (
-            <View>
-              <Text style={styles.infoText}>{info.email}</Text>
-            </View>
-          )}
-          <View header>{this.logoutButton()}</View>
+          <View>
+            {info.fullName !== "" && (
+              <View>
+                <Text style={styles.infoText}>{info.fullName}</Text>
+              </View>
+            )}
+            {info.email !== "" && (
+              <View>
+                <Text style={styles.infoText}>{info.email}</Text>
+              </View>
+            )}
+          </View>
         </View>
       );
     }
@@ -320,84 +469,15 @@ class ProfileScreen extends React.Component {
     const { info } = userStore;
 
     if (!info) {
-      return (
-        <View>
-          {this.createForm()}
-          {this.createButtons()}
-        </View>
-      );
+      return <View>{this.createButtons()}</View>;
     }
   };
 
-  createForm = () => {
-    const { typeForm } = this.state;
+  goToPeferences = () => {
+    const { nav } = this.props;
 
-    switch (typeForm) {
-      case "login":
-        return (
-          <View style={styles.form}>
-            <View style={styles.row}>{this.renderEmailField()}</View>
-
-            <View style={styles.row}>{this.renderPasswordField()}</View>
-
-            {this.errorMessage()}
-            {this.loginButton()}
-          </View>
-        );
-        break;
-      case "register":
-        return (
-          <View style={styles.form}>
-            <View style={styles.row}>{this.renderFullNameField()}</View>
-
-            <View style={styles.row}>{this.renderEmailField()}</View>
-
-            <View style={styles.row}>{this.renderPasswordField()}</View>
-
-            <View style={styles.row}>{this.renderPassword2Field()}</View>
-            {this.errorMessage()}
-            {this.registerButton()}
-          </View>
-        );
-        break;
-      default:
-        break;
-    }
+    nav.navigate("Preferences");
   };
-
-  createButtons = () => {
-    const { typeForm } = this.state;
-
-    switch (typeForm) {
-      case "login":
-        return (
-          <View>
-            <TouchableOpacity
-              style={[styles.standardButton, styles.emptyButton]}
-              onPress={this.goToRegister}
-            >
-              <Text style={styles.emptyButtonText}>{I18n.t("register")}</Text>
-            </TouchableOpacity>
-          </View>
-        );
-        break;
-      case "register":
-        return (
-          <TouchableOpacity
-            style={[styles.standardButton, styles.emptyButton]}
-            onPress={this.goToLogin}
-          >
-            <Text style={styles.emptyButtonText}>
-              {I18n.t("already_have_account")}
-            </Text>
-          </TouchableOpacity>
-        );
-        break;
-      default:
-        break;
-    }
-  };
-
   goToPrivacy = () => {
     console.log("goToPrivacy");
     const { nav } = this.props;
@@ -405,16 +485,16 @@ class ProfileScreen extends React.Component {
     nav.navigate("Privacy", {
       title: I18n.t("profile.login.privacy.title")
     });
-
-    /*nav.navigate("Browser", {
-      title: I18n.t("profile.login.privacy.title"),
-      url: "https://www.google.com"
-    });*/
   };
 
   otherLinks = () => {
     return (
       <View style={styles.boxLinks}>
+        <TouchableOpacity style={styles.rowLink} onPress={this.goToPeferences}>
+          <Text style={styles.rowText}>
+            {I18n.t("profile.links.preferences")}
+          </Text>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.rowLink} onPress={this.goToPrivacy}>
           <Text style={styles.rowText}>{I18n.t("profile.links.privacy")}</Text>
         </TouchableOpacity>
@@ -448,8 +528,8 @@ class ProfileScreen extends React.Component {
         <NavBar title={I18n.t("Profile")} />
         <ScrollView style={styles.container}>
           {this.renderAccountInfo()}
-          {this.renderLogin()}
           {this.otherLinks()}
+          {this.logoutButton()}
         </ScrollView>
         <TabBar selected="profile" />
       </View>

@@ -25,7 +25,10 @@ export default StyleSheet.create({
   form: {
     // backgroundColor: Colors.snow,
     // borderRadius: 4
-    padding: Metrics.doublePadding
+    //padding: Metrics.doublePadding
+  },
+  formContainer: {
+    padding: Metrics.baseSpace
   },
   boxGoogle: {
     padding: Metrics.doublePadding,

@@ -12,6 +12,7 @@ import {
 
 import Spinner from "../Components/Spinner";
 import ParsedText from "react-native-parsed-text";
+import t from "tcomb-form-native";
 
 // import { Card, CardItem, Content, Body } from 'native-base';
 import I18n from "react-native-i18n";
@@ -20,6 +21,7 @@ import Animatable from "react-native-animatable";
 import { createIconSetFromFontello } from "react-native-vector-icons";
 
 import RoundedButton from "../Components/RoundedButton";
+import { isEmail } from "../Lib/Utilities";
 
 // import LoginForm from '../Components/LoginForm';
 import { observer, inject } from "mobx-react/native";
@@ -28,6 +30,21 @@ import { Metrics, Colors, Images } from "../Themes";
 
 // Styles
 import styles from "./Styles/LoginScreenStyles";
+
+const Form = t.form.Form;
+
+const Type = t.enums({
+  private: I18n.t("forms.register.type.values.private"),
+  agent: I18n.t("forms.register.type.values.agent")
+});
+
+const Profile = t.struct({
+  fullName: t.String,
+  email: t.String,
+  password: t.String,
+  confirm_password: t.String,
+  type: Type
+});
 
 @inject("userStore", "nav")
 @observer
@@ -41,7 +58,10 @@ class LoginScreen extends React.Component {
       email: __DEV__ ? "paolo@idev.io" : "",
       password: __DEV__ ? "123456" : "",
       password2: "",
-      typeForm: "login"
+      typeForm: "login",
+      value: {
+        type: "private"
+      }
     };
   }
 
@@ -76,18 +96,62 @@ class LoginScreen extends React.Component {
   handleSubmit = () => {
     const { userStore } = this.props;
 
-    const { fullName, email, password, password2, typeForm } = this.state;
-
-    const profile = {
-      displayName: fullName
-    };
+    const { typeForm } = this.state;
+    Keyboard.dismiss();
+    console.log("typeForm", typeForm);
     switch (typeForm) {
       case "login":
+        const { email, password } = this.state;
         userStore.login(email, password);
 
         break;
       case "register":
-        userStore.createUser(email, password, profile);
+        const { value } = this.state;
+
+        if (!value) {
+          return;
+        }
+        if (
+          !value.fullName ||
+          !value.email ||
+          !value.password ||
+          !value.confirm_password ||
+          !value.type
+        ) {
+          console.log("falta algo");
+          userStore.errorMessage = I18n.t(
+            "forms.register.errors.missing_fields"
+          );
+          return;
+        }
+
+        if (!isEmail(value.email)) {
+          console.log("formato email");
+
+          userStore.errorMessage = I18n.t(
+            "forms.register.errors.email_format_not_valid"
+          );
+
+          return;
+        }
+
+        if (value.password.length < 6) {
+          console.log("password corta");
+          userStore.errorMessage = I18n.t(
+            "forms.register.errors.password_too_short"
+          );
+          return;
+        }
+        if (value.password != value.confirm_password) {
+          console.log("password distintas");
+          userStore.errorMessage = I18n.t(
+            "forms.register.errors.not_equal_passwords"
+          );
+          return;
+        }
+
+        console.log("value", value);
+        userStore.createUser(value);
         break;
       default:
         break;
@@ -245,6 +309,12 @@ class LoginScreen extends React.Component {
     );
   };
 
+  onChange = value => {
+    this.setState({
+      value
+    });
+  };
+
   goToPrivacy = () => {
     console.log("goToPrivacy");
     const { nav } = this.props;
@@ -276,7 +346,7 @@ class LoginScreen extends React.Component {
     );
   };
   createForm = () => {
-    const { typeForm } = this.state;
+    const { typeForm, value } = this.state;
 
     switch (typeForm) {
       case "login":
@@ -300,15 +370,56 @@ class LoginScreen extends React.Component {
         );
         break;
       case "register":
+        const options = {
+          auto: "placeholders",
+          fields: {
+            fullName: {
+              //label: I18n.t("forms.register.fullName.label"),
+              placeholder: I18n.t("forms.register.fullName.placeholder")
+            },
+            email: {
+              //label: I18n.t("forms.register.email.label"),
+              placeholder: I18n.t("forms.register.email.placeholder"),
+              keyboardType: "email-address",
+              autoCapitalize: "none"
+            },
+            password: {
+              //label: I18n.t("forms.register.password.label"),
+              placeholder: I18n.t("forms.register.password.placeholder"),
+              autoCapitalize: "none",
+              password: true,
+              secureTextEntry: true
+            },
+            confirm_password: {
+              label: null,
+              //label: I18n.t("forms.register.confirm_password.label"),
+              placeholder: I18n.t(
+                "forms.register.confirm_password.placeholder"
+              ),
+              autoCapitalize: "none",
+              password: true,
+              secureTextEntry: true
+            },
+            type: {
+              //label: I18n.t("forms.register.type.label"),
+              placeholder: I18n.t("forms.register.type.placeholder"),
+              nullOption: false
+            }
+          }
+        }; // optional rendering options (see documentation)
         return (
           <View style={styles.form}>
-            <View style={styles.row}>{this.renderFullNameField()}</View>
-
-            <View style={styles.row}>{this.renderEmailField()}</View>
-
-            <View style={styles.row}>{this.renderPasswordField()}</View>
-
-            <View style={styles.row}>{this.renderPassword2Field()}</View>
+            <View style={styles.formContainer}>
+              <Form
+                ref={registerForm => {
+                  this.registerForm = registerForm;
+                }}
+                type={Profile}
+                onChange={this.onChange}
+                value={value}
+                options={options}
+              />
+            </View>
             {this.errorMessage()}
             {this.registerButton()}
             <TouchableOpacity

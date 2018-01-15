@@ -5,6 +5,15 @@ import { create } from "apisauce";
 import cheerio from "react-native-cheerio";
 import _ from "lodash";
 import moment from "moment";
+
+import RNFetchBlob from "react-native-fetch-blob";
+
+// Utility functions
+export const getBase64Image = async url => {
+  const image = await RNFetchBlob.fetch("GET", url);
+  return image.base64();
+};
+
 export const getUrl = text => {
   let re = /(https?:\/\/|www\.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)/i;
   return re.exec(text);
@@ -84,6 +93,16 @@ export const extractMeta = async url => {
   }
 };
 
+export const isEmail = e => {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(e);
+};
+
+export const isPhone = p => {
+  var re = /^\d+$/;
+  var digits = p.replace(/\D/g, "");
+  return digits.match(re) !== null;
+};
 /**
  * @cfg {HEX} AlphaColor
  *

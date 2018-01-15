@@ -73,7 +73,10 @@ export default class BrowserScreen extends React.Component {
     return (
       <View style={styles.mainContainer}>
         <NavBar leftButton={true} title={title} />
-        <WebView source={PolicyHTML} style={{ flex: 1 }} />
+        <WebView
+          source={{ url: "https://www.iubenda.com/privacy-policy/8262090" }}
+          style={{ flex: 1 }}
+        />
       </View>
     );
   }

@@ -37,12 +37,16 @@ export default class ChatRow extends React.Component {
         return o.uid != me.uid;
       });
       const target = others[0];
+      //console.log("target", target);
       if (target) {
         roomImg = `https://initials.herokuapp.com/${target.displayName}`;
+        if (target.photo) {
+          roomImg = target.photo;
+        }
       } else {
         roomImg = `https://initials.herokuapp.com/Direct`;
       }
-      console.log("roomImg", roomImg);
+      //console.log("roomImg", roomImg);
     } else {
       roomImg = `https://initials.herokuapp.com/${data.title}`;
       if (data.venue && data.venue.img) {
@@ -129,7 +133,7 @@ export default class ChatRow extends React.Component {
 
     console.log("data", data);
     if (data.direct) {
-      console.log("users", data.users);
+      //console.log("users", data.users);
       let others = _.filter(data.users, o => {
         return o.uid != me.uid;
       });

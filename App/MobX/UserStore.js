@@ -6,6 +6,7 @@ import moment from "moment";
 
 import { persist, create } from "mobx-persist";
 import FCM from "react-native-fcm";
+import _ from "lodash";
 
 import branch from "react-native-branch";
 
@@ -24,6 +25,9 @@ class UserStore {
   @persist
   @observable
   roomAfterLogin = null;
+
+  @observable justCreated = false;
+
   @persist
   @observable
   userInviteAfterLogin = null;
@@ -130,22 +134,23 @@ class UserStore {
   }
 
   @action
-  createUser(email, password, profile) {
+  createUser(profile) {
     this.fetching = true;
     this.errorMessage = null;
+
     firebase
       .auth()
-      .createUserWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(profile.email, profile.password)
       .then(user => {
         console.log("result", user);
         this.fetching = false;
+        this.justCreated = true;
 
         database.ref("users/" + user.uid).set({
           uid: user.uid,
-          displayName: user.displayName,
+          fullName: profile.fullName,
           email: user.email,
-          phoneNumber: user.phoneNumber,
-          photoURL: user.photoURL
+          type: profile.type
         });
 
         this.saveProfile(profile);
@@ -180,7 +185,7 @@ class UserStore {
 
       user
         .updateProfile({
-          displayName: profile.displayName
+          displayName: profile.fullName
         })
         .then(
           () => {
@@ -199,6 +204,19 @@ class UserStore {
     }
   }
 
+  @action
+  updateUserProfile = profile => {
+    let user = firebase.auth().currentUser;
+    if (user) {
+      //console.log("updating profile", profile);
+      database.ref("users/" + user.uid).update(profile);
+      database.ref("users/" + user.uid).on("value", snapshot => {
+        const results = snapshot.val() || [];
+
+        userStore.info = results;
+      });
+    }
+  };
   @action
   logout() {
     if (this.info && this.info.uid) {
@@ -227,23 +245,15 @@ firebase.auth().onAuthStateChanged(user => {
     branch.setIdentity(user.uid);
     console.log("user connected", user);
 
-    database.ref("users/" + user.uid).set({
-      uid: user.uid,
-      displayName: user.displayName,
-      email: user.email,
-      phoneNumber: user.phoneNumber,
-      photoURL: user.photoURL
-    });
+    database.ref("users/" + user.uid).on("value", snapshot => {
+      const results = snapshot.val() || [];
 
-    userStore.info = {
-      displayName: user.displayName,
-      email: user.email,
-      emailVerified: user.emailVerified,
-      phoneNumber: user.emailVerified,
-      photoURL: user.photoURL,
-      refreshToken: user.refreshToken,
-      uid: user.uid
-    };
+      userStore.info = results;
+
+      if (!userStore.info.type) {
+        userStore.updateUserProfile({ type: "private" });
+      }
+    });
   } else {
     userStore.info = null;
     console.log("user disconnected");

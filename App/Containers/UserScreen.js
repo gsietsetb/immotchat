@@ -7,16 +7,20 @@ import {
   KeyboardAvoidingView,
   View,
   ListView,
-  Image
+  Image,
+  Platform
 } from "react-native";
 
 import { observer, inject } from "mobx-react/native";
+
+import FastImage from "react-native-fast-image";
 
 import { Metrics } from "../Themes";
 
 import NavBar from "../Components/NavBar";
 // external libs
 import Icon from "react-native-vector-icons/Entypo";
+import ProfileStore from "../MobX/ProfileStore";
 
 // Styles
 import styles from "./Styles/UserScreenStyles";
@@ -38,19 +42,40 @@ class UserScreen extends React.Component {
   constructor(props) {
     super(props);
     // If you need scroll to bottom, consider http://bit.ly/2bMQ2BZ
+    this.profileStore = new ProfileStore();
   }
 
   componentDidMount = () => {
     const { nav } = this.props;
     const { user } = nav.params;
     //roomStore.getDetails(chatRoom.id);
+    console.log("user", user);
+    this.profileStore.getDetails(user);
   };
 
   userAvatar = () => {
-    const { nav } = this.props;
-    const { user } = nav.params;
-    if (user) {
-      let avatarImg = `https://initials.herokuapp.com/${user.displayName}`;
+    const { details } = this.profileStore;
+    console.log("details", details);
+    if (details) {
+      let avatarImg = `https://initials.herokuapp.com/${details.fullName}`;
+      if (details.photo) {
+        avatarImg = details.photo;
+      }
+
+      if (Platform.OS === "ios") {
+        return (
+          <View>
+            <FastImage
+              style={styles.avatar}
+              resizeMode={FastImage.resizeMode.cover}
+              source={{
+                uri: avatarImg,
+                priority: FastImage.priority.normal
+              }}
+            />
+          </View>
+        );
+      }
       return (
         <View>
           <Image source={{ uri: avatarImg }} style={styles.avatar} />
@@ -60,13 +85,12 @@ class UserScreen extends React.Component {
   };
 
   userInfo = () => {
-    const { nav } = this.props;
-    const { user } = nav.params;
-    if (user) {
+    const { details } = this.profileStore;
+    if (details) {
       return (
         <View style={styles.userContainer}>
-          {user.displayName && (
-            <Text style={styles.infoText}>{user.displayName}</Text>
+          {details.fullName && (
+            <Text style={styles.infoText}>{details.fullName}</Text>
           )}
         </View>
       );

@@ -18,6 +18,7 @@ window.Blob = Blob;
 
 export default class UploaderStore {
   @observable sending = false;
+  @observable field = null;
 
   uploadImage = (uri, mime = "application/octet-stream") => {
     return new Promise((resolve, reject) => {
@@ -49,13 +50,20 @@ export default class UploaderStore {
     });
   };
 
-  singleUpload = async (uri, mime = "application/octet-stream") => {
+  singleUpload = async (
+    uri,
+    mime = "application/octet-stream",
+    field = null
+  ) => {
+    this.field = field;
     this.sending = true;
     console.log("uri", uri);
     const response = await this.uploadImage(uri, mime);
 
     console.log("response", response);
     this.sending = false;
+    this.field = null;
+
     return response;
   };
 }

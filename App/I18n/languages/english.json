@@ -34,21 +34,110 @@
     "user_invitation_anonymous": "Someone invited you to chat in immotchat",
     "download": {
       "title": "Download immotchat",
-      "inviteUser": "Download immotchat to chat with me"
+      "inviteUser": "Download immotchat to chat with me, {{url}}",
+      "inviteRoom": "Download immotchat to chat with me, {{url}}"
     }
   },
   "messages": {
     "user_uploaded_image": "{{name}}: uploaded a Picture"
   },
   "profile": {
+    "profile_picture": "Profile picture",
+    "agency_picture": "Agency logo",
     "links": {
-      "privacy": "Privacy Policy"
+      "privacy": "Privacy Policy",
+      "preferences": "Preferences"
     },
     "login": {
       "privacy": {
         "rules": "Signing up or logging in, you accept our #PrivacyPolicy.",
 
         "title": "Privacy Policy"
+      }
+    }
+  },
+  "preferences": {
+    "form": {
+      "agent": {
+        "phone": {
+          "label": "Phone number",
+          "placeholder": "Write your mobile phone number"
+        },
+        "agency": {
+          "label": "Agency name",
+          "placeholder": "Write your agency name"
+        },
+        "url": {
+          "label": "Agency url",
+          "placeholder": "Write your agency website's url"
+        }
+      }
+    },
+    "window": {
+      "title": "Additional info"
+    },
+    "buttons": {
+      "save": "Save",
+      "skip": "Later"
+    },
+    "picker": {
+      "general": {
+        "description":
+          "Give us some information to help you to find the best appartments that match your expectations."
+      },
+      "agent": {
+        "description":
+          "Give us some work information to find the best clients for you."
+      },
+      "cancel": "Cancel",
+      "budget": {
+        "label": "Budget",
+        "select": "Select your range of price",
+        "description": ""
+      },
+      "type": {
+        "label": "Type",
+        "select": "Select type of building",
+        "description": ""
+      },
+      "size": {
+        "label": "Size",
+        "select": "Size of building/apartament",
+        "description": ""
+      },
+      "area": {
+        "label": "City/Area",
+        "select": "Select City/Area",
+        "placeholder": "Type City/Area",
+        "description": ""
+      }
+    }
+  },
+  "forms": {
+    "register": {
+      "fullName": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Write your email address"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Write a password - min 5 chars"
+      },
+      "confirm_password": {
+        "label": "Confirm password",
+        "placeholder": "Re-type your password to confirm"
+      },
+      "type": {
+        "label": "Type",
+        "placeholder": "Are you an agent or private user?",
+        "values": {
+          "agent": "I'm an agent",
+          "private": "I'm a private"
+        }
       }
     }
   }
